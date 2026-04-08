@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Box Marker</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-top: #1a1d20;
+      --bg-bottom: #0d0f12;
+      --panel: rgba(22, 25, 29, 0.92);
+      --panel-strong: #1a1e23;
+      --border: rgba(116, 125, 135, 0.28);
+      --border-strong: rgba(151, 161, 172, 0.4);
+      --text-main: #e7e1d3;
+      --text-muted: #aeb6bf;
+      --shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+      --green: #64c977;
+      --green-glow: rgba(100, 201, 119, 0.38);
+      --yellow: #d8c05b;
+      --yellow-glow: rgba(216, 192, 91, 0.34);
+      --red: #dd6a61;
+      --red-glow: rgba(221, 106, 97, 0.34);
+      --ghost: rgba(138, 202, 244, 0.52);
+      --ghost-fill: rgba(138, 202, 244, 0.11);
+      --focus: rgba(168, 210, 181, 0.45);
+      --page-width: min(92vw, 760px);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: start center;
+      padding: 28px 16px 40px;
+      background:
+        radial-gradient(circle at top, rgba(92, 118, 105, 0.18), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(110, 98, 78, 0.12), transparent 32%),
+        linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+      color: var(--text-main);
+    }
+
+    .app-shell {
+      width: var(--page-width);
+      background: linear-gradient(180deg, rgba(28, 32, 37, 0.97), rgba(16, 18, 21, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .app-header {
+      padding: 18px 20px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: linear-gradient(180deg, rgba(43, 49, 56, 0.62), rgba(28, 31, 36, 0));
+    }
+
+    .app-header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .app-header p {
+      margin: 6px 0 0;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .viewer {
+      display: grid;
+      gap: 14px;
+      padding: 18px 20px 20px;
+    }
+
+    .image-card {
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      padding: 18px;
+      border-radius: 16px;
+      background:
+        linear-gradient(180deg, rgba(34, 38, 43, 0.88), rgba(19, 21, 24, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .image-stage {
+      position: relative;
+      width: min(100%, 408px);
+      user-select: none;
+      touch-action: none;
+    }
+
+    .image-stage img {
+      display: block;
+      width: 100%;
+      height: auto;
+      image-rendering: pixelated;
+      border-radius: 6px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .overlay-layer,
+    .ghost-grid {
+      position: absolute;
+      inset: 0;
+    }
+
+    .overlay-layer {
+      z-index: 2;
+    }
+
+    .overlay-layer.is-configuring {
+      pointer-events: none;
+    }
+
+    .skill-box {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease, transform 120ms ease;
+    }
+
+    .skill-box:hover {
+      border-color: rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    .skill-box:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .skill-box.is-green {
+      border-color: var(--green);
+      box-shadow: inset 0 0 0 1px rgba(100, 201, 119, 0.3), 0 0 14px var(--green-glow);
+      background: rgba(100, 201, 119, 0.08);
+    }
+
+    .skill-box.is-yellow {
+      border-color: var(--yellow);
+      box-shadow: inset 0 0 0 1px rgba(216, 192, 91, 0.28), 0 0 14px var(--yellow-glow);
+      background: rgba(216, 192, 91, 0.08);
+    }
+
+    .skill-box.is-red {
+      border-color: var(--red);
+      box-shadow: inset 0 0 0 1px rgba(221, 106, 97, 0.28), 0 0 14px var(--red-glow);
+      background: rgba(221, 106, 97, 0.08);
+    }
+
+    .ghost-grid {
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 120ms ease;
+    }
+
+    .ghost-grid.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .ghost-grid__frame {
+      position: absolute;
+      border: 1px solid var(--ghost);
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px rgba(10, 12, 15, 0.6), 0 0 18px rgba(138, 202, 244, 0.18), 0 0 0 999px rgba(6, 8, 10, 0.16);
+      background:
+        repeating-linear-gradient(45deg, rgba(138, 202, 244, 0.09), rgba(138, 202, 244, 0.09) 8px, rgba(8, 10, 12, 0.02) 8px, rgba(8, 10, 12, 0.02) 16px),
+        rgba(10, 12, 15, 0.06);
+      cursor: grab;
+      overflow: visible;
+    }
+
+    .ghost-grid__frame.is-dragging,
+    .ghost-grid__frame.is-resizing {
+      cursor: grabbing;
+    }
+
+    .ghost-grid__cell {
+      position: absolute;
+      z-index: 1;
+      border: 2px dashed rgba(138, 202, 244, 0.82);
+      border-radius: 6px;
+      background: rgba(138, 202, 244, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .ghost-grid__handle {
+      position: absolute;
+      z-index: 3;
+      border: 1px solid rgba(138, 202, 244, 0.85);
+      background: linear-gradient(180deg, rgba(138, 202, 244, 0.72), rgba(62, 122, 161, 0.72));
+      box-shadow: 0 0 16px rgba(138, 202, 244, 0.35);
+    }
+
+    .ghost-grid__handle--uniform {
+      right: -10px;
+      bottom: -10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      cursor: nwse-resize;
+    }
+
+    .ghost-grid__handle--horizontal {
+      top: 50%;
+      right: -10px;
+      width: 18px;
+      height: 38px;
+      border-radius: 999px;
+      transform: translateY(-50%);
+      cursor: ew-resize;
+    }
+
+    .ghost-grid__handle--vertical {
+      left: 50%;
+      bottom: -10px;
+      width: 38px;
+      height: 18px;
+      border-radius: 999px;
+      transform: translateX(-50%);
+      cursor: ns-resize;
+    }
+
+    .control-bar {
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(27, 31, 36, 0.92), rgba(20, 22, 26, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .control-bar__top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .behavior-summary {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .color-actions,
+    .utility-actions,
+    .configure-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    button {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(45, 49, 55, 0.94), rgba(28, 31, 35, 0.98));
+      color: var(--text-main);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, box-shadow 120ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .color-button {
+      min-width: 130px;
+      padding: 10px 12px;
+      display: grid;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .color-button__label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .color-button__hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      box-shadow: 0 0 12px currentColor;
+    }
+
+    .color-button[data-action="green"] .color-dot {
+      color: var(--green);
+      background: var(--green);
+    }
+
+    .color-button[data-action="yellow"] .color-dot {
+      color: var(--yellow);
+      background: var(--yellow);
+    }
+
+    .color-button[data-action="red"] .color-dot {
+      color: var(--red);
+      background: var(--red);
+    }
+
+    .color-button--clear .color-dot {
+      color: #9aa3ad;
+      background: #9aa3ad;
+      box-shadow: 0 0 12px rgba(154, 163, 173, 0.32);
+    }
+
+    .color-button.is-selected {
+      border-color: rgba(182, 203, 190, 0.3);
+      background: linear-gradient(180deg, rgba(56, 64, 71, 0.98), rgba(31, 36, 40, 0.98));
+      box-shadow: inset 0 0 0 1px rgba(184, 211, 193, 0.12);
+    }
+
+    .utility-button,
+    .nudge-button {
+      padding: 10px 12px;
+      min-height: 42px;
+      font-size: 0.9rem;
+    }
+
+    .utility-button.is-active {
+      border-color: rgba(138, 202, 244, 0.5);
+      box-shadow: 0 0 16px rgba(138, 202, 244, 0.16);
+    }
+
+    .configure-panel {
+      display: none;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(15, 17, 20, 0.88);
+      border: 1px solid rgba(138, 202, 244, 0.14);
+    }
+
+    .configure-panel.is-open {
+      display: grid;
+    }
+
+    .configure-panel p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .configure-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .configure-group {
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(28, 32, 38, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .configure-group h2 {
+      margin: 0 0 8px;
+      font-size: 0.84rem;
+      color: var(--text-main);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .readout-list {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .readout-list strong {
+      color: var(--text-main);
+      min-width: 58px;
+      display: inline-block;
+    }
+
+    .configure-actions {
+      align-items: center;
+    }
+
+    .status-line {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 10px 24px;
+      }
+
+      .app-shell {
+        width: min(100vw - 20px, 680px);
+      }
+
+      .app-header,
+      .viewer {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .image-card {
+        padding: 12px;
+      }
+
+      .image-stage {
+        width: min(100%, 360px);
+      }
+
+      .color-button {
+        min-width: calc(50% - 5px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <h1>Skill Box Marker</h1>
+      <p>Track solved skills during temporary events like Leagues.</p>
+    </header>
+
+    <section class="viewer">
+      <div class="image-card">
+        <div class="image-stage" id="image-stage">
+            <img id="skills-image" src="./skills_tab.png" alt="Skill tab image with click targets">
+          <div class="overlay-layer" id="overlay-layer" aria-hidden="false"></div>
+          <div class="ghost-grid" id="ghost-grid">
+            <div class="ghost-grid__frame" id="ghost-grid-frame">
+              <div class="ghost-grid__handle ghost-grid__handle--horizontal" data-resize-mode="resize-x" title="Drag to resize the grid width"></div>
+              <div class="ghost-grid__handle ghost-grid__handle--vertical" data-resize-mode="resize-y" title="Drag to resize the grid height"></div>
+              <div class="ghost-grid__handle ghost-grid__handle--uniform" data-resize-mode="resize-both" title="Drag diagonally to resize width and height together"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-bar">
+        <div class="control-bar__top">
+          <div>
+            <div class="color-actions" id="color-actions"></div>
+          </div>
+          <p class="behavior-summary" id="behavior-summary"></p>
+        </div>
+
+        <div class="utility-actions">
+          <button class="utility-button" id="configure-toggle" type="button">Configure grid</button>
+          <button class="utility-button" id="clear-all" type="button">Clear all markers</button>
+          <button class="utility-button" id="reset-grid" type="button">Reset grid</button>
+        </div>
+
+        <section class="configure-panel" id="configure-panel" aria-live="polite">
+          <p>Configure mode shows a ghost grid over the image. Drag inside the frame to move it. Use the right-side handle for width, the bottom handle for height, or the corner handle to resize both together. The position and size are saved automatically.</p>
+          <div class="configure-grid">
+            <div class="configure-group">
+              <h2>Grid Readout</h2>
+              <ul class="readout-list">
+                <li><strong>X</strong> <span id="readout-x"></span></li>
+                <li><strong>Y</strong> <span id="readout-y"></span></li>
+                <li><strong>Width</strong> <span id="readout-scale-x"></span></li>
+                <li><strong>Height</strong> <span id="readout-scale-y"></span></li>
+              </ul>
+            </div>
+            <div class="configure-group">
+              <h2>Fine Adjust</h2>
+              <div class="configure-actions">
+                <button class="nudge-button" type="button" data-nudge="up">Up</button>
+                <button class="nudge-button" type="button" data-nudge="left">Left</button>
+                <button class="nudge-button" type="button" data-nudge="right">Right</button>
+                <button class="nudge-button" type="button" data-nudge="down">Down</button>
+                <button class="nudge-button" type="button" data-scale-axis="x" data-scale-direction="down">Width -</button>
+                <button class="nudge-button" type="button" data-scale-axis="x" data-scale-direction="up">Width +</button>
+                <button class="nudge-button" type="button" data-scale-axis="y" data-scale-direction="down">Height -</button>
+                <button class="nudge-button" type="button" data-scale-axis="y" data-scale-direction="up">Height +</button>
+                <button class="nudge-button" type="button" data-scale-axis="both" data-scale-direction="down">Both -</button>
+                <button class="nudge-button" type="button" data-scale-axis="both" data-scale-direction="up">Both +</button>
+              </div>
+            </div>
+          </div>
+          <div class="status-line">Tip: start with the corner handle for a rough fit, then use the width and height handles or the fine-adjust buttons to line the boxes up exactly.</div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const BASE_IMAGE = { width: 204, height: 275 };
+    const GRID = { columns: 3, rows: 8, cellWidth: 62, cellHeight: 31 };
+    const COLORS = ["green", "yellow", "red"];
+    const CLICK_ACTIONS = [...COLORS, "clear"];
+    const SKILL_NAMES = [
+      "Attack",
+      "Hitpoints",
+      "Mining",
+      "Strength",
+      "Agility",
+      "Smithing",
+      "Defence",
+      "Herblore",
+      "Fishing",
+      "Ranged",
+      "Thieving",
+      "Cooking",
+      "Prayer",
+      "Crafting",
+      "Firemaking",
+      "Magic",
+      "Fletching",
+      "Woodcutting",
+      "Runecraft",
+      "Slayer",
+      "Farming",
+      "Construction",
+      "Hunter",
+      "Sailing",
+    ];
+    const COLOR_LABELS = {
+      green: "Solved",
+      yellow: "Partially Solved",
+      red: "Unsolved",
+    };
+    const CLEAR_LABEL = "Clear";
+    const STORAGE_KEY = "emtec-byte:osrs-skill-selector:skill-box-marker-state-v1";
+    const LEGACY_STORAGE_KEYS = ["skill-box-marker-state-v1"];
+    const DEFAULT_STATE = {
+      defaultAction: "green",
+      defaultColor: "green",
+      markers: Array.from({ length: GRID.columns * GRID.rows }, () => "none"),
+      grid: {
+        x: 7.2,
+        y: 7.6,
+        scaleX: 1.019,
+        scaleY: 0.974,
+      },
+      configureMode: false,
+    };
+
+    const elements = {
+      image: document.getElementById("skills-image"),
+      stage: document.getElementById("image-stage"),
+      overlay: document.getElementById("overlay-layer"),
+      ghostGrid: document.getElementById("ghost-grid"),
+      ghostFrame: document.getElementById("ghost-grid-frame"),
+      colorActions: document.getElementById("color-actions"),
+      summary: document.getElementById("behavior-summary"),
+      configureToggle: document.getElementById("configure-toggle"),
+      clearAll: document.getElementById("clear-all"),
+      resetGrid: document.getElementById("reset-grid"),
+      configurePanel: document.getElementById("configure-panel"),
+      readoutX: document.getElementById("readout-x"),
+      readoutY: document.getElementById("readout-y"),
+      readoutScaleX: document.getElementById("readout-scale-x"),
+      readoutScaleY: document.getElementById("readout-scale-y"),
+      nudgeButtons: Array.from(document.querySelectorAll("[data-nudge]")),
+      scaleButtons: Array.from(document.querySelectorAll("[data-scale-axis]")),
+    };
+
+    const state = loadState();
+    let dragMode = null;
+
+    function loadState() {
+      try {
+        let raw = localStorage.getItem(STORAGE_KEY);
+        let legacyKeyUsed = null;
+
+        if (!raw) {
+          legacyKeyUsed = LEGACY_STORAGE_KEYS.find((key) => localStorage.getItem(key));
+          raw = legacyKeyUsed ? localStorage.getItem(legacyKeyUsed) : null;
+        }
+
+        if (!raw) {
+          return structuredClone(DEFAULT_STATE);
+        }
+
+        if (legacyKeyUsed) {
+          localStorage.setItem(STORAGE_KEY, raw);
+        }
+
+        const parsed = JSON.parse(raw);
+        const legacyScale = Number.isFinite(parsed?.grid?.scale) ? clamp(parsed.grid.scale, 0.65, 1.6) : null;
+        const markers = Array.isArray(parsed.markers) ? parsed.markers.slice(0, GRID.columns * GRID.rows) : DEFAULT_STATE.markers.slice();
+        while (markers.length < GRID.columns * GRID.rows) {
+          markers.push("none");
+        }
+
+        return {
+          defaultAction: CLICK_ACTIONS.includes(parsed.defaultAction)
+            ? parsed.defaultAction
+            : (COLORS.includes(parsed.defaultColor) ? parsed.defaultColor : DEFAULT_STATE.defaultAction),
+          defaultColor: COLORS.includes(parsed.defaultColor) ? parsed.defaultColor : DEFAULT_STATE.defaultColor,
+          markers: markers.map((value) => (COLORS.includes(value) ? value : "none")),
+          grid: {
+            x: Number.isFinite(parsed?.grid?.x) ? parsed.grid.x : DEFAULT_STATE.grid.x,
+            y: Number.isFinite(parsed?.grid?.y) ? parsed.grid.y : DEFAULT_STATE.grid.y,
+            scaleX: Number.isFinite(parsed?.grid?.scaleX) ? clamp(parsed.grid.scaleX, 0.65, 1.6) : (legacyScale ?? DEFAULT_STATE.grid.scaleX),
+            scaleY: Number.isFinite(parsed?.grid?.scaleY) ? clamp(parsed.grid.scaleY, 0.65, 1.6) : (legacyScale ?? DEFAULT_STATE.grid.scaleY),
+          },
+          configureMode: Boolean(parsed.configureMode),
+        };
+      } catch {
+        return structuredClone(DEFAULT_STATE);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch {
+        // Ignore storage write failures so the page still works in restricted contexts.
+      }
+    }
+
+    function structuredClone(value) {
+      return JSON.parse(JSON.stringify(value));
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    function getDisplayScale() {
+      const rect = elements.image.getBoundingClientRect();
+      return {
+        x: rect.width / BASE_IMAGE.width,
+        y: rect.height / BASE_IMAGE.height,
+      };
+    }
+
+    function getGridAssignments() {
+      const startIndex = COLORS.indexOf(state.defaultColor);
+      const safeIndex = startIndex >= 0 ? startIndex : 0;
+      return {
+        click: COLORS[safeIndex],
+        ctrl: COLORS[(safeIndex + 1) % COLORS.length],
+        shift: COLORS[(safeIndex + 2) % COLORS.length],
+      };
+    }
+
+    function getModifierColorForEvent(event) {
+      const assignments = getGridAssignments();
+      if (event.ctrlKey) {
+        return assignments.ctrl;
+      }
+      if (event.shiftKey) {
+        return assignments.shift;
+      }
+      return null;
+    }
+
+    function getCycleColorOrder() {
+      const assignments = getGridAssignments();
+      return [assignments.click, assignments.ctrl, assignments.shift];
+    }
+
+    function setDefaultAction(action) {
+      state.defaultAction = action;
+      if (COLORS.includes(action)) {
+        state.defaultColor = action;
+      }
+      saveState();
+      renderControls();
+    }
+
+    function setMarker(index, color) {
+      state.markers[index] = color;
+      saveState();
+      renderOverlay();
+    }
+
+    function toggleMarker(index, color) {
+      setMarker(index, state.markers[index] === color ? "none" : color);
+    }
+
+    function getNextCycleColor(currentColor) {
+      const cycle = [...getCycleColorOrder(), "none"];
+      const currentIndex = cycle.indexOf(currentColor);
+
+      if (currentIndex === -1) {
+        return cycle[0];
+      }
+
+      return cycle[(currentIndex + 1) % cycle.length];
+    }
+
+    function updateGridPosition(patch) {
+      state.grid = {
+        ...state.grid,
+        ...patch,
+      };
+      state.grid.scaleX = clamp(state.grid.scaleX, 0.65, 1.6);
+      state.grid.scaleY = clamp(state.grid.scaleY, 0.65, 1.6);
+      saveState();
+      renderOverlay();
+      renderGhostGrid();
+      updateReadout();
+    }
+
+    function setConfigureMode(enabled) {
+      state.configureMode = enabled;
+      saveState();
+      elements.overlay.classList.toggle("is-configuring", enabled);
+      elements.ghostGrid.classList.toggle("is-active", enabled);
+      elements.configureToggle.classList.toggle("is-active", enabled);
+      elements.configureToggle.textContent = enabled ? "Done configuring" : "Configure grid";
+      elements.configurePanel.classList.toggle("is-open", enabled);
+    }
+
+    function renderControls() {
+      const assignments = getGridAssignments();
+      const clearSelected = state.defaultAction === "clear";
+      const labels = {
+        [assignments.click]: "Click",
+        [assignments.ctrl]: "Ctrl+Click",
+        [assignments.shift]: "Shift+Click",
+      };
+
+      const colorButtons = COLORS.map((color) => {
+        const name = COLOR_LABELS[color] ?? color;
+        const isSelected = color === state.defaultAction ? " is-selected" : "";
+        const hint = clearSelected ? "Select default" : labels[color];
+        return `
+          <button class="color-button${isSelected}" type="button" data-action="${color}" aria-pressed="${color === state.defaultAction}">
+            <span class="color-button__label"><span class="color-dot" aria-hidden="true"></span>${name}</span>
+            <span class="color-button__hint">${hint}</span>
+          </button>
+        `;
+      }).join("");
+
+      const clearSelectedClass = clearSelected ? " is-selected" : "";
+      const clearHint = clearSelected ? "Click" : "Right click to clear";
+      const clearButton = `
+        <button class="color-button color-button--clear${clearSelectedClass}" type="button" data-action="clear" aria-pressed="${clearSelected}" aria-label="${CLEAR_LABEL}">
+          <span class="color-button__label"><span class="color-dot" aria-hidden="true"></span>${CLEAR_LABEL}</span>
+          <span class="color-button__hint">${clearHint}</span>
+        </button>
+      `;
+
+      elements.colorActions.innerHTML = `${colorButtons}${clearButton}`;
+
+      if (clearSelected) {
+        elements.summary.textContent = "Click clears selections. Right click also clears. Select a status to resume cycling.";
+      } else {
+        elements.summary.textContent = `Tap/click cycles ${COLOR_LABELS[assignments.click]} -> ${COLOR_LABELS[assignments.ctrl]} -> ${COLOR_LABELS[assignments.shift]} -> clear. Hold Ctrl for ${COLOR_LABELS[assignments.ctrl]} or Shift for ${COLOR_LABELS[assignments.shift]}. Right click clears.`;
+      }
+
+      elements.colorActions.querySelectorAll("[data-action]").forEach((button) => {
+        button.addEventListener("click", () => {
+          setDefaultAction(button.dataset.action);
+        });
+      });
+    }
+
+    function renderOverlay() {
+      const displayScale = getDisplayScale();
+      const cellWidth = GRID.cellWidth * state.grid.scaleX * displayScale.x;
+      const cellHeight = GRID.cellHeight * state.grid.scaleY * displayScale.y;
+      const offsetX = state.grid.x * displayScale.x;
+      const offsetY = state.grid.y * displayScale.y;
+
+      elements.overlay.innerHTML = "";
+
+      for (let row = 0; row < GRID.rows; row += 1) {
+        for (let column = 0; column < GRID.columns; column += 1) {
+          const index = row * GRID.columns + column;
+          const skillName = SKILL_NAMES[index] ?? `Skill ${index + 1}`;
+          const button = document.createElement("button");
+          const color = state.markers[index];
+          button.type = "button";
+          button.className = `skill-box${color !== "none" ? ` is-${color}` : ""}`;
+          button.style.left = `${offsetX + column * cellWidth}px`;
+          button.style.top = `${offsetY + row * cellHeight}px`;
+          button.style.width = `${cellWidth}px`;
+          button.style.height = `${cellHeight}px`;
+          button.title = skillName;
+          button.setAttribute("aria-label", skillName);
+          button.addEventListener("click", (event) => {
+            if (state.configureMode) {
+              return;
+            }
+
+            if (state.defaultAction === "clear") {
+              setMarker(index, "none");
+              return;
+            }
+
+            const modifierColor = getModifierColorForEvent(event);
+            if (modifierColor) {
+              toggleMarker(index, modifierColor);
+              return;
+            }
+
+            const nextColor = getNextCycleColor(state.markers[index]);
+            setMarker(index, nextColor);
+          });
+          button.addEventListener("contextmenu", (event) => {
+            if (state.configureMode) {
+              return;
+            }
+
+            event.preventDefault();
+            setMarker(index, "none");
+          });
+          elements.overlay.appendChild(button);
+        }
+      }
+    }
+
+    function renderGhostGrid() {
+      const displayScale = getDisplayScale();
+      const width = GRID.columns * GRID.cellWidth * state.grid.scaleX * displayScale.x;
+      const height = GRID.rows * GRID.cellHeight * state.grid.scaleY * displayScale.y;
+      const offsetX = state.grid.x * displayScale.x;
+      const offsetY = state.grid.y * displayScale.y;
+      const cellWidth = GRID.cellWidth * state.grid.scaleX * displayScale.x;
+      const cellHeight = GRID.cellHeight * state.grid.scaleY * displayScale.y;
+
+      elements.ghostFrame.style.left = `${offsetX}px`;
+      elements.ghostFrame.style.top = `${offsetY}px`;
+      elements.ghostFrame.style.width = `${width}px`;
+      elements.ghostFrame.style.height = `${height}px`;
+
+      const existingCells = Array.from(elements.ghostFrame.querySelectorAll(".ghost-grid__cell"));
+      existingCells.forEach((cell) => cell.remove());
+
+      for (let row = 0; row < GRID.rows; row += 1) {
+        for (let column = 0; column < GRID.columns; column += 1) {
+          const cell = document.createElement("div");
+          cell.className = "ghost-grid__cell";
+          cell.style.left = `${column * cellWidth}px`;
+          cell.style.top = `${row * cellHeight}px`;
+          cell.style.width = `${cellWidth}px`;
+          cell.style.height = `${cellHeight}px`;
+          elements.ghostFrame.appendChild(cell);
+        }
+      }
+    }
+
+    function updateReadout() {
+      elements.readoutX.textContent = `${state.grid.x.toFixed(1)} px`;
+      elements.readoutY.textContent = `${state.grid.y.toFixed(1)} px`;
+      elements.readoutScaleX.textContent = `${state.grid.scaleX.toFixed(3)}x`;
+      elements.readoutScaleY.textContent = `${state.grid.scaleY.toFixed(3)}x`;
+    }
+
+    function resetGrid() {
+      updateGridPosition(DEFAULT_STATE.grid);
+    }
+
+    function handleNudge(direction) {
+      const step = 1;
+      if (direction === "up") {
+        updateGridPosition({ y: state.grid.y - step });
+      }
+      if (direction === "down") {
+        updateGridPosition({ y: state.grid.y + step });
+      }
+      if (direction === "left") {
+        updateGridPosition({ x: state.grid.x - step });
+      }
+      if (direction === "right") {
+        updateGridPosition({ x: state.grid.x + step });
+      }
+    }
+
+    function handleScale(axis, direction) {
+      const delta = direction === "up" ? 0.01 : -0.01;
+      if (axis === "x") {
+        updateGridPosition({ scaleX: state.grid.scaleX + delta });
+        return;
+      }
+      if (axis === "y") {
+        updateGridPosition({ scaleY: state.grid.scaleY + delta });
+        return;
+      }
+      updateGridPosition({
+        scaleX: state.grid.scaleX + delta,
+        scaleY: state.grid.scaleY + delta,
+      });
+    }
+
+    function beginGridInteraction(event, mode) {
+      if (!state.configureMode) {
+        return;
+      }
+
+      event.preventDefault();
+      const scale = getDisplayScale();
+      dragMode = {
+        mode,
+        pointerId: event.pointerId,
+        startX: event.clientX,
+        startY: event.clientY,
+        gridX: state.grid.x,
+        gridY: state.grid.y,
+        gridScaleX: state.grid.scaleX,
+        gridScaleY: state.grid.scaleY,
+        displayScaleX: scale.x,
+        displayScaleY: scale.y,
+      };
+
+      elements.ghostFrame.classList.toggle("is-dragging", mode === "move");
+      elements.ghostFrame.classList.toggle("is-resizing", mode !== "move");
+      elements.ghostFrame.setPointerCapture(event.pointerId);
+    }
+
+    function continueGridInteraction(event) {
+      if (!dragMode || event.pointerId !== dragMode.pointerId) {
+        return;
+      }
+
+      const deltaX = (event.clientX - dragMode.startX) / dragMode.displayScaleX;
+      const deltaY = (event.clientY - dragMode.startY) / dragMode.displayScaleY;
+      const scaleDeltaX = deltaX / (GRID.columns * GRID.cellWidth);
+      const scaleDeltaY = deltaY / (GRID.rows * GRID.cellHeight);
+
+      if (dragMode.mode === "move") {
+        updateGridPosition({
+          x: dragMode.gridX + deltaX,
+          y: dragMode.gridY + deltaY,
+        });
+        return;
+      }
+
+      if (dragMode.mode === "resize-x") {
+        updateGridPosition({
+          scaleX: dragMode.gridScaleX + scaleDeltaX,
+        });
+        return;
+      }
+
+      if (dragMode.mode === "resize-y") {
+        updateGridPosition({
+          scaleY: dragMode.gridScaleY + scaleDeltaY,
+        });
+        return;
+      }
+
+      updateGridPosition({
+        scaleX: dragMode.gridScaleX + scaleDeltaX,
+        scaleY: dragMode.gridScaleY + scaleDeltaY,
+      });
+    }
+
+    function endGridInteraction(event) {
+      if (!dragMode || event.pointerId !== dragMode.pointerId) {
+        return;
+      }
+
+      elements.ghostFrame.classList.remove("is-dragging", "is-resizing");
+      elements.ghostFrame.releasePointerCapture(event.pointerId);
+      dragMode = null;
+    }
+
+    function bindEvents() {
+      elements.configureToggle.addEventListener("click", () => {
+        setConfigureMode(!state.configureMode);
+      });
+
+      elements.clearAll.addEventListener("click", () => {
+        state.markers = Array.from({ length: GRID.columns * GRID.rows }, () => "none");
+        saveState();
+        renderOverlay();
+      });
+
+      elements.resetGrid.addEventListener("click", () => {
+        resetGrid();
+      });
+
+      elements.nudgeButtons.forEach((button) => {
+        button.addEventListener("click", () => handleNudge(button.dataset.nudge));
+      });
+
+      elements.scaleButtons.forEach((button) => {
+        button.addEventListener("click", () => handleScale(button.dataset.scaleAxis, button.dataset.scaleDirection));
+      });
+
+      elements.ghostFrame.addEventListener("pointerdown", (event) => {
+        const handle = event.target.closest("[data-resize-mode]");
+        const mode = handle ? handle.dataset.resizeMode : "move";
+        beginGridInteraction(event, mode);
+      });
+
+      elements.ghostFrame.addEventListener("pointermove", continueGridInteraction);
+      elements.ghostFrame.addEventListener("pointerup", endGridInteraction);
+      elements.ghostFrame.addEventListener("pointercancel", endGridInteraction);
+
+      window.addEventListener("resize", () => {
+        renderOverlay();
+        renderGhostGrid();
+      });
+
+      elements.image.addEventListener("load", () => {
+        renderOverlay();
+        renderGhostGrid();
+      });
+    }
+
+    function initialize() {
+      renderControls();
+      renderOverlay();
+      renderGhostGrid();
+      updateReadout();
+      setConfigureMode(state.configureMode);
+      bindEvents();
+    }
+
+    initialize();
+  </script>
+</body>
+</html>
