@@ -1,14 +1,36 @@
 import { NOTES_GRID } from "../config/grids.js";
+import {
+  NOTES_GRID_KEY,
+  NOTES_LEGACY_NOTE_KEY_PREFIX,
+  NOTES_LEGACY_NOTE_KEY_SUFFIX,
+  NOTES_SELECTED_SKILL_KEY,
+  NOTES_STORAGE_MIGRATION_KEY,
+  NOTES_TEXTAREA_HEIGHT_KEY,
+} from "../config/storage-keys.js";
 import { NOTES_BOXES } from "../config/skills.js";
-import { NOTES_GRID_KEY, NOTES_SELECTED_SKILL_KEY, NOTES_TEXTAREA_HEIGHT_KEY, getNoteStorageKey } from "../config/storage-keys.js";
 import { createGridConfigMenu } from "../lib/grid-config.js";
 import { createGridSurface } from "../lib/grid.js";
 import { createIconImage } from "../lib/icons.js";
+import { createMarkdownEditor } from "../lib/markdown-editor.js";
+import {
+  deleteNoteRecord,
+  importNoteRecords,
+  isNotesDbSupported,
+  loadNotedSkillIds as loadNotedSkillIdsFromDb,
+  readNoteRecord,
+  writeNoteRecord,
+} from "../lib/notes-db.js";
 import { createDebouncedWriter, readJson, removeKey, writeJson } from "../lib/storage.js";
 
-const DEFAULT_TEXTAREA_HEIGHT = 428;
+const DEFAULT_TEXTAREA_HEIGHT = 397;
 const MIN_TEXTAREA_HEIGHT = 180;
 const MAX_TEXTAREA_HEIGHT = 960;
+const NOTES_LOADING_STATUS = "Loading local note...";
+const NOTES_UNAVAILABLE_STATUS = "Notes storage unavailable in this browser.";
+const EMPTY_NOTE = Object.freeze({
+  text: "",
+  updatedAt: null,
+});
 const resetTextareaIconUrl = new URL("../../assets/icons/interlining.svg", import.meta.url).href;
 
 function sanitizeSelectedSkill(value) {
@@ -29,19 +51,69 @@ function sanitizeTextareaHeight(value) {
   return Math.min(MAX_TEXTAREA_HEIGHT, Math.max(MIN_TEXTAREA_HEIGHT, nextHeight));
 }
 
-function readNote(skillId) {
+function cloneEmptyNote() {
+  return {
+    ...EMPTY_NOTE,
+  };
+}
+
+function sanitizeNoteState(value) {
+  return {
+    text: typeof value?.text === "string" ? value.text : "",
+    updatedAt: Number.isFinite(value?.updatedAt) ? value.updatedAt : null,
+  };
+}
+
+function getLegacyNoteStorageKey(skillId) {
+  return `${NOTES_LEGACY_NOTE_KEY_PREFIX}${skillId}${NOTES_LEGACY_NOTE_KEY_SUFFIX}`;
+}
+
+function readLegacyNote(skillId) {
+  const note = readJson(getLegacyNoteStorageKey(skillId), cloneEmptyNote());
+  return sanitizeNoteState(note);
+}
+
+async function readNote(skillId, pendingNoteWrites) {
   if (!skillId) {
     return {
-      text: "",
-      updatedAt: null,
+      ok: true,
+      error: null,
+      note: cloneEmptyNote(),
     };
   }
 
-  const note = readJson(getNoteStorageKey(skillId), { text: "", updatedAt: null });
+  const pendingWrite = pendingNoteWrites.get(skillId);
+  if (pendingWrite) {
+    await pendingWrite;
+  }
+
+  const result = await readNoteRecord(skillId);
+  if (!result.ok) {
+    return {
+      ok: false,
+      error: result.error,
+      note: cloneEmptyNote(),
+    };
+  }
+
   return {
-    text: typeof note?.text === "string" ? note.text : "",
-    updatedAt: Number.isFinite(note?.updatedAt) ? note.updatedAt : null,
+    ok: true,
+    error: null,
+    note: sanitizeNoteState(result.note),
   };
+}
+
+async function loadNotedSkillIds() {
+  const result = await loadNotedSkillIdsFromDb();
+  if (!result.ok) {
+    return {
+      ok: false,
+      error: result.error,
+      skillIds: new Set(),
+    };
+  }
+
+  return result;
 }
 
 function formatSavedStatus(updatedAt, emptyText = false) {
@@ -61,37 +133,59 @@ function formatSavedStatus(updatedAt, emptyText = false) {
   return `Saved locally at ${formattedTime}.`;
 }
 
-function loadNotedSkillIds() {
-  const notedSkillIds = new Set();
-
-  for (const item of NOTES_BOXES) {
-    const note = readJson(getNoteStorageKey(item.id), null);
-    if (typeof note?.text === "string" && note.text.trim() !== "") {
-      notedSkillIds.add(item.id);
-    }
+async function migrateLegacyNotesToIndexedDb() {
+  if (!isNotesDbSupported()) {
+    return;
   }
 
-  return notedSkillIds;
+  const migrationState = readJson(NOTES_STORAGE_MIGRATION_KEY, { didMigrate: false });
+  if (migrationState?.didMigrate) {
+    return;
+  }
+
+  const legacyRecords = NOTES_BOXES
+    .map((item) => {
+      const note = readLegacyNote(item.id);
+      if (note.text.trim() === "" && !Number.isFinite(note.updatedAt)) {
+        return null;
+      }
+
+      return {
+        skillId: item.id,
+        ...note,
+        history: [],
+      };
+    })
+    .filter(Boolean);
+
+  const importResult = await importNoteRecords(legacyRecords);
+  if (!importResult.ok) {
+    return;
+  }
+
+  NOTES_BOXES.forEach((item) => {
+    removeKey(getLegacyNoteStorageKey(item.id));
+  });
+
+  writeJson(NOTES_STORAGE_MIGRATION_KEY, {
+    didMigrate: true,
+    migratedAt: Date.now(),
+  });
 }
 
-export function bootstrapNotesStorage() {
-  removeKey("osrs-skill-selector:migrations:notes-grid-render:v1");
-  removeKey("osrs-skill-selector:migrations:notes-grid-geometry:v1");
-  removeKey("osrs-skill-selector:migrations:notes-grid-vertical-fit:v1");
-
+export async function bootstrapNotesStorage() {
   const selectedState = readJson(NOTES_SELECTED_SKILL_KEY, { skillId: null });
   const nextSelectedSkillId = sanitizeSelectedSkill(selectedState);
 
-  if (nextSelectedSkillId === selectedState.skillId) {
-    return;
+  if (nextSelectedSkillId !== selectedState.skillId) {
+    if (nextSelectedSkillId) {
+      writeJson(NOTES_SELECTED_SKILL_KEY, { skillId: nextSelectedSkillId });
+    } else {
+      removeKey(NOTES_SELECTED_SKILL_KEY);
+    }
   }
 
-  if (nextSelectedSkillId) {
-    writeJson(NOTES_SELECTED_SKILL_KEY, { skillId: nextSelectedSkillId });
-    return;
-  }
-
-  removeKey(NOTES_SELECTED_SKILL_KEY);
+  await migrateLegacyNotesToIndexedDb();
 }
 
 export function createNotesFeature() {
@@ -100,11 +194,16 @@ export function createNotesFeature() {
     label: "Notes",
     mount({ panelEl, toolbarEl }) {
       let selectedSkillId = sanitizeSelectedSkill(readJson(NOTES_SELECTED_SKILL_KEY, { skillId: null }));
-      let noteState = readNote(selectedSkillId);
-      let notedSkillIds = loadNotedSkillIds();
-      let statusText = selectedSkillId ? formatSavedStatus(noteState.updatedAt, noteState.text.trim() === "") : "Select a box above to start a local note.";
+      let noteState = cloneEmptyNote();
+      let notedSkillIds = new Set();
+      let statusText = selectedSkillId ? NOTES_LOADING_STATUS : "Select a box above to start a local note.";
       let textareaHeight = sanitizeTextareaHeight(readJson(NOTES_TEXTAREA_HEIGHT_KEY, { height: DEFAULT_TEXTAREA_HEIGHT }));
-      let sizeObserver = null;
+      let notesPersistenceAvailable = isNotesDbSupported();
+      let notesLoaded = !notesPersistenceAvailable;
+      let isDisposed = false;
+      let noteLoadToken = 0;
+
+      const pendingNoteWrites = new Map();
 
       const surface = createGridSurface({
         imageSrc: NOTES_GRID.imageSrc,
@@ -148,7 +247,7 @@ export function createNotesFeature() {
       notesPanel.className = "notes-panel";
       notesPanel.innerHTML = `
         <div class="notes-panel__header">
-          <div>
+          <div class="notes-panel__header-copy">
             <h2 class="notes-panel__title">Skill Notes</h2>
             <p class="notes-panel__meta"></p>
           </div>
@@ -156,13 +255,15 @@ export function createNotesFeature() {
             <p class="note-status"></p>
           </div>
         </div>
-        <textarea class="notes-panel__textarea" id="notes-textarea" rows="8" aria-label="Skill note" placeholder="Select a box above to add a local note."></textarea>
       `;
 
       const notesMeta = notesPanel.querySelector(".notes-panel__meta");
       const noteStatus = notesPanel.querySelector(".note-status");
       const headerActions = notesPanel.querySelector(".notes-panel__header-actions");
-      const textarea = notesPanel.querySelector(".notes-panel__textarea");
+
+      const editorMount = document.createElement("div");
+      editorMount.className = "notes-panel__editor-shell";
+      notesPanel.appendChild(editorMount);
 
       const resetSizeButton = document.createElement("button");
       resetSizeButton.type = "button";
@@ -181,11 +282,6 @@ export function createNotesFeature() {
         });
       }, 140);
 
-      function applyTextareaHeight(nextHeight) {
-        textareaHeight = sanitizeTextareaHeight({ height: nextHeight });
-        textarea.style.height = `${textareaHeight}px`;
-      }
-
       function persistTextareaHeight(nextHeight) {
         const sanitizedHeight = sanitizeTextareaHeight({ height: nextHeight });
         if (sanitizedHeight === textareaHeight) {
@@ -196,26 +292,58 @@ export function createNotesFeature() {
         textareaHeightWriter.schedule(sanitizedHeight);
       }
 
-      const noteWriter = createDebouncedWriter((skillId, text) => {
-        if (!skillId) {
+      function flushPendingNote() {
+        noteWriter.flush();
+      }
+
+      const editor = createMarkdownEditor({
+        mountEl: editorMount,
+        initialValue: noteState.text,
+        placeholder: "Select a box above to add a local note.",
+        initialMode: noteState.text.trim() === "" ? "write" : "preview",
+        initialHeight: textareaHeight,
+        minHeight: MIN_TEXTAREA_HEIGHT,
+        maxHeight: MAX_TEXTAREA_HEIGHT,
+        onChange: handleEditorChange,
+        onHeightChange: persistTextareaHeight,
+        onBlur: flushPendingNote,
+        autoPreviewOnBlur: true,
+      });
+
+      function trackPendingWrite(skillId, promise) {
+        pendingNoteWrites.set(skillId, promise);
+        return promise.finally(() => {
+          if (pendingNoteWrites.get(skillId) === promise) {
+            pendingNoteWrites.delete(skillId);
+          }
+        });
+      }
+
+      const noteWriter = createDebouncedWriter(async (skillId, text) => {
+        if (!skillId || !notesPersistenceAvailable) {
           return;
         }
 
         const normalizedText = typeof text === "string" ? text : "";
         if (normalizedText.trim() === "") {
-          const didRemove = removeKey(getNoteStorageKey(skillId));
-          if (!didRemove) {
+          const deleteResult = await trackPendingWrite(skillId, deleteNoteRecord(skillId));
+          if (!deleteResult.ok) {
+            if (isDisposed) {
+              return;
+            }
+
             statusText = "Local save failed. Storage may be full.";
             renderSelection(false);
             return;
           }
 
           notedSkillIds.delete(skillId);
+          if (isDisposed) {
+            return;
+          }
+
           if (skillId === selectedSkillId) {
-            noteState = {
-              text: normalizedText,
-              updatedAt: null,
-            };
+            noteState = cloneEmptyNote();
             statusText = formatSavedStatus(null, true);
             renderSelection();
           }
@@ -224,24 +352,28 @@ export function createNotesFeature() {
         }
 
         const updatedAt = Date.now();
-        const didSave = writeJson(getNoteStorageKey(skillId), {
+        const writeResult = await trackPendingWrite(skillId, writeNoteRecord(skillId, {
           text: normalizedText,
           updatedAt,
-        });
-        if (!didSave) {
+        }));
+        if (!writeResult.ok) {
+          if (isDisposed) {
+            return;
+          }
+
           statusText = "Local save failed. Storage may be full.";
           renderSelection(false);
           return;
         }
 
         notedSkillIds.add(skillId);
+        if (isDisposed) {
+          return;
+        }
 
         if (skillId === selectedSkillId) {
-          noteState = {
-            text: normalizedText,
-            updatedAt,
-          };
-          statusText = formatSavedStatus(updatedAt);
+          noteState = sanitizeNoteState(writeResult.note);
+          statusText = formatSavedStatus(noteState.updatedAt);
           renderSelection(false);
         }
 
@@ -256,26 +388,96 @@ export function createNotesFeature() {
         const selectedItem = getSelectedItem();
 
         if (!selectedItem) {
-          notesMeta.textContent = "Select a box above to create or edit a local note for that skill plan.";
-          noteStatus.textContent = "Select a box above to start a local note.";
-          textarea.disabled = true;
+          notesMeta.textContent = notesPersistenceAvailable
+            ? "Select a box above to create or edit a local note for that skill plan."
+            : "Select a box above. Notes storage is unavailable in this browser.";
+          noteStatus.textContent = notesPersistenceAvailable
+            ? (notesLoaded ? "Select a box above to start a local note." : NOTES_LOADING_STATUS)
+            : NOTES_UNAVAILABLE_STATUS;
+          editor.setMode("write");
+          editor.setDisabled(true);
           if (syncText) {
-            textarea.value = "";
+            editor.setValue("");
+          }
+          return;
+        }
+
+        if (!notesPersistenceAvailable) {
+          notesMeta.textContent = `${selectedItem.label} selected. Notes storage is unavailable in this browser.`;
+          noteStatus.textContent = NOTES_UNAVAILABLE_STATUS;
+          editor.setMode("write");
+          editor.setDisabled(true);
+          if (syncText) {
+            editor.setValue("");
+          }
+          return;
+        }
+
+        if (!notesLoaded) {
+          notesMeta.textContent = `${selectedItem.label} selected. This note stays in this browser only.`;
+          noteStatus.textContent = NOTES_LOADING_STATUS;
+          editor.setMode("write");
+          editor.setDisabled(true);
+          if (syncText) {
+            editor.setValue(noteState.text);
           }
           return;
         }
 
         notesMeta.textContent = `${selectedItem.label} selected. This note stays in this browser only.`;
         noteStatus.textContent = statusText;
-        textarea.disabled = false;
+        editor.setDisabled(false);
 
         if (syncText) {
-          textarea.value = noteState.text;
+          editor.setValue(noteState.text);
         }
       }
 
-      function flushPendingNote() {
-        noteWriter.flush();
+      async function hydrateInitialNotesState() {
+        if (!notesPersistenceAvailable) {
+          renderSelection();
+          return;
+        }
+
+        const requestToken = ++noteLoadToken;
+        const [noteResult, notedIdsResult] = await Promise.all([
+          readNote(selectedSkillId, pendingNoteWrites),
+          loadNotedSkillIds(),
+        ]);
+
+        if (isDisposed || requestToken !== noteLoadToken) {
+          return;
+        }
+
+        noteState = noteResult.note;
+        if (notedIdsResult.ok) {
+          notedSkillIds = notedIdsResult.skillIds;
+        }
+        notesLoaded = true;
+        statusText = noteResult.ok
+          ? (selectedSkillId ? formatSavedStatus(noteState.updatedAt, noteState.text.trim() === "") : "Select a box above to start a local note.")
+          : "Unable to load note locally.";
+
+        surface.render();
+        renderSelection();
+      }
+
+      async function hydrateSelectedSkill(skillId) {
+        const requestToken = ++noteLoadToken;
+        const noteResult = await readNote(skillId, pendingNoteWrites);
+        if (isDisposed || requestToken !== noteLoadToken || skillId !== selectedSkillId) {
+          return;
+        }
+
+        noteState = noteResult.note;
+        notesLoaded = true;
+        statusText = noteResult.ok
+          ? (noteState.text.trim() === "" ? "No note saved yet." : formatSavedStatus(noteState.updatedAt))
+          : "Unable to load note locally.";
+        editor.setMode(noteState.text.trim() === "" ? "write" : "preview");
+
+        surface.render();
+        renderSelection();
       }
 
       function selectSkill(skillId) {
@@ -286,23 +488,27 @@ export function createNotesFeature() {
         flushPendingNote();
         selectedSkillId = skillId;
         writeJson(NOTES_SELECTED_SKILL_KEY, { skillId: selectedSkillId });
-        noteState = readNote(selectedSkillId);
-        statusText = noteState.text.trim() === ""
-          ? "No note saved yet."
-          : formatSavedStatus(noteState.updatedAt);
+        noteState = cloneEmptyNote();
+        notesLoaded = !notesPersistenceAvailable;
+        statusText = notesPersistenceAvailable ? NOTES_LOADING_STATUS : NOTES_UNAVAILABLE_STATUS;
+        editor.setMode("write");
 
         surface.render();
         renderSelection();
+
+        if (notesPersistenceAvailable) {
+          void hydrateSelectedSkill(skillId);
+        }
       }
 
-      function handleInput() {
-        if (!selectedSkillId) {
+      function handleEditorChange(nextValue) {
+        if (!selectedSkillId || !notesPersistenceAvailable || !notesLoaded) {
           return;
         }
 
         noteState = {
           ...noteState,
-          text: textarea.value,
+          text: nextValue,
         };
         statusText = "Saving locally...";
         renderSelection(false);
@@ -321,34 +527,28 @@ export function createNotesFeature() {
         textareaHeightWriter.flush();
       }
 
-      if (typeof ResizeObserver === "function") {
-        sizeObserver = new ResizeObserver(() => {
-          persistTextareaHeight(textarea.offsetHeight);
-        });
-        sizeObserver.observe(textarea);
-      }
-
       resetSizeButton.addEventListener("click", () => {
-        applyTextareaHeight(DEFAULT_TEXTAREA_HEIGHT);
+        textareaHeight = DEFAULT_TEXTAREA_HEIGHT;
+        editor.setHeight(DEFAULT_TEXTAREA_HEIGHT);
         writeJson(NOTES_TEXTAREA_HEIGHT_KEY, { height: DEFAULT_TEXTAREA_HEIGHT });
       });
 
-      textarea.addEventListener("input", handleInput);
-      textarea.addEventListener("blur", flushPendingNote);
       window.addEventListener("pagehide", handlePageHide);
       document.addEventListener("visibilitychange", handleVisibilityChange);
 
-      applyTextareaHeight(textareaHeight);
       renderSelection();
       featureView.append(surface.element, notesPanel);
       panelEl.replaceChildren(featureView);
+      void hydrateInitialNotesState();
 
       return () => {
+        isDisposed = true;
+        noteLoadToken += 1;
         flushPendingNote();
         textareaHeightWriter.flush();
         window.removeEventListener("pagehide", handlePageHide);
         document.removeEventListener("visibilitychange", handleVisibilityChange);
-        sizeObserver?.disconnect();
+        editor.destroy();
         gridMenu.destroy();
         surface.destroy();
       };
