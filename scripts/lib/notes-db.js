@@ -1,9 +1,12 @@
-const DB_NAME = "osrs-skill-selector";
-const DB_VERSION = 1;
-const NOTES_STORE_NAME = "notes";
-const MAX_HISTORY_ENTRIES = 20;
+import {
+  NOTES_STORE_NAME,
+  isAppDbSupported,
+  openAppDb,
+  requestToPromise,
+  transactionToPromise,
+} from "./app-db.js";
 
-let openDbPromise = null;
+const MAX_HISTORY_ENTRIES = 20;
 
 function createSuccessResult(payload = {}) {
   return {
@@ -88,74 +91,8 @@ function createHistorySnapshot(record) {
   };
 }
 
-function requestToPromise(request) {
-  return new Promise((resolve, reject) => {
-    request.onsuccess = () => {
-      resolve(request.result);
-    };
-
-    request.onerror = () => {
-      reject(request.error ?? new Error("request-failed"));
-    };
-  });
-}
-
-function transactionToPromise(transaction) {
-  return new Promise((resolve, reject) => {
-    transaction.oncomplete = () => {
-      resolve();
-    };
-
-    transaction.onerror = () => {
-      reject(transaction.error ?? new Error("transaction-failed"));
-    };
-
-    transaction.onabort = () => {
-      reject(transaction.error ?? new Error("transaction-aborted"));
-    };
-  });
-}
-
-function openNotesDb() {
-  if (!isNotesDbSupported()) {
-    return Promise.reject(new Error("indexeddb-unavailable"));
-  }
-
-  if (openDbPromise) {
-    return openDbPromise;
-  }
-
-  openDbPromise = new Promise((resolve, reject) => {
-    const request = window.indexedDB.open(DB_NAME, DB_VERSION);
-
-    request.onupgradeneeded = () => {
-      const db = request.result;
-      if (!db.objectStoreNames.contains(NOTES_STORE_NAME)) {
-        db.createObjectStore(NOTES_STORE_NAME, { keyPath: "skillId" });
-      }
-    };
-
-    request.onsuccess = () => {
-      resolve(request.result);
-    };
-
-    request.onerror = () => {
-      reject(request.error ?? new Error("database-open-failed"));
-    };
-
-    request.onblocked = () => {
-      reject(new Error("database-open-blocked"));
-    };
-  }).catch((error) => {
-    openDbPromise = null;
-    throw error;
-  });
-
-  return openDbPromise;
-}
-
 export function isNotesDbSupported() {
-  return typeof window !== "undefined" && typeof window.indexedDB !== "undefined";
+  return isAppDbSupported();
 }
 
 export async function readNoteRecord(skillId) {
@@ -164,7 +101,7 @@ export async function readNoteRecord(skillId) {
       return createSuccessResult({ note: createEmptyNoteRecord("") });
     }
 
-    const db = await openNotesDb();
+    const db = await openAppDb();
     const transaction = db.transaction(NOTES_STORE_NAME, "readonly");
     const transactionDone = transactionToPromise(transaction);
     const store = transaction.objectStore(NOTES_STORE_NAME);
@@ -206,7 +143,7 @@ export async function writeNoteRecord(skillId, value) {
         : existingRecord.history,
     };
 
-    const db = await openNotesDb();
+    const db = await openAppDb();
     const transaction = db.transaction(NOTES_STORE_NAME, "readwrite");
     const transactionDone = transactionToPromise(transaction);
     transaction.objectStore(NOTES_STORE_NAME).put(recordToStore);
@@ -226,7 +163,7 @@ export async function deleteNoteRecord(skillId) {
       return createFailureResult("invalid-skill-id");
     }
 
-    const db = await openNotesDb();
+    const db = await openAppDb();
     const transaction = db.transaction(NOTES_STORE_NAME, "readwrite");
     const transactionDone = transactionToPromise(transaction);
     transaction.objectStore(NOTES_STORE_NAME).delete(skillId);
@@ -240,7 +177,7 @@ export async function deleteNoteRecord(skillId) {
 
 export async function exportNoteRecords() {
   try {
-    const db = await openNotesDb();
+    const db = await openAppDb();
     const transaction = db.transaction(NOTES_STORE_NAME, "readonly");
     const transactionDone = transactionToPromise(transaction);
     const store = transaction.objectStore(NOTES_STORE_NAME);
@@ -296,7 +233,7 @@ export async function importNoteRecords(records) {
       return createSuccessResult({ importedCount: 0 });
     }
 
-    const db = await openNotesDb();
+    const db = await openAppDb();
     const transaction = db.transaction(NOTES_STORE_NAME, "readwrite");
     const transactionDone = transactionToPromise(transaction);
     const store = transaction.objectStore(NOTES_STORE_NAME);

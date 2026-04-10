@@ -1,0 +1,6632 @@
+{
+  "URL": {
+    "prefix": "https://oldschool.runescape.wiki"
+  },
+  "meta": {
+    "league": "Demonic Pacts League",
+    "leagueId": "demonic-pacts-league",
+    "leagueUrl": {
+      "suffix": "/w/Demonic_Pacts_League"
+    },
+    "purpose": "Master relationship file mapping notable unlocks, activities, drops, and echo content to Demonic Pacts League region requirements.",
+    "sourcePages": [
+      {
+        "suffix": "/w/Demonic_Pacts_League"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Boosted_drops"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Echo_bosses_and_echo_equipment"
+      },
+      {
+        "suffix": "/w/Update%3AGet_Ready_For_Leagues_VI%3A_Demonic_Pacts_-_April_15th"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Varlamore"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Karamja"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Asgarnia"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Fremennik"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Kandarin"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Morytania"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Tirannwn"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Wilderness"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Kharidian_Desert"
+      },
+      {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Kebos_and_Kourend"
+      }
+    ],
+    "notes": [
+      "This file is structured for planner/runtime use rather than display-only use.",
+      "Aggregate drop labels from league tables (for example 'All unique rewards' or 'Armadyl armour') do not always correspond to a single wiki page. For those entries, itemUrlSuffixes may be null and the source page is the canonical link target.",
+      "Most concrete wiki suffixes follow standard MediaWiki title normalization from the names shown in the cited league pages: spaces become underscores and special characters are URL-encoded.",
+      "Where the source material exposed a region summary but not every individual downstream page title, uncertain settlement/activity/shop URLs were intentionally omitted rather than guessed."
+    ],
+    "externalSources": [
+      {
+        "label": "Official OSRS Leagues hub",
+        "url": "https://osrs.runescape.com/leagues"
+      },
+      {
+        "label": "Official announcement page",
+        "url": "https://osrs.game/Leagues-VI-Announcement"
+      },
+      {
+        "label": "OSRS Wiki Demonic Pacts planner",
+        "url": "https://tools.runescape.wiki/demonic-pacts/"
+      }
+    ]
+  },
+  "regionUnlockModel": {
+    "startingRegions": [
+      {
+        "regionId": "varlamore",
+        "name": "Varlamore",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Varlamore"
+        }
+      }
+    ],
+    "forcedFirstUnlock": [
+      {
+        "regionId": "karamja",
+        "name": "Karamja",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Karamja"
+        }
+      }
+    ],
+    "selectableAdditionalRegions": [
+      {
+        "regionId": "asgarnia",
+        "name": "Asgarnia",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Asgarnia"
+        }
+      },
+      {
+        "regionId": "fremennik",
+        "name": "Fremennik Province",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Fremennik"
+        }
+      },
+      {
+        "regionId": "kandarin",
+        "name": "Kandarin",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Kandarin"
+        }
+      },
+      {
+        "regionId": "desert",
+        "name": "Kharidian Desert",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Kharidian_Desert"
+        }
+      },
+      {
+        "regionId": "morytania",
+        "name": "Morytania",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Morytania"
+        }
+      },
+      {
+        "regionId": "tirannwn",
+        "name": "Tirannwn",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Tirannwn"
+        }
+      },
+      {
+        "regionId": "wilderness",
+        "name": "Wilderness",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Wilderness"
+        }
+      },
+      {
+        "regionId": "kourend",
+        "name": "Kebos and Kourend",
+        "url": {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Kebos_and_Kourend"
+        }
+      }
+    ],
+    "maxSelectableAdditionalRegions": 3,
+    "misthalinAccessible": false
+  },
+  "globalAvailabilityRules": [
+    {
+      "id": "global/travel-destination-locks",
+      "description": "Transportation methods such as charter ships, fairy rings, gnome gliders, balloons, customs officers and similar travel systems require the destination area to be unlocked.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/universal-access-areas",
+      "description": "Death's Office, the player-owned house, random events, Zanaris and the Abyss are universally accessible during the league.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/poh-location",
+      "description": "When purchasing a player-owned house, it is placed in Aldarin; houses can only be moved to unlocked areas.",
+      "relatedRegionIds": [
+        "varlamore"
+      ]
+    },
+    {
+      "id": "global/slayer-assignment-pool",
+      "description": "All Slayer Masters assign the same task pool, filtered by unlocked areas. Slayer Equipment shops in all regions also sell anti-dragon shields and elemental shields.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/combo-boss-finished-items",
+      "description": "Items that normally drop as components that require multiple regions to assemble instead drop as finished items in the league.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/soulreaper-axe-dt2-rule",
+      "description": "All Soulreaper axe pieces can drop from every Desert Treasure II boss during the league.",
+      "relatedRegionIds": [
+        "varlamore",
+        "asgarnia",
+        "fremennik",
+        "desert"
+      ]
+    },
+    {
+      "id": "global/raid-mega-rares-cross-availability",
+      "description": "Twisted bow, Scythe of Vitur, and Tumeken's shadow are available from Chambers of Xeric, Theatre of Blood, and Tombs of Amascut during the league.",
+      "relatedRegionIds": [
+        "kourend",
+        "morytania",
+        "desert"
+      ]
+    },
+    {
+      "id": "global/wilderness-boss-diary-bypass",
+      "description": "Wilderness bosses do not require completion of the Wilderness Medium Diary during the league.",
+      "relatedRegionIds": [
+        "wilderness"
+      ]
+    },
+    {
+      "id": "global/zulrah-rule-changes",
+      "description": "Zulrah has no damage cap or melee damage immunity during the league.",
+      "relatedRegionIds": [
+        "tirannwn"
+      ]
+    },
+    {
+      "id": "global/ironman-no-trading",
+      "description": "All League characters are Ironmen and cannot trade with other players or use the Grand Exchange.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/sailing-disabled",
+      "description": "Sailing is disabled in the Demonic Pacts League and cannot be used for inter-region travel.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/yamas-lair-start",
+      "description": "Characters begin in a League-specific version of Yama's Lair before exiting into Varlamore; the lair also provides level-1 Agility access via stepping stones.",
+      "relatedRegionIds": [
+        "varlamore"
+      ]
+    },
+    {
+      "id": "global/passive-xp-multiplier",
+      "description": "Baseline passive effects include 5x experience, with later relic tiers increasing the XP multiplier further.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/passive-drop-rate-multiplier",
+      "description": "Eligible item drops start at 2x as common, with later passive upgrades increasing league-wide drop boosts further.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/passive-minigame-points",
+      "description": "Minigame points are boosted by 4x as part of the baseline passive effects.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/passive-farming-ticks",
+      "description": "Farming ticks occur every minute instead of every five minutes.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/passive-unlimited-run",
+      "description": "Run energy is never drained while running.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/clue-scroll-boxes",
+      "description": "Clue scrolls drop as stackable scroll boxes and clue-step progress is saved between clues.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    },
+    {
+      "id": "global/shop-stock-and-additions",
+      "description": "Most shop stock does not deplete in league worlds; Slayer Equipment shops sell anti-dragon and elemental shields, the Fortis General Store stocks box traps and bird snares, and the Sunset Coast charter shop stocks a hunter crossbow.",
+      "relatedRegionIds": [
+        "varlamore",
+        "karamja",
+        "asgarnia",
+        "fremennik",
+        "kandarin",
+        "desert",
+        "morytania",
+        "tirannwn",
+        "wilderness",
+        "kourend"
+      ]
+    }
+  ],
+  "globalAutoUnlocks": {
+    "quests": [
+      {
+        "name": "Dragon Slayer I",
+        "url": {
+          "suffix": "/w/Dragon_Slayer_I"
+        }
+      },
+      {
+        "name": "Learning the Ropes",
+        "url": {
+          "suffix": "/w/Learning_the_Ropes"
+        }
+      },
+      {
+        "name": "The Restless Ghost",
+        "url": {
+          "suffix": "/w/The_Restless_Ghost"
+        }
+      },
+      {
+        "name": "Rune Mysteries",
+        "url": {
+          "suffix": "/w/Rune_Mysteries"
+        }
+      },
+      {
+        "name": "Children of the Sun",
+        "url": {
+          "suffix": "/w/Children_of_the_Sun"
+        }
+      },
+      {
+        "name": "Desert Treasure II - The Fallen Empire",
+        "url": {
+          "suffix": "/w/Desert_Treasure_II_-_The_Fallen_Empire"
+        }
+      },
+      {
+        "name": "Druidic Ritual",
+        "url": {
+          "suffix": "/w/Druidic_Ritual"
+        }
+      },
+      {
+        "name": "Eagles' Peak",
+        "url": {
+          "suffix": "/w/Eagles%27_Peak"
+        }
+      },
+      {
+        "name": "Elemental Workshop I",
+        "url": {
+          "suffix": "/w/Elemental_Workshop_I"
+        }
+      },
+      {
+        "name": "Fairytale I - Growing Pains",
+        "url": {
+          "suffix": "/w/Fairytale_I_-_Growing_Pains"
+        }
+      },
+      {
+        "name": "Fairytale II - Cure a Queen",
+        "url": {
+          "suffix": "/w/Fairytale_II_-_Cure_a_Queen"
+        }
+      },
+      {
+        "name": "Lost City",
+        "url": {
+          "suffix": "/w/Lost_City"
+        }
+      },
+      {
+        "name": "Nature Spirit",
+        "url": {
+          "suffix": "/w/Nature_Spirit"
+        }
+      },
+      {
+        "name": "Perilous Moons",
+        "url": {
+          "suffix": "/w/Perilous_Moons"
+        }
+      },
+      {
+        "name": "Priest in Peril",
+        "url": {
+          "suffix": "/w/Priest_in_Peril"
+        }
+      },
+      {
+        "name": "Twilight's Promise",
+        "url": {
+          "suffix": "/w/Twilight%27s_Promise"
+        }
+      }
+    ],
+    "combatAchievements": [
+      {
+        "name": "Back to Our Roots",
+        "url": {
+          "suffix": "/w/Back_to_Our_Roots"
+        }
+      },
+      {
+        "name": "Demonic Rebound",
+        "url": {
+          "suffix": "/w/Demonic_Rebound"
+        }
+      }
+    ],
+    "starterItems": [
+      {
+        "name": "Dramen staff",
+        "url": {
+          "suffix": "/w/Dramen_staff"
+        }
+      },
+      {
+        "name": "Spade",
+        "url": {
+          "suffix": "/w/Spade"
+        }
+      },
+      {
+        "name": "Impling jar",
+        "url": {
+          "suffix": "/w/Impling_jar"
+        }
+      },
+      {
+        "name": "Strange device",
+        "url": {
+          "suffix": "/w/Strange_device"
+        },
+        "note": "The league tutor grants 2 strange devices."
+      }
+    ],
+    "startingStats": {
+      "Herblore": 3,
+      "Runecraft": 5
+    }
+  },
+  "echoBosses": [
+    {
+      "regionId": "varlamore",
+      "regionName": "Varlamore",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Varlamore"
+      },
+      "echoBoss": {
+        "name": "Amoxliatl (Echo)",
+        "url": {
+          "suffix": "/w/Amoxliatl_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "Amoxliatl",
+        "url": {
+          "suffix": "/w/Amoxliatl"
+        }
+      },
+      "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipmentSummary": [
+        "A twin weapon with increased stats"
+      ]
+    },
+    {
+      "regionId": "asgarnia",
+      "regionName": "Asgarnia",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Asgarnia"
+      },
+      "echoBoss": {
+        "name": "Cerberus (Echo)",
+        "url": {
+          "suffix": "/w/Cerberus_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "Cerberus",
+        "url": {
+          "suffix": "/w/Cerberus"
+        }
+      },
+      "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipmentSummary": [
+        "A dagger that can ignite, scales with elemental weaknesses, and has a special attack"
+      ]
+    },
+    {
+      "regionId": "kandarin",
+      "regionName": "Kandarin",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Kandarin"
+      },
+      "echoBoss": {
+        "name": "Thermonuclear smoke devil (Echo)",
+        "url": {
+          "suffix": "/w/Thermonuclear_smoke_devil_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "Thermonuclear Smoke Devil",
+        "url": {
+          "suffix": "/w/Thermonuclear_Smoke_Devil"
+        }
+      },
+      "accessRule": "Requires the Kandarin echo orb; the echo variant no longer requires an active Slayer task once the orb is obtained.",
+      "echoEquipmentSummary": [
+        "Devil's element",
+        "A four-pronged main-hand magic weapon"
+      ]
+    },
+    {
+      "regionId": "kourend",
+      "regionName": "Kebos and Kourend",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Kebos_and_Kourend"
+      },
+      "echoBoss": {
+        "name": "Hespori (Echo)",
+        "url": {
+          "suffix": "/w/Hespori_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "Hespori",
+        "url": {
+          "suffix": "/w/Hespori"
+        }
+      },
+      "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipmentSummary": [
+        "A shortbow that restores Hitpoints and Prayer points"
+      ]
+    },
+    {
+      "regionId": "fremennik",
+      "regionName": "Fremennik Province",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Fremennik"
+      },
+      "echoBoss": {
+        "name": "Dagannoth Kings (Echo)",
+        "url": {
+          "suffix": "/w/Dagannoth_Kings_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "Dagannoth Kings",
+        "url": {
+          "suffix": "/w/Dagannoth_Kings"
+        }
+      },
+      "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipmentSummary": [
+        "A best-in-slot viking helmet"
+      ]
+    },
+    {
+      "regionId": "wilderness",
+      "regionName": "Wilderness",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Wilderness"
+      },
+      "echoBoss": {
+        "name": "King Black Dragon (Echo)",
+        "url": {
+          "suffix": "/w/King_Black_Dragon_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "King Black Dragon",
+        "url": {
+          "suffix": "/w/King_Black_Dragon"
+        }
+      },
+      "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipmentSummary": [
+        "A crossbow with a double hit that counts as one hit and has ice-barrage-like effects"
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "varlamore",
+      "name": "Varlamore",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Varlamore"
+      },
+      "unlockMode": "starting_region",
+      "regionRequirements": [
+        "varlamore"
+      ],
+      "notableSettlements": [
+        "Civitas illa Fortis",
+        "The Avium Savannah",
+        "Aldarin and Mistrock",
+        "Cam Torum",
+        "Ralos' Rise",
+        "Quetzacalli Gorge and the Darkfrost",
+        "Twilight Temple and the Ruins of Tapoyauik",
+        "Auburnvale and Nemus Retreat",
+        "The Stranglewood",
+        "The Tlati Rainforest, Tal Teklan, and Kastori",
+        "The Crypt of Tonali"
+      ],
+      "notableCombatActivities": [
+        "Moons of Peril",
+        "Fortis Colosseum",
+        "Doom of Mokhaiotl",
+        "Vardorvis",
+        "Amoxliatl",
+        "Amoxliatl (Echo)",
+        "Hueycoatl",
+        "Gemstone Crab"
+      ],
+      "notableNonCombatActivities": [
+        "Wealthy citizen thieving and stealing valuables in Civitas illa Fortis",
+        "Blessed bone shards for Prayer",
+        "Calcified deposit mining",
+        "Sunfire rune crafting",
+        "Hunter's Guild and Hunters' Rumours",
+        "Mastering Mixology",
+        "Colossal Wyrm Agility Course",
+        "Vale Totems"
+      ],
+      "notableShopsServices": [
+        "Artima's Crafting Supplies",
+        "Cobado's Groceries",
+        "Fortis Blacksmith",
+        "Fortis Baker's Stall",
+        "Fortis General Store",
+        "Spike's Spikes",
+        "Huita's Herbal Supplies",
+        "The Runic Emporium",
+        "Tizoro's Pickaxes",
+        "Toci's Gem Store",
+        "Yarnio's Baked Goods",
+        "Imia's Supplies",
+        "Pellem's Fur Store",
+        "Picaria's Fishing Shop",
+        "Stonecutter Supplies",
+        "Thurid's Brain Buckets",
+        "Trader Stan's Trading Post",
+        "Faustus' Fruit and Veg",
+        "Moonrise Brewery and Winery",
+        "Mistrock Mining Supplies",
+        "Shields of Mistrock",
+        "Chouani (tanner)",
+        "Lunami's Axe Shop",
+        "Sawmill",
+        "Sebamo's Sublime Staffs",
+        "Arcuani's Archery Supplies",
+        "Dyes to Die For",
+        "Sulisal's Superb Fishing Store",
+        "Tal Teklan Rune Shop"
+      ],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "Perilous Moons",
+            "url": {
+              "suffix": "/w/Perilous_Moons"
+            },
+            "regionRequirements": [
+              "varlamore"
+            ]
+          },
+          {
+            "name": "Twilight's Promise",
+            "url": {
+              "suffix": "/w/Twilight%27s_Promise"
+            },
+            "regionRequirements": [
+              "varlamore"
+            ]
+          },
+          {
+            "name": "Children of the Sun",
+            "url": {
+              "suffix": "/w/Children_of_the_Sun"
+            },
+            "regionRequirements": [
+              "varlamore"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [],
+        "combatAchievements": [
+          {
+            "name": "Back to Our Roots",
+            "url": {
+              "suffix": "/w/Back_to_Our_Roots"
+            },
+            "regionRequirements": [
+              "varlamore"
+            ]
+          },
+          {
+            "name": "Demonic Rebound",
+            "url": {
+              "suffix": "/w/Demonic_Rebound"
+            },
+            "regionRequirements": [
+              "varlamore"
+            ]
+          },
+          {
+            "name": "Grub Patrol",
+            "url": null,
+            "regionRequirements": [
+              "varlamore"
+            ]
+          },
+          {
+            "name": "Perfect Doom",
+            "url": null,
+            "regionRequirements": [
+              "varlamore"
+            ]
+          }
+        ],
+        "slayerContent": [
+          "Ancient Zygomites",
+          "Custodian stalkers",
+          "All types of naguas"
+        ],
+        "items": [],
+        "mechanics": [
+          "Loop half of key (moon key) drop rates are boosted from mining, woodcutting, and fishing sources in Varlamore, including the Ruins of Tapoyauik and Cam Torum."
+        ]
+      },
+      "echoBoss": {
+        "name": "Amoxliatl (Echo)",
+        "url": {
+          "suffix": "/w/Amoxliatl_%28Echo%29"
+        },
+        "baseBoss": {
+          "name": "Amoxliatl",
+          "url": {
+            "suffix": "/w/Amoxliatl"
+          }
+        },
+        "regionRequirement": "varlamore",
+        "additionalRequirement": "Acquire the Varlamore echo orb from Amoxliatl before entering the echo fight.",
+        "echoEquipmentSummary": [
+          "A twin weapon with increased stats"
+        ],
+        "regionRequirements": [
+          "varlamore"
+        ]
+      },
+      "notableDrops": [
+        {
+          "itemNames": [
+            "All unique rewards"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Moons of Peril"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Moons_of_Peril"
+          ],
+          "note": "Aggregate league-table label.",
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Glacial temotli"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Glacial_temotli"
+          ],
+          "sourceNames": [
+            "Amoxliatl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Amoxliatl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Pendant of ates"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Pendant_of_ates"
+          ],
+          "sourceNames": [
+            "Amoxliatl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Amoxliatl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tooth half of key"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tooth_half_of_key"
+          ],
+          "sourceNames": [
+            "Amoxliatl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Amoxliatl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Glacial temotli"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Glacial_temotli"
+          ],
+          "sourceNames": [
+            "Frost nagua"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Frost_nagua"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Pendant of ates"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Pendant_of_ates"
+          ],
+          "sourceNames": [
+            "Frost nagua"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Frost_nagua"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tooth half of key"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tooth_half_of_key"
+          ],
+          "sourceNames": [
+            "Frost nagua"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Frost_nagua"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Sulphur blades"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Sulphur_blades"
+          ],
+          "sourceNames": [
+            "Sulphur nagua"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Sulphur_nagua"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Hueycoatl hide"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Hueycoatl_hide"
+          ],
+          "sourceNames": [
+            "Hueycoatl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hueycoatl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tome of earth"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tome_of_earth"
+          ],
+          "sourceNames": [
+            "Hueycoatl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hueycoatl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon hunter wand"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_hunter_wand"
+          ],
+          "sourceNames": [
+            "Hueycoatl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hueycoatl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tooth half of key"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tooth_half_of_key"
+          ],
+          "sourceNames": [
+            "Hueycoatl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hueycoatl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Soulreaper axe pieces"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Vardorvis"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Vardorvis"
+          ],
+          "note": "Aggregate piece set; league rule allows any DT2 boss to drop all pieces.",
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ultor ring"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ultor_ring"
+          ],
+          "sourceNames": [
+            "Vardorvis"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Vardorvis"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Virtus robes"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Virtus_robes"
+          ],
+          "sourceNames": [
+            "Vardorvis"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Vardorvis"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Awakener's orb"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Awakener%27s_orb"
+          ],
+          "sourceNames": [
+            "Vardorvis"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Vardorvis"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Hunters' Guild loot sack rares"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Hunter%27s_loot_sack"
+          ],
+          "sourceNames": [
+            "Hunter rumours"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hunter_Rumours"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tecu salamander"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tecu_salamander"
+          ],
+          "sourceNames": [
+            "Hunting"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hunting"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Avernic treads"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Avernic_treads"
+          ],
+          "sourceNames": [
+            "Doom of Mokhaiotl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Doom_of_Mokhaiotl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Mokhaiotl cloth"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Mokhaiotl_cloth"
+          ],
+          "sourceNames": [
+            "Doom of Mokhaiotl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Doom_of_Mokhaiotl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Eye of ayak (uncharged)"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Eye_of_ayak_%28uncharged%29"
+          ],
+          "sourceNames": [
+            "Doom of Mokhaiotl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Doom_of_Mokhaiotl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tooth half of key"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tooth_half_of_key"
+          ],
+          "sourceNames": [
+            "Doom of Mokhaiotl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Doom_of_Mokhaiotl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Bow string spool"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Bow_string_spool"
+          ],
+          "sourceNames": [
+            "Vale offerings"
+          ],
+          "sourceUrlSuffixes": [
+            null
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Fletching knife"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Fletching_knife"
+          ],
+          "sourceNames": [
+            "Vale offerings"
+          ],
+          "sourceUrlSuffixes": [
+            null
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Greenman mask"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Greenman_mask"
+          ],
+          "sourceNames": [
+            "Vale offerings"
+          ],
+          "sourceUrlSuffixes": [
+            null
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Antler guard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Antler_guard"
+          ],
+          "sourceNames": [
+            "Elder custodian stalker",
+            "Mature custodian stalker"
+          ],
+          "sourceUrlSuffixes": [
+            null,
+            null
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Echo boots"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Echo_boots"
+          ],
+          "sourceNames": [
+            "Fortis Colosseum"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Fortis_Colosseum"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Sunfire fanatic armour"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Sunfire_fanatic_armour"
+          ],
+          "sourceNames": [
+            "Fortis Colosseum"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Fortis_Colosseum"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tonalztics of ralos"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tonalztics_of_ralos"
+          ],
+          "sourceNames": [
+            "Fortis Colosseum"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Fortis_Colosseum"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        }
+      ],
+      "dataGaps": [],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Varlamore"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Varlamore/Notable_drops"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Boosted_drops"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Echo_bosses_and_echo_equipment"
+        }
+      ]
+    },
+    {
+      "id": "karamja",
+      "name": "Karamja",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Karamja"
+      },
+      "unlockMode": "mandatory_first_unlock",
+      "regionRequirements": [
+        "karamja"
+      ],
+      "notableSettlements": [
+        "Brimhaven",
+        "Karamja Shipyard",
+        "Musa Point",
+        "Shilo Village",
+        "Tai Bwo Wannai",
+        "Mor-Ul-Rek",
+        "Crandor",
+        "Realm of the Fisher King"
+      ],
+      "notableCombatActivities": [
+        "Brimhaven Dungeon",
+        "Tai Bwo Wannai Dungeon",
+        "The Fight Caves",
+        "The Fight Pits",
+        "TzHaar-Ket-Rak's Challenges",
+        "The Inferno",
+        "TzHaar creatures"
+      ],
+      "notableNonCombatActivities": [
+        "Brimhaven Agility Arena",
+        "Brimhaven house portal",
+        "Calquat tree patch",
+        "Infernal eel fishing",
+        "Fruit tree patch",
+        "Karambwan fishing",
+        "Nature Altar",
+        "Tai Bwo Wannai Cleanup",
+        "Teak and mahogany woodcutting",
+        "TzHaar pickpocketing",
+        "TzHaar gem shop thieving"
+      ],
+      "notableShopsServices": [],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "Shilo Village",
+            "url": {
+              "suffix": "/w/Shilo_Village"
+            },
+            "regionRequirements": [
+              "karamja"
+            ]
+          },
+          {
+            "name": "Jungle Potion",
+            "url": {
+              "suffix": "/w/Jungle_Potion"
+            },
+            "regionRequirements": [
+              "karamja"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [
+          {
+            "diary": "Karamja Diary",
+            "url": {
+              "suffix": "/w/Karamja_Diary"
+            },
+            "tasks": [
+              "Travel to Port Sarim via the dock east of Musa Point",
+              "Travel to Ardougne via the port near Brimhaven",
+              "Use the Gnome Glider to travel to Karamja",
+              "Charter a ship from the shipyard in the far east of Karamja",
+              "Charter the Lady of the Waves from south of Cairn Isle to Port Khazard",
+              "Eat an oomlie wrap",
+              "Collect 5 palm leaves",
+              "Kill a deathwing in the Viyeldi Caves under the Kharazi Jungle",
+              "Create an anti-venom potion while standing in the Horseshoe Mine"
+            ],
+            "regionRequirements": [
+              "karamja"
+            ]
+          }
+        ],
+        "combatAchievements": [],
+        "slayerContent": [],
+        "items": [],
+        "mechanics": [
+          "Buying a player-owned house via an Estate Agent places the house in Brimhaven for level-1 Construction access.",
+          "TzHaar-Ket-Rak lets players do all of his challenges immediately."
+        ]
+      },
+      "echoBoss": null,
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Obsidian helmet",
+            "Obsidian platebody",
+            "Obsidian platelegs"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Obsidian_helmet",
+            "/w/Obsidian_platebody",
+            "/w/Obsidian_platelegs"
+          ],
+          "sourceNames": [
+            "TzHaar-Ket"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/TzHaar-Ket"
+          ],
+          "regionRequirements": [
+            "karamja"
+          ]
+        },
+        {
+          "itemNames": [
+            "TzHaar weaponry"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "TzHaar-Ket",
+            "TzHaar-Xil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/TzHaar-Ket",
+            "/w/TzHaar-Xil"
+          ],
+          "regionRequirements": [
+            "karamja"
+          ]
+        },
+        {
+          "itemNames": [
+            "Toktz-mej-tal"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Toktz-mej-tal"
+          ],
+          "sourceNames": [
+            "TzHaar-Mej"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/TzHaar-Mej"
+          ],
+          "regionRequirements": [
+            "karamja"
+          ]
+        },
+        {
+          "itemNames": [
+            "Toktz-xil-ak",
+            "Toktz-xil-ek"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Toktz-xil-ak",
+            "/w/Toktz-xil-ek"
+          ],
+          "sourceNames": [
+            "TzHaar-Xil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/TzHaar-Xil"
+          ],
+          "regionRequirements": [
+            "karamja"
+          ]
+        },
+        {
+          "itemNames": [
+            "Draconic visage"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Draconic_visage"
+          ],
+          "sourceNames": [
+            "Steel dragon",
+            "Iron dragon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Steel_dragon",
+            "/w/Iron_dragon"
+          ],
+          "regionRequirements": [
+            "karamja"
+          ]
+        },
+        {
+          "itemNames": [
+            "Gout tuber"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Gout_tuber"
+          ],
+          "sourceNames": [
+            "Tai Bwo Wannai Cleanup"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tai_Bwo_Wannai_Cleanup"
+          ],
+          "regionRequirements": [
+            "karamja"
+          ]
+        }
+      ],
+      "dataGaps": [
+        "No Karamja-specific auto-completed Combat Achievement list was found in the available sources."
+      ],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Karamja"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Boosted_drops"
+        },
+        {
+          "suffix": "/w/Update%3AGet_Ready_For_Leagues_VI%3A_Demonic_Pacts_-_April_15th"
+        }
+      ]
+    },
+    {
+      "id": "asgarnia",
+      "name": "Asgarnia",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Asgarnia"
+      },
+      "unlockMode": "selectable",
+      "regionRequirements": [
+        "asgarnia"
+      ],
+      "notableSettlements": [
+        "Burthorpe",
+        "Ruins of Camdozaal",
+        "Ice Mountain",
+        "Dwarven Mine",
+        "Entrana",
+        "Falador",
+        "Goblin Village",
+        "God Wars Dungeon",
+        "Port Sarim",
+        "Rimmington",
+        "Taverley",
+        "Troll Stronghold",
+        "Void Knights' Outpost"
+      ],
+      "notableCombatActivities": [
+        "Asgarnia Ice Dungeon",
+        "Cerberus",
+        "Giant Mole",
+        "God Wars Dungeon (including Nex)",
+        "Pest Control",
+        "Royal Titans",
+        "Taverley Dungeon",
+        "Warriors' Guild",
+        "The Whisperer"
+      ],
+      "notableNonCombatActivities": [
+        "Air Altar",
+        "Body Altar",
+        "Law Altar",
+        "Mind Altar",
+        "Crafting Guild",
+        "Falador Rooftop Course",
+        "Falador tree patch",
+        "Falador allotment patch",
+        "Heroes' Guild",
+        "Motherlode Mine",
+        "Rimmington house portal",
+        "Rogues' Den",
+        "Taverley house portal",
+        "Taverley tree patch",
+        "Troll Stronghold herb patch",
+        "Fire Obelisk",
+        "Water Obelisk"
+      ],
+      "notableShopsServices": [
+        "Betty's Magic Emporium",
+        "Garden supplier",
+        "Happy Heroes' H'emporium",
+        "Multicannon parts for sale",
+        "Nurmof's Pickaxe Shop",
+        "Prospector Percy's Nugget Shop"
+      ],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "Merlin's Crystal",
+            "url": {
+              "suffix": "/w/Merlin%27s_Crystal"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          },
+          {
+            "name": "My Arm's Big Adventure",
+            "url": {
+              "suffix": "/w/My_Arm%27s_Big_Adventure"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          },
+          {
+            "name": "Below Ice Mountain",
+            "url": {
+              "suffix": "/w/Below_Ice_Mountain"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          },
+          {
+            "name": "Dwarf Cannon",
+            "url": {
+              "suffix": "/w/Dwarf_Cannon"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          },
+          {
+            "name": "Shield of Arrav",
+            "url": {
+              "suffix": "/w/Shield_of_Arrav"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          },
+          {
+            "name": "Heroes' Quest",
+            "url": {
+              "suffix": "/w/Heroes%27_Quest"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [
+          {
+            "diary": "Falador Diary",
+            "url": {
+              "suffix": "/w/Falador_Diary"
+            },
+            "tasks": [
+              "Smith some blurite limbs on Doric's anvil",
+              "Visit the Port Sarim Rat Pits",
+              "Recharge your Prayer in the Port Sarim church while wearing full Proselyte",
+              "Purchase a white 2h sword from Sir Vyvin"
+            ],
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          }
+        ],
+        "combatAchievements": [
+          {
+            "name": "Tentacular",
+            "url": {
+              "suffix": "/w/Tentacular"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          },
+          {
+            "name": "The Worst Ranged Weapon",
+            "url": {
+              "suffix": "/w/The_Worst_Ranged_Weapon"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          },
+          {
+            "name": "The Bane of Demons",
+            "url": {
+              "suffix": "/w/The_Bane_of_Demons"
+            },
+            "regionRequirements": [
+              "asgarnia"
+            ]
+          }
+        ],
+        "slayerContent": [],
+        "items": [],
+        "mechanics": [
+          "The Frozen Door becomes completable without requiring Desert Treasure I."
+        ]
+      },
+      "echoBoss": {
+        "name": "Cerberus (Echo)",
+        "url": {
+          "suffix": "/w/Cerberus_%28Echo%29"
+        },
+        "baseBoss": {
+          "name": "Cerberus",
+          "url": {
+            "suffix": "/w/Cerberus"
+          }
+        },
+        "regionRequirement": "asgarnia",
+        "additionalRequirement": "Acquire the Asgarnia echo orb from Cerberus before entering the echo fight.",
+        "echoEquipmentSummary": [
+          "A dagger that can ignite, scales with elemental weaknesses, and has a special attack"
+        ],
+        "regionRequirements": [
+          "asgarnia"
+        ]
+      },
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Bronze defender",
+            "Iron defender",
+            "Steel defender",
+            "Black defender",
+            "Mithril defender",
+            "Adamant defender",
+            "Rune defender"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Bronze_defender",
+            "/w/Iron_defender",
+            "/w/Steel_defender",
+            "/w/Black_defender",
+            "/w/Mithril_defender",
+            "/w/Adamant_defender",
+            "/w/Rune_defender"
+          ],
+          "sourceNames": [
+            "Cyclops"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Cyclops"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon defender"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_defender"
+          ],
+          "sourceNames": [
+            "Cyclops"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Cyclops"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Primordial crystal",
+            "Pegasian crystal"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Primordial_crystal",
+            "/w/Pegasian_crystal"
+          ],
+          "sourceNames": [
+            "Cerberus"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Cerberus"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Eternal boots"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Eternal_boots"
+          ],
+          "sourceNames": [
+            "Cerberus"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Cerberus"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Smouldering stone"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Smouldering_stone"
+          ],
+          "sourceNames": [
+            "Cerberus"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Cerberus"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Armadyl armour"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Armadyl_armour"
+          ],
+          "sourceNames": [
+            "Kree'arra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kree%27arra"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Armadyl hilt"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Armadyl_hilt"
+          ],
+          "sourceNames": [
+            "Kree'arra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kree%27arra"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Bandos armour"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Bandos_armour"
+          ],
+          "sourceNames": [
+            "General Graardor"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/General_Graardor"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Bandos hilt"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Bandos_hilt"
+          ],
+          "sourceNames": [
+            "General Graardor"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/General_Graardor"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Saradomin sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Saradomin_sword"
+          ],
+          "sourceNames": [
+            "Commander Zilyana"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Commander_Zilyana"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Saradomin's light"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Saradomin%27s_light"
+          ],
+          "sourceNames": [
+            "Commander Zilyana"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Commander_Zilyana"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Armadyl crossbow"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Armadyl_crossbow"
+          ],
+          "sourceNames": [
+            "Commander Zilyana"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Commander_Zilyana"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Saradomin hilt"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Saradomin_hilt"
+          ],
+          "sourceNames": [
+            "Commander Zilyana"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Commander_Zilyana"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Steam battlestaff"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Steam_battlestaff"
+          ],
+          "sourceNames": [
+            "K'ril Tsutsaroth"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/K%27ril_Tsutsaroth"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Zamorakian spear"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Zamorakian_spear"
+          ],
+          "sourceNames": [
+            "K'ril Tsutsaroth"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/K%27ril_Tsutsaroth"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Staff of the dead"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Staff_of_the_dead"
+          ],
+          "sourceNames": [
+            "K'ril Tsutsaroth"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/K%27ril_Tsutsaroth"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Zamorak hilt"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Zamorak_hilt"
+          ],
+          "sourceNames": [
+            "K'ril Tsutsaroth"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/K%27ril_Tsutsaroth"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Any Godsword shard"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Kree'arra",
+            "General Graardor",
+            "Commander Zilyana",
+            "K'ril Tsutsaroth"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kree%27arra",
+            "/w/General_Graardor",
+            "/w/Commander_Zilyana",
+            "/w/K%27ril_Tsutsaroth"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon boots"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_boots"
+          ],
+          "sourceNames": [
+            "Spiritual mages"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Spiritual_mages"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Draconic visage"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Draconic_visage"
+          ],
+          "sourceNames": [
+            "Skeletal wyvern"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Skeletal_wyvern"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Zaryte vambraces"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Zaryte_vambraces"
+          ],
+          "sourceNames": [
+            "Nex"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Nex"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Nihil horn"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Nihil_horn"
+          ],
+          "sourceNames": [
+            "Nex"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Nex"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Torva armour"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Torva_armour"
+          ],
+          "sourceNames": [
+            "Nex"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Nex"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ancient hilt"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ancient_hilt"
+          ],
+          "sourceNames": [
+            "Nex"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Nex"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Bellator ring"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Bellator_ring"
+          ],
+          "sourceNames": [
+            "The Whisperer"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Whisperer"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Soulreaper axe pieces"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "The Whisperer"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Whisperer"
+          ],
+          "note": "Aggregate piece set; league rule allows any DT2 boss to drop all pieces.",
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Virtus robes"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Virtus_robes"
+          ],
+          "sourceNames": [
+            "The Whisperer"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Whisperer"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Awakener's orb"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Awakener%27s_orb"
+          ],
+          "sourceNames": [
+            "The Whisperer"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Whisperer"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Smouldering stone"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Smouldering_stone"
+          ],
+          "sourceNames": [
+            "Hellhounds"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hellhounds"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Giantsoul amulet"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Giantsoul_amulet"
+          ],
+          "sourceNames": [
+            "Royal Titans"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Royal_Titans"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Deadeye prayer scroll"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Deadeye_prayer_scroll"
+          ],
+          "sourceNames": [
+            "Royal Titans"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Royal_Titans"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Mystic vigour prayer scroll"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Mystic_vigour_prayer_scroll"
+          ],
+          "sourceNames": [
+            "Royal Titans"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Royal_Titans"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Fire element staff crown"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Fire_element_staff_crown"
+          ],
+          "sourceNames": [
+            "Royal Titans"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Royal_Titans"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ice element staff crown"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ice_element_staff_crown"
+          ],
+          "sourceNames": [
+            "Royal Titans"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Royal_Titans"
+          ],
+          "regionRequirements": [
+            "asgarnia"
+          ]
+        }
+      ],
+      "dataGaps": [],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Asgarnia"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Asgarnia/Notable_drops"
+        },
+        {
+          "suffix": "/w/Update%3AGet_Ready_For_Leagues_VI%3A_Demonic_Pacts_-_April_15th"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Echo_bosses_and_echo_equipment"
+        }
+      ]
+    },
+    {
+      "id": "fremennik",
+      "name": "Fremennik Province",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Fremennik"
+      },
+      "unlockMode": "selectable",
+      "regionRequirements": [
+        "fremennik"
+      ],
+      "notableSettlements": [
+        "Keldagrim",
+        "Ghorrock Dungeon",
+        "Lunar Isle",
+        "Miscellania",
+        "Etceteria",
+        "Neitiznot",
+        "Jatizso",
+        "Rellekka",
+        "The Island of Stone",
+        "The Mountain Camp",
+        "The Pirates' Cove",
+        "Ungael",
+        "Waterbirth Island",
+        "Weiss"
+      ],
+      "notableCombatActivities": [
+        "Basilisk Knights",
+        "Duke Sucellus",
+        "Phantom Muspah",
+        "Dagannoth Kings",
+        "Dagannoth Kings (Echo)",
+        "Rellekka Slayer Cave",
+        "Waterbirth Island Dungeon",
+        "Vorkath"
+      ],
+      "notableNonCombatActivities": [
+        "Blast Furnace",
+        "Kingdom Management",
+        "Penguin Agility Course",
+        "Rellekka house portal",
+        "Rellekka Rooftop Course",
+        "Astral Altar",
+        "Weiss herb patch"
+      ],
+      "notableShopsServices": [
+        "Mawnis Burowgar",
+        "Skulgrimen's Battle Gear",
+        "Baba Yaga's Magic Shop",
+        "Moon Clan Fine Clothes",
+        "Ore Store",
+        "Keldagrim Stonemason",
+        "Blast Furnace ore seller"
+      ],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "Secrets of the North",
+            "url": {
+              "suffix": "/w/Secrets_of_the_North"
+            },
+            "includesPrerequisites": true,
+            "note": "Does not auto-complete Desert Treasure I or its prerequisites.",
+            "regionRequirements": [
+              "fremennik"
+            ]
+          },
+          {
+            "name": "Horror from the Deep",
+            "url": {
+              "suffix": "/w/Horror_from_the_Deep"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "fremennik"
+            ]
+          },
+          {
+            "name": "Dragon Slayer II",
+            "url": {
+              "suffix": "/w/Dragon_Slayer_II"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "fremennik"
+            ]
+          },
+          {
+            "name": "Mountain Daughter",
+            "url": {
+              "suffix": "/w/Mountain_Daughter"
+            },
+            "regionRequirements": [
+              "fremennik"
+            ]
+          },
+          {
+            "name": "The Fremennik Isles",
+            "url": {
+              "suffix": "/w/The_Fremennik_Isles"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "fremennik"
+            ]
+          },
+          {
+            "name": "Olaf's Quest",
+            "url": {
+              "suffix": "/w/Olaf%27s_Quest"
+            },
+            "regionRequirements": [
+              "fremennik"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [
+          {
+            "diary": "Fremennik Diary",
+            "url": {
+              "suffix": "/w/Fremennik_Diary"
+            },
+            "tasks": [
+              "Enter the Troll Stronghold",
+              "Mine some gold at the Arzinian Mine",
+              "Travel to the Snowy Hunter Area via Eagle",
+              "Teleport to Trollheim",
+              "Kill each of the God Wars Dungeon Generals",
+              "Slay a spiritual mage within the God Wars Dungeon"
+            ],
+            "regionRequirements": [
+              "fremennik"
+            ]
+          }
+        ],
+        "combatAchievements": [
+          {
+            "name": "Versatile Drainer",
+            "url": {
+              "suffix": "/w/Versatile_Drainer"
+            },
+            "regionRequirements": [
+              "fremennik"
+            ]
+          },
+          {
+            "name": "More than just a ranged weapon",
+            "url": {
+              "suffix": "/w/More_than_just_a_ranged_weapon"
+            },
+            "regionRequirements": [
+              "fremennik"
+            ]
+          }
+        ],
+        "slayerContent": [],
+        "items": [
+          {
+            "name": "Ice gloves",
+            "url": {
+              "suffix": "/w/Ice_gloves"
+            },
+            "regionRequirements": [
+              "fremennik"
+            ]
+          }
+        ],
+        "mechanics": [
+          "The ability to create super antifire potions."
+        ]
+      },
+      "echoBoss": {
+        "name": "Dagannoth Kings (Echo)",
+        "url": {
+          "suffix": "/w/Dagannoth_Kings_%28Echo%29"
+        },
+        "baseBoss": {
+          "name": "Dagannoth Kings",
+          "url": {
+            "suffix": "/w/Dagannoth_Kings"
+          }
+        },
+        "regionRequirement": "fremennik",
+        "additionalRequirement": "Acquire the Fremennik echo orb from the Dagannoth Kings before entering the echo fight.",
+        "echoEquipmentSummary": [
+          "A best-in-slot viking helmet"
+        ],
+        "regionRequirements": [
+          "fremennik"
+        ]
+      },
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Draconic visage",
+            "Skeletal visage"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Draconic_visage",
+            "/w/Skeletal_visage"
+          ],
+          "sourceNames": [
+            "Vorkath"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Vorkath"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragonbone necklace"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragonbone_necklace"
+          ],
+          "sourceNames": [
+            "Vorkath"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Vorkath"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dagannoth King rings"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Dagannoth Kings"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Dagannoth_Kings"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dagannoth King non-ring unique table items"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Dagannoth Kings"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Dagannoth_Kings"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon axe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_axe"
+          ],
+          "sourceNames": [
+            "Dagannoth Kings"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Dagannoth_Kings"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Basilisk jaw"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Basilisk_jaw"
+          ],
+          "sourceNames": [
+            "Basilisk Knight"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Basilisk_Knight"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Leaf-bladed sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Leaf-bladed_sword"
+          ],
+          "sourceNames": [
+            "Kurask"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kurask"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Leaf-bladed sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Leaf-bladed_sword"
+          ],
+          "sourceNames": [
+            "Turoth"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Turoth"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Leaf-bladed battleaxe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Leaf-bladed_battleaxe"
+          ],
+          "sourceNames": [
+            "Kurask",
+            "King Kurask"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kurask",
+            "/w/King_Kurask"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Brine sabre"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Brine_sabre"
+          ],
+          "sourceNames": [
+            "Brine rat"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Brine_rat"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Magus ring"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Magus_ring"
+          ],
+          "sourceNames": [
+            "Duke Sucellus"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Duke_Sucellus"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Soulreaper axe pieces"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Duke Sucellus"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Duke_Sucellus"
+          ],
+          "note": "Aggregate piece set; league rule allows any DT2 boss to drop all pieces.",
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Virtus robes"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Virtus_robes"
+          ],
+          "sourceNames": [
+            "Duke Sucellus"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Duke_Sucellus"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Awakener's orb"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Awakener%27s_orb"
+          ],
+          "sourceNames": [
+            "Duke Sucellus"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Duke_Sucellus"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Frozen cache"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Frozen_cache"
+          ],
+          "sourceNames": [
+            "Phantom Muspah"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Phantom_Muspah"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ancient sceptre"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ancient_sceptre"
+          ],
+          "sourceNames": [
+            "Phantom Muspah"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Phantom_Muspah"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        },
+        {
+          "itemNames": [
+            "Venator shard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Venator_shard"
+          ],
+          "sourceNames": [
+            "Phantom Muspah"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Phantom_Muspah"
+          ],
+          "regionRequirements": [
+            "fremennik"
+          ]
+        }
+      ],
+      "dataGaps": [],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Fremennik"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Fremennik/Notable_drops"
+        },
+        {
+          "suffix": "/w/Update%3AGet_Ready_For_Leagues_VI%3A_Demonic_Pacts_-_April_15th"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Echo_bosses_and_echo_equipment"
+        }
+      ]
+    },
+    {
+      "id": "kandarin",
+      "name": "Kandarin",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Kandarin"
+      },
+      "unlockMode": "selectable",
+      "regionRequirements": [
+        "kandarin"
+      ],
+      "notableSettlements": [
+        "Ape Atoll",
+        "Ardougne",
+        "Barbarian Outpost",
+        "Catherby",
+        "Corsair Cove",
+        "Gu'Tanoth",
+        "Myths' Guild",
+        "Piscatoris Fishing Colony",
+        "Port Khazard",
+        "Seers' Village",
+        "Tree Gnome Stronghold",
+        "Tree Gnome Village",
+        "Yanille"
+      ],
+      "notableCombatActivities": [
+        "Ancient Cavern",
+        "Ape Atoll Dungeon",
+        "Kruk's Dungeon",
+        "Barbarian Assault",
+        "Castle Wars",
+        "Demonic gorillas",
+        "Kraken",
+        "Stronghold Slayer Cave",
+        "Smoke devils",
+        "Thermonuclear Smoke Devil",
+        "Thermonuclear smoke devil (Echo)",
+        "Waterfall Dungeon",
+        "Poison Waste Dungeon"
+      ],
+      "notableNonCombatActivities": [
+        "Ardougne Market thieving",
+        "Ardougne Rooftop Course",
+        "Barbarian fishing",
+        "Barbarian Outpost Agility Course",
+        "Catherby fishing spots",
+        "Chompy bird hunting",
+        "Hunter training",
+        "Myths' Guild and Wrath Altar",
+        "Gnome Stronghold Agility Course",
+        "Ardougne/Catherby/Tree Gnome farming patches",
+        "Fishing Trawler",
+        "Fishing Guild",
+        "Piscatoris Hunter area",
+        "Ourania Altar",
+        "Seers' Village Rooftop Course",
+        "Spirit trees",
+        "Tower of Life",
+        "Yanille house portal"
+      ],
+      "notableShopsServices": [
+        "Hickton's Archery Emporium",
+        "Dargaud's Bow and Arrows",
+        "Daga's Scimitar Smithy",
+        "Rasolo the Wandering Merchant",
+        "Myths' Guild Weaponry",
+        "Magic Guild Store (Runes and Staves)",
+        "Magic Guild Store (Mystic Robes)",
+        "Aleck's Hunter Emporium"
+      ],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "King's Ransom",
+            "url": {
+              "suffix": "/w/King%27s_Ransom"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "kandarin"
+            ]
+          },
+          {
+            "name": "Monkey Madness II",
+            "url": {
+              "suffix": "/w/Monkey_Madness_II"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "kandarin"
+            ]
+          },
+          {
+            "name": "Swan Song",
+            "url": {
+              "suffix": "/w/Swan_Song"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "kandarin"
+            ]
+          },
+          {
+            "name": "Dragon Slayer II",
+            "url": {
+              "suffix": "/w/Dragon_Slayer_II"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "kandarin"
+            ]
+          },
+          {
+            "name": "The Hand in the Sand",
+            "url": {
+              "suffix": "/w/The_Hand_in_the_Sand"
+            },
+            "regionRequirements": [
+              "kandarin"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [
+          {
+            "diary": "Kandarin Diary",
+            "url": {
+              "suffix": "/w/Kandarin_Diary"
+            },
+            "tasks": [
+              "Use the grapple shortcut to get from the water to the Catherby shore",
+              "Create a mind helmet",
+              "Charge a water orb",
+              "Kill a shadow hound in the Shadow Dungeon",
+              "Fish and cook 5 sharks in Catherby using the cooking gauntlets",
+              "Teleport to Catherby"
+            ],
+            "regionRequirements": [
+              "kandarin"
+            ]
+          },
+          {
+            "diary": "Western Provinces Diary",
+            "url": {
+              "suffix": "/w/Western_Provinces_Diary"
+            },
+            "tasks": [
+              "Complete a novice game of Pest Control",
+              "Teleport to Pest Control using the minigame teleport",
+              "Complete an intermediate game of Pest Control",
+              "Complete a veteran game of Pest Control",
+              "Build an Isafdar painting in your POH Quest Hall",
+              "Equip any complete void set"
+            ],
+            "regionRequirements": [
+              "kandarin"
+            ]
+          },
+          {
+            "diary": "Ardougne Diary",
+            "url": {
+              "suffix": "/w/Ardougne_Diary"
+            },
+            "tasks": [
+              "Enter the Combat Training Camp north of West Ardougne",
+              "Use the Ardougne lever to teleport to the Wilderness",
+              "Travel to Castle Wars by hot air balloon",
+              "Equip or upgrade an Iban's staff",
+              "Recharge jewellery at the totem pole in the Legends' Guild",
+              "Smith a Dragon sq shield in West Ardougne",
+              "Craft death runes at the Death Altar",
+              "Imbue a salve amulet at Nightmare Zone or equip a salve amulet(i)",
+              "Cast Ice Barrage on another player within Castle Wars"
+            ],
+            "regionRequirements": [
+              "kandarin"
+            ]
+          }
+        ],
+        "combatAchievements": [],
+        "slayerContent": [
+          "Ogres (40-90)",
+          "Black Demons (80-126)",
+          "Hellhounds (75-126)",
+          "Waterfiends (75-110)",
+          "Cave Kraken (80-126)",
+          "Mithril Dragons (3-126)",
+          "Smoke Devils (85-126)"
+        ],
+        "items": [],
+        "mechanics": [
+          "Nightmare Zone is restricted; points are purchased from Dominic Onion for 1 gp each."
+        ]
+      },
+      "echoBoss": {
+        "name": "Thermonuclear smoke devil (Echo)",
+        "url": {
+          "suffix": "/w/Thermonuclear_smoke_devil_%28Echo%29"
+        },
+        "baseBoss": {
+          "name": "Thermonuclear Smoke Devil",
+          "url": {
+            "suffix": "/w/Thermonuclear_Smoke_Devil"
+          }
+        },
+        "regionRequirement": "kandarin",
+        "additionalRequirement": "Acquire the Kandarin echo orb from Thermonuclear Smoke Devil. The echo variant does not require an active Slayer task once the orb is obtained.",
+        "echoEquipmentSummary": [
+          "Devil's element",
+          "A four-pronged main-hand magic weapon"
+        ],
+        "regionRequirements": [
+          "kandarin"
+        ]
+      },
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Angler's outfit"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Angler%27s_outfit"
+          ],
+          "sourceNames": [
+            "Fishing Trawler"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Fishing_Trawler"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Zenyte shard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Zenyte_shard"
+          ],
+          "sourceNames": [
+            "Tortured gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tortured_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Zenyte shard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Zenyte_shard"
+          ],
+          "sourceNames": [
+            "Demonic gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Demonic_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ballista limbs"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Tortured gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tortured_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ballista limbs"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Demonic gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Demonic_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ballista spring"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ballista_spring"
+          ],
+          "sourceNames": [
+            "Tortured gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tortured_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ballista spring"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ballista_spring"
+          ],
+          "sourceNames": [
+            "Demonic gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Demonic_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Light frame"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Light_frame"
+          ],
+          "sourceNames": [
+            "Tortured gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tortured_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Light frame"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Light_frame"
+          ],
+          "sourceNames": [
+            "Demonic gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Demonic_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Heavy frame"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Heavy_frame"
+          ],
+          "sourceNames": [
+            "Tortured gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tortured_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Heavy frame"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Heavy_frame"
+          ],
+          "sourceNames": [
+            "Demonic gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Demonic_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Monkey tail"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Monkey_tail"
+          ],
+          "sourceNames": [
+            "Tortured gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tortured_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Monkey tail"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Monkey_tail"
+          ],
+          "sourceNames": [
+            "Demonic gorilla"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Demonic_gorilla"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Trident of the seas"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Trident_of_the_seas"
+          ],
+          "sourceNames": [
+            "Kraken"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kraken"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Kraken tentacle"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Kraken_tentacle"
+          ],
+          "sourceNames": [
+            "Kraken"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kraken"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Kraken tentacle"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Kraken_tentacle"
+          ],
+          "sourceNames": [
+            "Cave kraken"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Cave_kraken"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Uncharged trident"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Uncharged_trident"
+          ],
+          "sourceNames": [
+            "Cave Kraken"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Cave_Kraken"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Occult necklace"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Occult_necklace"
+          ],
+          "sourceNames": [
+            "Nuclear smoke devil",
+            "Smoke devil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Nuclear_smoke_devil",
+            "/w/Smoke_devil"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Occult necklace"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Occult_necklace"
+          ],
+          "sourceNames": [
+            "Thermonuclear Smoke Devil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Thermonuclear_Smoke_Devil"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Smoke battlestaff"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Smoke_battlestaff"
+          ],
+          "sourceNames": [
+            "Thermonuclear Smoke Devil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Thermonuclear_Smoke_Devil"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon chainbody"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_chainbody"
+          ],
+          "sourceNames": [
+            "Thermonuclear Smoke Devil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Thermonuclear_Smoke_Devil"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon full helm"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_full_helm"
+          ],
+          "sourceNames": [
+            "Mithril dragon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Mithril_dragon"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon full helm"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_full_helm"
+          ],
+          "sourceNames": [
+            "Chewed bones"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Chewed_bones"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Draconic visage"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Draconic_visage"
+          ],
+          "sourceNames": [
+            "Mithril dragon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Mithril_dragon"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Mist battlestaff"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Mist_battlestaff"
+          ],
+          "sourceNames": [
+            "Waterfiend"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Waterfiend"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Warped sceptre"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Warped_sceptre"
+          ],
+          "sourceNames": [
+            "Warped terrorbird",
+            "Warped tortoise"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Warped_terrorbird",
+            "/w/Warped_tortoise"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        },
+        {
+          "itemNames": [
+            "Smouldering stone"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Smouldering_stone"
+          ],
+          "sourceNames": [
+            "Hellhounds"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hellhounds"
+          ],
+          "regionRequirements": [
+            "kandarin"
+          ]
+        }
+      ],
+      "dataGaps": [],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Kandarin"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Boosted_drops"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Echo_bosses_and_echo_equipment"
+        },
+        {
+          "suffix": "/w/Update%3AGet_Ready_For_Leagues_VI%3A_Demonic_Pacts_-_April_15th"
+        }
+      ]
+    },
+    {
+      "id": "desert",
+      "name": "Kharidian Desert",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Kharidian_Desert"
+      },
+      "unlockMode": "selectable",
+      "regionRequirements": [
+        "desert"
+      ],
+      "notableSettlements": [
+        "Bandit Camp",
+        "Necropolis",
+        "Ruins of Unkah",
+        "Bedabin Camp",
+        "Desert Mining Camp",
+        "Nardah",
+        "Pollnivneach",
+        "Ruins of Uzer",
+        "Uzer Oasis",
+        "Giants' Plateau",
+        "Sophanem"
+      ],
+      "notableCombatActivities": [
+        "Bandits",
+        "Kalphite Queen",
+        "Pollnivneach Slayer Dungeon",
+        "Tombs of Amascut",
+        "The Leviathan"
+      ],
+      "notableNonCombatActivities": [
+        "Agility Pyramid",
+        "Mage Training Arena",
+        "Giants' Foundry",
+        "Guardians of the Rift",
+        "Nardah",
+        "Elidinis statuette",
+        "Pollnivneach blackjacking",
+        "Pollnivneach house portal",
+        "Pollnivneach Rooftop Course",
+        "Pyramid Plunder",
+        "Fire Altar",
+        "Sandstone and granite mining",
+        "Sandstorm Machine",
+        "Sorceress' Garden",
+        "Zahur's Herblore Services",
+        "Tempoross"
+      ],
+      "notableShopsServices": [],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "Desert Treasure II",
+            "url": {
+              "suffix": "/w/Desert_Treasure_II"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "desert"
+            ]
+          },
+          {
+            "name": "Prince Ali Rescue",
+            "url": {
+              "suffix": "/w/Prince_Ali_Rescue"
+            },
+            "regionRequirements": [
+              "desert"
+            ]
+          },
+          {
+            "name": "Icthlarin's Little Helper",
+            "url": {
+              "suffix": "/w/Icthlarin%27s_Little_Helper"
+            },
+            "regionRequirements": [
+              "desert"
+            ]
+          },
+          {
+            "name": "Temple of the Eye",
+            "url": {
+              "suffix": "/w/Temple_of_the_Eye"
+            },
+            "regionRequirements": [
+              "desert"
+            ]
+          },
+          {
+            "name": "The Golem",
+            "url": {
+              "suffix": "/w/The_Golem"
+            },
+            "regionRequirements": [
+              "desert"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [],
+        "combatAchievements": [],
+        "slayerContent": [],
+        "items": [],
+        "mechanics": [
+          "The Emir's Arena minigame is unavailable during the league, though the building remains accessible."
+        ]
+      },
+      "echoBoss": null,
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Kq head"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Kq_head"
+          ],
+          "sourceNames": [
+            "Kalphite Queen"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kalphite_Queen"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "All unique rewards"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Tombs of Amascut"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tombs_of_Amascut"
+          ],
+          "note": "Aggregate league-table label.",
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Pharaoh's sceptre"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Pharaoh%27s_sceptre"
+          ],
+          "sourceNames": [
+            "Pyramid Plunder"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Pyramid_Plunder"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon chainbody"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_chainbody"
+          ],
+          "sourceNames": [
+            "Kalphite Queen"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kalphite_Queen"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon pickaxe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_pickaxe"
+          ],
+          "sourceNames": [
+            "Kalphite Queen"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kalphite_Queen"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon chainbody"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_chainbody"
+          ],
+          "sourceNames": [
+            "Dust devil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Dust_devil"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon 2h sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_2h_sword"
+          ],
+          "sourceNames": [
+            "Kalphite Queen"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kalphite_Queen"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dust battlestaff"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dust_battlestaff"
+          ],
+          "sourceNames": [
+            "Dust devil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Dust_devil"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Venator ring"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Venator_ring"
+          ],
+          "sourceNames": [
+            "The Leviathan"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Leviathan"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Soulreaper axe pieces"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "The Leviathan"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Leviathan"
+          ],
+          "note": "Aggregate piece set; league rule allows any DT2 boss to drop all pieces.",
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Virtus robes"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Virtus_robes"
+          ],
+          "sourceNames": [
+            "The Leviathan"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Leviathan"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Awakener's orb"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Awakener%27s_orb"
+          ],
+          "sourceNames": [
+            "The Leviathan"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Leviathan"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Fish barrel"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Fish_barrel"
+          ],
+          "sourceNames": [
+            "Tempoross"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tempoross"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tackle box"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tackle_box"
+          ],
+          "sourceNames": [
+            "Tempoross"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tempoross"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tome of water"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tome_of_water"
+          ],
+          "sourceNames": [
+            "Tempoross"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tempoross"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon harpoon"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_harpoon"
+          ],
+          "sourceNames": [
+            "Tempoross"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Tempoross"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal needle"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_needle"
+          ],
+          "sourceNames": [
+            "Guardians of the Rift"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Guardians_of_the_Rift"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal lantern"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_lantern"
+          ],
+          "sourceNames": [
+            "Guardians of the Rift"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Guardians_of_the_Rift"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal dye"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_dye"
+          ],
+          "sourceNames": [
+            "Guardians of the Rift"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Guardians_of_the_Rift"
+          ],
+          "regionRequirements": [
+            "desert"
+          ]
+        }
+      ],
+      "dataGaps": [
+        "Specific Desert Diary auto-completed task list was partially visible in the available sources but not fully captured.",
+        "No Desert-specific auto-completed Combat Achievement list was found in the available sources."
+      ],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Boosted_drops"
+        },
+        {
+          "suffix": "/w/Update%3AGet_Ready_For_Leagues_VI%3A_Demonic_Pacts_-_April_15th"
+        }
+      ]
+    },
+    {
+      "id": "kourend",
+      "name": "Kebos and Kourend",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Kebos_and_Kourend"
+      },
+      "unlockMode": "selectable",
+      "regionRequirements": [
+        "kourend"
+      ],
+      "notableSettlements": [
+        "Hosidius",
+        "Arceuus",
+        "Lovakengj",
+        "Port Piscarilius",
+        "Shayzien",
+        "Kingstown",
+        "Northern Tundras",
+        "Kourend Woodland",
+        "Mount Karuulm",
+        "Kebos Swamp",
+        "Mount Quidamortem"
+      ],
+      "notableCombatActivities": [
+        "Chambers of Xeric",
+        "Lizardman shamans",
+        "Mount Karuulm Slayer Dungeon",
+        "Sarachnis (Forthos Dungeon)",
+        "Catacombs of Kourend",
+        "Giants' Den",
+        "Yama",
+        "Hespori (Echo)"
+      ],
+      "notableNonCombatActivities": [
+        "Farming Guild",
+        "Woodcutting Guild",
+        "Arceuus Library",
+        "Hosidius house portal",
+        "Tithe Farm",
+        "Lake Molch",
+        "Aerial Fishing",
+        "Wintertodt",
+        "Soul Altar",
+        "Blood Altar",
+        "Blast Mine",
+        "Hosidius patches"
+      ],
+      "notableShopsServices": [],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "A Kingdom Divided",
+            "url": {
+              "suffix": "/w/A_Kingdom_Divided"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "kourend"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [
+          {
+            "diary": "Kourend and Kebos Diary",
+            "url": {
+              "suffix": "/w/Kourend_and_Kebos_Diary"
+            },
+            "tasks": [
+              "Cast Monster Examine on a mountain troll south of Mount Quidamortem"
+            ],
+            "regionRequirements": [
+              "kourend"
+            ]
+          }
+        ],
+        "combatAchievements": [
+          {
+            "name": "Chambers of Xeric Veteran",
+            "url": {
+              "suffix": "/w/Chambers_of_Xeric_Veteran"
+            },
+            "regionRequirements": [
+              "kourend"
+            ]
+          },
+          {
+            "name": "Chambers of Xeric Master",
+            "url": {
+              "suffix": "/w/Chambers_of_Xeric_Master"
+            },
+            "regionRequirements": [
+              "kourend"
+            ]
+          },
+          {
+            "name": "Chambers of Xeric Grandmaster",
+            "url": {
+              "suffix": "/w/Chambers_of_Xeric_Grandmaster"
+            },
+            "regionRequirements": [
+              "kourend"
+            ]
+          },
+          {
+            "name": "Chambers of Xeric: CM Master",
+            "url": {
+              "suffix": "/w/Chambers_of_Xeric%3A_CM_Master"
+            },
+            "regionRequirements": [
+              "kourend"
+            ]
+          },
+          {
+            "name": "Chambers of Xeric: CM GrandMaster",
+            "url": {
+              "suffix": "/w/Chambers_of_Xeric%3A_CM_GrandMaster"
+            },
+            "regionRequirements": [
+              "kourend"
+            ]
+          },
+          {
+            "name": "Demonbane Weaponry",
+            "url": {
+              "suffix": "/w/Demonbane_Weaponry"
+            },
+            "regionRequirements": [
+              "kourend"
+            ]
+          },
+          {
+            "name": "No Pressure",
+            "url": {
+              "suffix": "/w/No_Pressure"
+            },
+            "regionRequirements": [
+              "kourend"
+            ]
+          }
+        ],
+        "slayerContent": [
+          "Konar assigns tasks based on the areas the player has unlocked."
+        ],
+        "items": [],
+        "mechanics": [
+          "Chambers of Xeric Challenge Mode has 25% increased damage and defence, 50% increased monster hitpoints, and uniques are further multiplied by 3.",
+          "Dexterous and Arcane prayer scrolls have reduced weighting in Chambers of Xeric Challenge Mode."
+        ]
+      },
+      "echoBoss": {
+        "name": "Hespori (Echo)",
+        "url": {
+          "suffix": "/w/Hespori_%28Echo%29"
+        },
+        "baseBoss": {
+          "name": "Hespori",
+          "url": {
+            "suffix": "/w/Hespori"
+          }
+        },
+        "regionRequirement": "kourend",
+        "additionalRequirement": "Acquire the Kourend echo orb from Hespori before entering the echo fight.",
+        "echoEquipmentSummary": [
+          "A shortbow that restores both Prayer and Hitpoints"
+        ],
+        "regionRequirements": [
+          "kourend"
+        ]
+      },
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Unique reward"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Chambers of Xeric"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Chambers_of_Xeric"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Warm gloves",
+            "Bruma torch"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Warm_gloves",
+            "/w/Bruma_torch"
+          ],
+          "sourceNames": [
+            "Wintertodt"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Wintertodt"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Pyromancer outfit"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Wintertodt"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Wintertodt"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tome of fire (empty)"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tome_of_fire_%28empty%29"
+          ],
+          "sourceNames": [
+            "Wintertodt"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Wintertodt"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon axe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_axe"
+          ],
+          "sourceNames": [
+            "Wintertodt"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Wintertodt"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Burnt page"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Burnt_page"
+          ],
+          "sourceNames": [
+            "Wintertodt"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Wintertodt"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon sword",
+            "Dragon harpoon"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_sword",
+            "/w/Dragon_harpoon"
+          ],
+          "sourceNames": [
+            "Wyrm"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Wyrm"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon knife"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_knife"
+          ],
+          "sourceNames": [
+            "Drake",
+            "Wyrm"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Drake",
+            "/w/Wyrm"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon thrownaxe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_thrownaxe"
+          ],
+          "sourceNames": [
+            "Drake",
+            "Wyrm"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Drake",
+            "/w/Wyrm"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Hydra's fang",
+            "Hydra's heart",
+            "Hydra's eye"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Hydra%27s_fang",
+            "/w/Hydra%27s_heart",
+            "/w/Hydra%27s_eye"
+          ],
+          "sourceNames": [
+            "Alchemical Hydra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Alchemical_Hydra"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Hydra's fang",
+            "Hydra's heart",
+            "Hydra's eye"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Hydra%27s_fang",
+            "/w/Hydra%27s_heart",
+            "/w/Hydra%27s_eye"
+          ],
+          "sourceNames": [
+            "Hydra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hydra"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Bonecrusher necklace"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Bonecrusher_necklace"
+          ],
+          "sourceNames": [
+            "Alchemical Hydra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Alchemical_Hydra"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ferocious gloves"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ferocious_gloves"
+          ],
+          "sourceNames": [
+            "Alchemical Hydra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Alchemical_Hydra"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon hunter lance"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_hunter_lance"
+          ],
+          "sourceNames": [
+            "Alchemical Hydra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Alchemical_Hydra"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon thrownaxe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_thrownaxe"
+          ],
+          "sourceNames": [
+            "Alchemical Hydra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Alchemical_Hydra"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon knife"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_knife"
+          ],
+          "sourceNames": [
+            "Alchemical Hydra"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Alchemical_Hydra"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Drake's claw",
+            "Drake's tooth"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Drake%27s_claw",
+            "/w/Drake%27s_tooth"
+          ],
+          "sourceNames": [
+            "Drake"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Drake"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon warhammer"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_warhammer"
+          ],
+          "sourceNames": [
+            "Lizardman shaman"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Lizardman_shaman"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Draconic visage"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Draconic_visage"
+          ],
+          "sourceNames": [
+            "Dragons in the Catacombs of Kourend"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Catacombs_of_Kourend"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Sarachnis cudgel"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Sarachnis_cudgel"
+          ],
+          "sourceNames": [
+            "Sarachnis"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Sarachnis"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Bottomless compost bucket"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Bottomless_compost_bucket"
+          ],
+          "sourceNames": [
+            "Hespori"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hespori"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon hasta"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_hasta"
+          ],
+          "sourceNames": [
+            "Brimstone chest"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Brimstone_chest"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dusk Mystic"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dusk_Mystic"
+          ],
+          "sourceNames": [
+            "Brimstone chest"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Brimstone_chest"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal whip"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_whip"
+          ],
+          "sourceNames": [
+            "Abyssal demon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Abyssal_demon"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal dagger"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_dagger"
+          ],
+          "sourceNames": [
+            "Abyssal demon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Abyssal_demon"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon chainbody"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_chainbody"
+          ],
+          "sourceNames": [
+            "Dust devil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Dust_devil"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Uncut onyx"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Uncut_onyx"
+          ],
+          "sourceNames": [
+            "Skotizo"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Skotizo"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Hespori seed"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Hespori_seed"
+          ],
+          "sourceNames": [
+            "Seed pack"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Seed_pack"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Golden tench"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Golden_tench"
+          ],
+          "sourceNames": [
+            "Aerial fishing"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Aerial_Fishing"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Oathplate armour"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Yama"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Yama"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        },
+        {
+          "itemNames": [
+            "Soulflame horn"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Soulflame_horn"
+          ],
+          "sourceNames": [
+            "Yama"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Yama"
+          ],
+          "regionRequirements": [
+            "kourend"
+          ]
+        }
+      ],
+      "dataGaps": [
+        "A dedicated Kebos and Kourend league area page was not directly retrievable from search results; overview, unlocks, combat achievements, and drop groups were assembled from the official update page and league boosted-drops page."
+      ],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Boosted_drops"
+        },
+        {
+          "suffix": "/w/Update%3AGet_Ready_For_Leagues_VI%3A_Demonic_Pacts_-_April_15th"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Echo_bosses_and_echo_equipment"
+        }
+      ]
+    },
+    {
+      "id": "morytania",
+      "name": "Morytania",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Morytania"
+      },
+      "unlockMode": "selectable",
+      "regionRequirements": [
+        "morytania"
+      ],
+      "notableSettlements": [
+        "Burgh de Rott",
+        "Canifis",
+        "Darkmeyer",
+        "Meiyerditch",
+        "Mort'ton",
+        "Mos Le'Harmless",
+        "Port Phasmatys",
+        "Slepe",
+        "Ver Sinhaza",
+        "Braindeath Island",
+        "Dragontooth Island",
+        "Harmony Island"
+      ],
+      "notableCombatActivities": [
+        "Barrows",
+        "Cave horrors",
+        "Fenkenstrain's experiments",
+        "Grotesque Guardians",
+        "Haunted Mine",
+        "Morytania Spider Cave",
+        "The Nightmare of Ashihama",
+        "Lair of Tarn Razorlor",
+        "Shades of Mort'ton",
+        "Slayer Tower",
+        "Theatre of Blood",
+        "Vyrewatch Sentinels",
+        "Araxxor",
+        "Phosani's Nightmare"
+      ],
+      "notableNonCombatActivities": [
+        "Canifis Rooftop Course",
+        "Daeyalt Essence mining",
+        "Ectofuntus prayer training",
+        "Hallowed Sepulchre",
+        "Harmony Island herb patch",
+        "Port Phasmatys allotment patch",
+        "Temple Trekking",
+        "True Blood Altar",
+        "Vyrelord pickpocketing",
+        "Werewolf Agility Course"
+      ],
+      "notableShopsServices": [
+        "Ak-Haranu's Exotic Shop",
+        "Canifis General Store",
+        "Smithing Smith's Shop"
+      ],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "Ghosts Ahoy",
+            "url": {
+              "suffix": "/w/Ghosts_Ahoy"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "Vampyre Slayer",
+            "url": {
+              "suffix": "/w/Vampyre_Slayer"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "A Taste of Hope",
+            "url": {
+              "suffix": "/w/A_Taste_of_Hope"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "The Great Brain Robbery",
+            "url": {
+              "suffix": "/w/The_Great_Brain_Robbery"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "morytania"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [
+          {
+            "diary": "Morytania Diary",
+            "url": {
+              "suffix": "/w/Morytania_Diary"
+            },
+            "tasks": [
+              "Make a batch of cannonballs at the Port Phasmatys furnace",
+              "Travel to Dragontooth Isle",
+              "Enter the Kharyrll portal in your POH through a Portal Chamber",
+              "Pray at the altar of nature in the nature grotto with piety activated",
+              "Catch a shark in Burgh de Rott with your bare hands",
+              "Fertilize the Morytania herb patch using lunar spells"
+            ],
+            "regionRequirements": [
+              "morytania"
+            ]
+          }
+        ],
+        "combatAchievements": [
+          {
+            "name": "Theatre of Blood Veteran",
+            "url": {
+              "suffix": "/w/Theatre_of_Blood_Veteran"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "Theatre of Blood Master",
+            "url": {
+              "suffix": "/w/Theatre_of_Blood_Master"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "Theatre of Blood Grandmaster",
+            "url": {
+              "suffix": "/w/Theatre_of_Blood_Grandmaster"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "Theatre of Blood: HM Grandmaster",
+            "url": {
+              "suffix": "/w/Theatre_of_Blood%3A_HM_Grandmaster"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "Chally Time",
+            "url": {
+              "suffix": "/w/Chally_Time"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "Nylocas, On the Rocks",
+            "url": {
+              "suffix": "/w/Nylocas%2C_On_the_Rocks"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          },
+          {
+            "name": "Faithless Crypt Run",
+            "url": {
+              "suffix": "/w/Faithless_Crypt_Run"
+            },
+            "regionRequirements": [
+              "morytania"
+            ]
+          }
+        ],
+        "slayerContent": [],
+        "items": [],
+        "mechanics": [
+          "Theatre of Blood: Hard Mode and Phosani's Nightmare have increased damage/defence, 50% more monster hitpoints, and further doubled unique chances during the league.",
+          "In Theatre of Blood: Hard Mode, if one player rolls a unique, all party members receive a unique item."
+        ]
+      },
+      "echoBoss": null,
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Barrows armour pieces"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Barrows"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Barrows"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Granite gloves"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Granite_gloves"
+          ],
+          "sourceNames": [
+            "Grotesque Guardians"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Grotesque_Guardians"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Granite ring"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Granite_ring"
+          ],
+          "sourceNames": [
+            "Grotesque Guardians"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Grotesque_Guardians"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Granite hammer"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Granite_hammer"
+          ],
+          "sourceNames": [
+            "Grotesque Guardians"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Grotesque_Guardians"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Guardian boots"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Guardian_boots"
+          ],
+          "sourceNames": [
+            "Grotesque Guardians"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Grotesque_Guardians"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ring of endurance (uncharged)"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ring_of_endurance_%28uncharged%29"
+          ],
+          "sourceNames": [
+            "Grand Hallowed Coffin"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Grand_Hallowed_Coffin"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Unique reward"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Theatre of Blood"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Theatre_of_Blood"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Unique reward"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Theatre of Blood/Hard Mode"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Theatre_of_Blood/Hard_Mode"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Nightmare staff"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Nightmare_staff"
+          ],
+          "sourceNames": [
+            "The Nightmare"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Nightmare"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Inquisitor's armour"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "The Nightmare"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Nightmare"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Inquisitor's mace"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Inquisitor%27s_mace"
+          ],
+          "sourceNames": [
+            "The Nightmare"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Nightmare"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Nightmare staff orbs"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "The Nightmare"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Nightmare"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Black mask"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Black_mask"
+          ],
+          "sourceNames": [
+            "Cave horror"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Cave_horror"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Blood shard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Blood_shard"
+          ],
+          "sourceNames": [
+            "Vyrewatch sentinel"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Vyrewatch_sentinel"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Blood shard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Blood_shard"
+          ],
+          "sourceNames": [
+            "Vyre"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Vyre"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Nightmare staff"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Nightmare_staff"
+          ],
+          "sourceNames": [
+            "Phosani's Nightmare"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Phosani%27s_Nightmare"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Inquisitor's armour"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Phosani's Nightmare"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Phosani%27s_Nightmare"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Inquisitor's mace"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Inquisitor%27s_mace"
+          ],
+          "sourceNames": [
+            "Phosani's Nightmare"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Phosani%27s_Nightmare"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Nightmare staff orbs"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Phosani's Nightmare"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Phosani%27s_Nightmare"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Zealot's robes"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Shades of Mort'ton"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Shades_of_Mort%27ton"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Runescroll of swampbark"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Runescroll_of_swampbark"
+          ],
+          "sourceNames": [
+            "Shades of Mort'ton"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Shades_of_Mort%27ton"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Runescroll of bloodbark"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Runescroll_of_bloodbark"
+          ],
+          "sourceNames": [
+            "Shades of Mort'ton"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Shades_of_Mort%27ton"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Amulet of rancour"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Amulet_of_rancour"
+          ],
+          "sourceNames": [
+            "Araxxor"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Araxxor"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Noxious halberd pieces"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Araxxor"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Araxxor"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Aranea boots"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Aranea_boots"
+          ],
+          "sourceNames": [
+            "Araxyte"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Araxyte"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Granite maul"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Granite_maul"
+          ],
+          "sourceNames": [
+            "Gargoyle"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Gargoyle"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        },
+        {
+          "itemNames": [
+            "Brittle key"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Brittle_key"
+          ],
+          "sourceNames": [
+            "Gargoyle"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Gargoyle"
+          ],
+          "regionRequirements": [
+            "morytania"
+          ]
+        }
+      ],
+      "dataGaps": [],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Morytania"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Morytania/Notable_drops"
+        }
+      ]
+    },
+    {
+      "id": "tirannwn",
+      "name": "Tirannwn",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Tirannwn"
+      },
+      "unlockMode": "selectable",
+      "regionRequirements": [
+        "tirannwn"
+      ],
+      "notableSettlements": [
+        "Gwenith",
+        "Iorwerth Camp",
+        "Lletya",
+        "Prifddinas",
+        "Tyras Camp",
+        "Zul-Andra"
+      ],
+      "notableCombatActivities": [
+        "A 'Rabbit'",
+        "Iorwerth Dungeon",
+        "The Gauntlet",
+        "The Corrupted Gauntlet",
+        "Zulrah",
+        "Zalcano"
+      ],
+      "notableNonCombatActivities": [
+        "Elven Crystal Chest",
+        "Death Altar",
+        "Gwenith Hunter area",
+        "Lletya fruit tree patch",
+        "Pickpocketing elves",
+        "Prifddinas allotment patch",
+        "Prifddinas Agility Course",
+        "Crystal implings",
+        "Prifddinas house portal",
+        "Prifddinas teak and mahogany trees",
+        "Sacred eel fishing"
+      ],
+      "notableShopsServices": [
+        "Sian's Ranged Weaponry",
+        "Iorwerth's Arms",
+        "Amlodd's Magical Supplies",
+        "Gwyn's Mining Emporium"
+      ],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "Song of the Elves",
+            "url": {
+              "suffix": "/w/Song_of_the_Elves"
+            },
+            "includesPrerequisites": true,
+            "regionRequirements": [
+              "tirannwn"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [
+          {
+            "diary": "Tirannwn",
+            "url": null,
+            "tasks": [],
+            "note": "No achievement diary tasks are auto-completed for Tirannwn.",
+            "regionRequirements": [
+              "tirannwn"
+            ]
+          }
+        ],
+        "combatAchievements": [
+          {
+            "name": "Snake Rebound",
+            "url": {
+              "suffix": "/w/Snake_Rebound"
+            },
+            "regionRequirements": [
+              "tirannwn"
+            ]
+          }
+        ],
+        "slayerContent": [],
+        "items": [],
+        "mechanics": []
+      },
+      "echoBoss": null,
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Elven signet"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Elven_signet"
+          ],
+          "sourceNames": [
+            "Crystal impling"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Crystal_impling"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Crystal armour seed",
+            "Crystal weapon seed"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Crystal_armour_seed",
+            "/w/Crystal_weapon_seed"
+          ],
+          "sourceNames": [
+            "The Gauntlet"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Gauntlet"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Enhanced crystal weapon seed"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Enhanced_crystal_weapon_seed"
+          ],
+          "sourceNames": [
+            "The Gauntlet"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Gauntlet"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Crystal armour seed",
+            "Crystal weapon seed"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Crystal_armour_seed",
+            "/w/Crystal_weapon_seed"
+          ],
+          "sourceNames": [
+            "The Corrupted Gauntlet"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Corrupted_Gauntlet"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Enhanced crystal weapon seed"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Enhanced_crystal_weapon_seed"
+          ],
+          "sourceNames": [
+            "The Corrupted Gauntlet"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/The_Corrupted_Gauntlet"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Crystal tool seed"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Crystal_tool_seed"
+          ],
+          "sourceNames": [
+            "Zalcano"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Zalcano"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Zalcano shard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Zalcano_shard"
+          ],
+          "sourceNames": [
+            "Zalcano"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Zalcano"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tanzanite fang",
+            "Serpentine visage"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tanzanite_fang",
+            "/w/Serpentine_visage"
+          ],
+          "sourceNames": [
+            "Zulrah"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Zulrah"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Uncharged toxic trident"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Uncharged_toxic_trident"
+          ],
+          "sourceNames": [
+            "Zulrah"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Zulrah"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Uncut onyx"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Uncut_onyx"
+          ],
+          "sourceNames": [
+            "Zulrah"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Zulrah"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dark bow"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dark_bow"
+          ],
+          "sourceNames": [
+            "Dark beast"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Dark_beast"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragonstone armour"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Enhanced crystal chest"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Enhanced_crystal_chest"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Enhanced crystal teleport seed"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Enhanced_crystal_teleport_seed"
+          ],
+          "sourceNames": [
+            "Elf (Thieving)",
+            "Guard (Prifddinas)",
+            "Iorwerth Warrior"
+          ],
+          "sourceUrlSuffixes": [
+            null,
+            null,
+            "/w/Iorwerth_Warrior"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Mist battlestaff"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Mist_battlestaff"
+          ],
+          "sourceNames": [
+            "Waterfiend"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Waterfiend"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Leaf-bladed sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Leaf-bladed_sword"
+          ],
+          "sourceNames": [
+            "Kurask",
+            "King Kurask"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kurask",
+            "/w/King_Kurask"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        },
+        {
+          "itemNames": [
+            "Leaf-bladed battleaxe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Leaf-bladed_battleaxe"
+          ],
+          "sourceNames": [
+            "Kurask",
+            "King Kurask"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Kurask",
+            "/w/King_Kurask"
+          ],
+          "regionRequirements": [
+            "tirannwn"
+          ]
+        }
+      ],
+      "dataGaps": [],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Tirannwn"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Tirannwn/Notable_drops"
+        }
+      ]
+    },
+    {
+      "id": "wilderness",
+      "name": "Wilderness",
+      "url": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Wilderness"
+      },
+      "unlockMode": "selectable",
+      "regionRequirements": [
+        "wilderness"
+      ],
+      "notableSettlements": [
+        "Bandit Camp",
+        "Dark Warriors' Fortress",
+        "Ferox Enclave",
+        "Mage Arena",
+        "Rogues' Castle",
+        "Pirates' Hideout"
+      ],
+      "notableCombatActivities": [
+        "Callisto",
+        "Artio",
+        "Chaos Elemental",
+        "Chaos Fanatic",
+        "Corporeal Beast",
+        "Crazy Archaeologist",
+        "King Black Dragon",
+        "King Black Dragon (Echo)",
+        "Lava dragons",
+        "Mage Arena",
+        "Mage Arena II",
+        "Scorpia",
+        "Venenatis",
+        "Spindel",
+        "Vet'ion",
+        "Calvar'ion",
+        "Wilderness God Wars Dungeon",
+        "Wilderness Slayer Cave"
+      ],
+      "notableNonCombatActivities": [
+        "Abyss runecrafting",
+        "Black chinchompas",
+        "Black salamanders",
+        "Dark crab fishing",
+        "Fountain of Rune",
+        "Chaos Altar",
+        "Wilderness Agility Course",
+        "Wilderness Resource Area",
+        "Rogues' Castle chests"
+      ],
+      "notableShopsServices": [],
+      "autoUnlocks": {
+        "quests": [
+          {
+            "name": "Enter the Abyss",
+            "url": {
+              "suffix": "/w/Enter_the_Abyss"
+            },
+            "regionRequirements": [
+              "wilderness"
+            ]
+          }
+        ],
+        "achievementDiaryTasks": [
+          {
+            "diary": "Wilderness Diary",
+            "url": {
+              "suffix": "/w/Wilderness_Diary"
+            },
+            "tasks": [
+              "Enter the Wilderness from the Ardougne or Edgeville lever",
+              "Kill an earth warrior",
+              "Smith a gold helmet in the Resource Area",
+              "Talk to the Emblem Trader",
+              "Charge an earth orb",
+              "Take the Agility shortcut from Trollheim to the Wilderness",
+              "Fish a raw lava eel in the Wilderness",
+              "Charge an air orb",
+              "Teleport to Ghorrock"
+            ],
+            "regionRequirements": [
+              "wilderness"
+            ]
+          }
+        ],
+        "combatAchievements": [
+          {
+            "name": "Finding the Weak Spot",
+            "url": {
+              "suffix": "/w/Finding_the_Weak_Spot"
+            },
+            "regionRequirements": [
+              "wilderness"
+            ]
+          }
+        ],
+        "slayerContent": [
+          "Krystilia assigns tasks like any other Slayer Master rather than Wilderness-specific tasks."
+        ],
+        "items": [],
+        "mechanics": [
+          "Last Man Standing and Bounty Hunter are not accessible during League Worlds.",
+          "PvP deaths behave like PvM deaths: items move to a gravestone that appears at the respawn location.",
+          "Loot keys are disabled.",
+          "Revenant Caves entry is free during the league.",
+          "Wilderness Agility Course entry is free during the league.",
+          "The Lesser Fanatic is moved to Ferox Enclave for diary reward claims."
+        ]
+      },
+      "echoBoss": {
+        "name": "King Black Dragon (Echo)",
+        "url": {
+          "suffix": "/w/King_Black_Dragon_%28Echo%29"
+        },
+        "baseBoss": {
+          "name": "King Black Dragon",
+          "url": {
+            "suffix": "/w/King_Black_Dragon"
+          }
+        },
+        "regionRequirement": "wilderness",
+        "additionalRequirement": "Acquire the Wilderness echo orb from King Black Dragon before entering the echo fight.",
+        "echoEquipmentSummary": [
+          "A crossbow with a double hit that counts as one hit and ice-barrage-like effects"
+        ],
+        "regionRequirements": [
+          "wilderness"
+        ]
+      },
+      "notableDrops": [
+        {
+          "itemNames": [
+            "Wilderness weapons (Off-task)"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Revenants"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Revenants"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Wilderness weapons (On-task)"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Revenants"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Revenants"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Amulet of avarice"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Amulet_of_avarice"
+          ],
+          "sourceNames": [
+            "Revenants"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Revenants"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Any Ancient artefact"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Revenants"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Revenants"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Ancient crystal"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Ancient_crystal"
+          ],
+          "sourceNames": [
+            "Revenants"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Revenants"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Yew seed",
+            "Magic seed"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Yew_seed",
+            "/w/Magic_seed"
+          ],
+          "sourceNames": [
+            "Revenants"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Revenants"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Malediction shard",
+            "Odium shard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Malediction_shard",
+            "/w/Odium_shard"
+          ],
+          "sourceNames": [
+            "Chaos Fanatic",
+            "Crazy Archaeologist",
+            "Scorpia"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Chaos_Fanatic",
+            "/w/Crazy_Archaeologist",
+            "/w/Scorpia"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Fedora"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Fedora"
+          ],
+          "sourceNames": [
+            "Crazy Archaeologist"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Crazy_Archaeologist"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon boots"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_boots"
+          ],
+          "sourceNames": [
+            "Spiritual mage"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Spiritual_mage"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon 2h sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_2h_sword"
+          ],
+          "sourceNames": [
+            "Chaos Elemental"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Chaos_Elemental"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon 2h sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_2h_sword"
+          ],
+          "sourceNames": [
+            "Callisto",
+            "Venenatis",
+            "Vet'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Callisto",
+            "/w/Venenatis",
+            "/w/Vet%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon 2h sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_2h_sword"
+          ],
+          "sourceNames": [
+            "Artio",
+            "Spindel",
+            "Calvar'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Artio",
+            "/w/Spindel",
+            "/w/Calvar%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon pickaxe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_pickaxe"
+          ],
+          "sourceNames": [
+            "Chaos Elemental",
+            "Callisto",
+            "Venenatis",
+            "Vet'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Chaos_Elemental",
+            "/w/Callisto",
+            "/w/Venenatis",
+            "/w/Vet%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon pickaxe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_pickaxe"
+          ],
+          "sourceNames": [
+            "Artio",
+            "Spindel",
+            "Calvar'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Artio",
+            "/w/Spindel",
+            "/w/Calvar%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon pickaxe"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_pickaxe"
+          ],
+          "sourceNames": [
+            "King Black Dragon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/King_Black_Dragon"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Voidwaker pieces"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Callisto",
+            "Venenatis",
+            "Vet'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Callisto",
+            "/w/Venenatis",
+            "/w/Vet%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Voidwaker pieces"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Artio",
+            "Spindel",
+            "Calvar'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Artio",
+            "/w/Spindel",
+            "/w/Calvar%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Wilderness weapon upgrades"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Callisto",
+            "Venenatis",
+            "Vet'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Callisto",
+            "/w/Venenatis",
+            "/w/Vet%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tyrannical ring",
+            "Treasonous ring",
+            "Ring of the gods"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tyrannical_ring",
+            "/w/Treasonous_ring",
+            "/w/Ring_of_the_gods"
+          ],
+          "sourceNames": [
+            "Callisto",
+            "Venenatis",
+            "Vet'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Callisto",
+            "/w/Venenatis",
+            "/w/Vet%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Wilderness weapon upgrades"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Artio",
+            "Spindel",
+            "Calvar'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Artio",
+            "/w/Spindel",
+            "/w/Calvar%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Tyrannical ring",
+            "Treasonous ring",
+            "Ring of the gods"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Tyrannical_ring",
+            "/w/Treasonous_ring",
+            "/w/Ring_of_the_gods"
+          ],
+          "sourceNames": [
+            "Artio",
+            "Spindel",
+            "Calvar'ion"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Artio",
+            "/w/Spindel",
+            "/w/Calvar%27ion"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Draconic visage"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Draconic_visage"
+          ],
+          "sourceNames": [
+            "Black dragon",
+            "Lava dragon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Black_dragon",
+            "/w/Lava_dragon"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Draconic visage"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Draconic_visage"
+          ],
+          "sourceNames": [
+            "King Black Dragon",
+            "Black dragon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/King_Black_Dragon",
+            "/w/Black_dragon"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Amulet of eternal glory"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Amulet_of_eternal_glory"
+          ],
+          "sourceNames": [
+            "Fountain of Rune"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Fountain_of_Rune"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dagon'hai robes"
+          ],
+          "itemUrlSuffixes": [
+            null
+          ],
+          "sourceNames": [
+            "Larran's big chest"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Larran%27s_big_chest"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Arcane sigil"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Arcane_sigil"
+          ],
+          "sourceNames": [
+            "Corporeal beast"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Corporeal_beast"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Spectral sigil"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Spectral_sigil"
+          ],
+          "sourceNames": [
+            "Corporeal beast"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Corporeal_beast"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Elysian sigil"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Elysian_sigil"
+          ],
+          "sourceNames": [
+            "Corporeal beast"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Corporeal_beast"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal whip"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_whip"
+          ],
+          "sourceNames": [
+            "Abyssal demon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Abyssal_demon"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal dagger"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_dagger"
+          ],
+          "sourceNames": [
+            "Abyssal demon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Abyssal_demon"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon chainbody"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_chainbody"
+          ],
+          "sourceNames": [
+            "Dust devil"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Dust_devil"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Smouldering stone"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Smouldering_stone"
+          ],
+          "sourceNames": [
+            "Hellhound"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Hellhound"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Teleport anchoring scroll"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Teleport_anchoring_scroll"
+          ],
+          "sourceNames": [
+            "Zombie pirate"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Zombie_pirate"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Teleport anchoring scroll"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Teleport_anchoring_scroll"
+          ],
+          "sourceNames": [
+            "Zombie Pirate's Locker"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Zombie_Pirate%27s_Locker"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        }
+      ],
+      "dataGaps": [
+        "No Wilderness-specific shops/services were highlighted in the retrieved sources."
+      ],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League/Areas/Wilderness"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Boosted_drops"
+        },
+        {
+          "suffix": "/w/Demonic_Pacts_League/Echo_bosses_and_echo_equipment"
+        }
+      ]
+    }
+  ],
+  "leagueLinks": {
+    "officialHub": "https://osrs.runescape.com/leagues",
+    "officialAnnouncement": "https://osrs.game/Leagues-VI-Announcement",
+    "wikiPlanner": "https://tools.runescape.wiki/demonic-pacts/"
+  }
+}

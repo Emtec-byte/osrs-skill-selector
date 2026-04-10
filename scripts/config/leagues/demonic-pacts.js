@@ -1,0 +1,63 @@
+const imagesBaseUrl = new URL("../../../assets/images/", import.meta.url);
+const dataBaseUrl = new URL("../../../assets/data/", import.meta.url);
+
+export const DEMONIC_PACTS_LEAGUE = {
+  id: "demonic-pacts",
+  label: "Demonic Pacts",
+  shortLabel: "Map",
+  capabilities: {
+    mapPlanner: true,
+    relicPlanner: false,
+    pactPlanner: false,
+    taskPlanner: false,
+  },
+  map: {
+    svgSrc: new URL("interactive_map.svg", imagesBaseUrl).href,
+    regionIdMap: {
+      wilderness: "wilderness",
+      misthalin: "misthalin",
+      karamja: "karamja",
+      "kharidian-desert": "desert",
+      morytania: "morytania",
+      fremennik: "fremennik",
+      kandarin: "kandarin",
+      asgarnia: "asgarnia",
+      tirannwn: "tirannwn",
+      kourend: "kourend",
+      varlamore: "varlamore",
+    },
+  },
+  data: {
+    relationshipJsonSrc: new URL("demonic-pacts-region-relationship-master.json", dataBaseUrl).href,
+  },
+  rules: {
+    startingRegionIds: ["varlamore"],
+    forcedRegionIds: ["karamja"],
+    selectableRegionIds: ["asgarnia", "fremennik", "kandarin", "desert", "morytania", "tirannwn", "wilderness", "kourend"],
+    unavailableRegionIds: ["misthalin"],
+    maxSelectableAdditionalRegions: 3,
+  },
+  plannerRules: {
+    requiresUnlockedTravelDestinations: true,
+    hasUniversalAccessAreas: true,
+    pohDefaultRegionId: "varlamore",
+    slayerAssignmentsFilteredByUnlockedAreas: true,
+    comboBossDropsAreFinishedItems: true,
+    soulreaperPiecesDropFromAnyDt2Boss: true,
+    raidMegaRaresCrossAvailability: true,
+    wildernessBossDiaryBypass: true,
+    zulrahNoDamageCap: true,
+    zulrahAllowsMeleeDamage: true,
+    isIronman: true,
+    sailingEnabled: false,
+    startsInYamasLair: true,
+    baseXpMultiplier: 5,
+    baseDropRateMultiplier: 2,
+    minigamePointMultiplier: 4,
+    farmingTickMinutes: 1,
+    unlimitedRun: true,
+    stackableClueScrollBoxes: true,
+    preserveClueProgressBetweenClues: true,
+    enhancedShopStock: true,
+  },
+};

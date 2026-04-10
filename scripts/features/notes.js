@@ -1,5 +1,6 @@
 import { NOTES_GRID } from "../config/grids.js";
 import {
+  MARKER_MARKERS_KEY,
   NOTES_GRID_KEY,
   NOTES_LEGACY_NOTE_KEY_PREFIX,
   NOTES_LEGACY_NOTE_KEY_SUFFIX,
@@ -7,7 +8,7 @@ import {
   NOTES_STORAGE_MIGRATION_KEY,
   NOTES_TEXTAREA_HEIGHT_KEY,
 } from "../config/storage-keys.js";
-import { NOTES_BOXES } from "../config/skills.js";
+import { MARKER_SKILLS, NOTES_BOXES } from "../config/skills.js";
 import { createGridConfigMenu } from "../lib/grid-config.js";
 import { createGridSurface } from "../lib/grid.js";
 import { createIconImage } from "../lib/icons.js";
@@ -20,6 +21,7 @@ import {
   readNoteRecord,
   writeNoteRecord,
 } from "../lib/notes-db.js";
+import { MARKER_COLOR_LABELS, createDefaultMarkers, sanitizeMarkers } from "../lib/skill-marker-state.js";
 import { createDebouncedWriter, readJson, removeKey, writeJson } from "../lib/storage.js";
 
 const DEFAULT_TEXTAREA_HEIGHT = 397;
@@ -133,6 +135,19 @@ function formatSavedStatus(updatedAt, emptyText = false) {
   return `Saved locally at ${formattedTime}.`;
 }
 
+function getLinkedMarkerColor(skillId, markers) {
+  const index = MARKER_SKILLS.findIndex((item) => item.id === skillId);
+  return index >= 0 ? markers[index] : "none";
+}
+
+function formatLinkedMarkerLabel(color) {
+  if (color === "none") {
+    return "Unmarked";
+  }
+
+  return MARKER_COLOR_LABELS[color] ?? "Unmarked";
+}
+
 async function migrateLegacyNotesToIndexedDb() {
   if (!isNotesDbSupported()) {
     return;
@@ -188,7 +203,7 @@ export async function bootstrapNotesStorage() {
   await migrateLegacyNotesToIndexedDb();
 }
 
-export function createNotesFeature() {
+export function createNotesFeature({ layoutEnv }) {
   return {
     id: "notes",
     label: "Notes",
@@ -202,6 +217,10 @@ export function createNotesFeature() {
       let notesLoaded = !notesPersistenceAvailable;
       let isDisposed = false;
       let noteLoadToken = 0;
+      let layoutMode = layoutEnv?.getMode?.() ?? "mobile";
+      let didApplyDesktopDefaultHeight = false;
+      let desktopHeightAttempts = 0;
+      const linkedMarkers = sanitizeMarkers(readJson(MARKER_MARKERS_KEY, createDefaultMarkers(MARKER_SKILLS.length)), MARKER_SKILLS.length);
 
       const pendingNoteWrites = new Map();
 
@@ -212,14 +231,18 @@ export function createNotesFeature() {
         labels: NOTES_BOXES,
         grid: NOTES_GRID.grid,
         placement: sanitizeGridPlacement(readJson(NOTES_GRID_KEY, NOTES_GRID.defaultPlacement)),
-        getCellProps: ({ item }) => ({
-          className: [
-            item.id === selectedSkillId ? "is-selected" : "",
-            notedSkillIds.has(item.id) ? "has-note-indicator" : "",
-          ].filter(Boolean).join(" "),
-          title: item.label,
-          pressed: item.id === selectedSkillId,
-        }),
+        getCellProps: ({ item }) => {
+          const linkedMarkerColor = getLinkedMarkerColor(item.id, linkedMarkers);
+          return {
+            className: [
+              item.id === selectedSkillId ? "is-selected" : "",
+              notedSkillIds.has(item.id) ? "has-note-indicator" : "",
+              notedSkillIds.has(item.id) && linkedMarkerColor !== "none" ? `has-linked-${linkedMarkerColor}` : "",
+            ].filter(Boolean).join(" "),
+            title: item.label,
+            pressed: item.id === selectedSkillId,
+          };
+        },
         onCellActivate: ({ item }) => {
           selectSkill(item.id);
         },
@@ -241,10 +264,26 @@ export function createNotesFeature() {
       });
 
       const featureView = document.createElement("section");
-      featureView.className = "feature-view";
+      featureView.className = "feature-view notes-feature";
+      featureView.dataset.layoutMode = layoutMode;
+
+      const selectorColumn = document.createElement("div");
+      selectorColumn.className = "notes-feature__selector-column";
+
+      const metaStack = document.createElement("div");
+      metaStack.className = "notes-feature__meta-stack";
+
+      const selectionInfoPanel = document.createElement("article");
+      selectionInfoPanel.className = "notes-feature__meta-panel";
+
+      const coveragePanel = document.createElement("article");
+      coveragePanel.className = "notes-feature__meta-panel";
+
+      metaStack.append(selectionInfoPanel, coveragePanel);
+      selectorColumn.append(surface.element, metaStack);
 
       const notesPanel = document.createElement("section");
-      notesPanel.className = "notes-panel";
+      notesPanel.className = "notes-panel notes-feature__editor-panel";
       notesPanel.innerHTML = `
         <div class="notes-panel__header">
           <div class="notes-panel__header-copy">
@@ -282,6 +321,36 @@ export function createNotesFeature() {
         });
       }, 140);
 
+      function syncDesktopDefaultEditorHeight() {
+        if (layoutMode !== "desktop" || didApplyDesktopDefaultHeight) {
+          return;
+        }
+
+        requestAnimationFrame(() => {
+          if (isDisposed || layoutMode !== "desktop" || didApplyDesktopDefaultHeight) {
+            return;
+          }
+
+          const selectorHeight = selectorColumn.getBoundingClientRect().height;
+          const targetHeight = sanitizeTextareaHeight({
+            height: Math.round(selectorHeight),
+          });
+
+          if ((selectorHeight <= 0 || targetHeight <= textareaHeight) && desktopHeightAttempts < 6) {
+            desktopHeightAttempts += 1;
+            syncDesktopDefaultEditorHeight();
+            return;
+          }
+
+          if (Number.isFinite(targetHeight) && targetHeight > textareaHeight) {
+            textareaHeight = targetHeight;
+            editor.setHeight(targetHeight);
+          }
+
+          didApplyDesktopDefaultHeight = true;
+        });
+      }
+
       function persistTextareaHeight(nextHeight) {
         const sanitizedHeight = sanitizeTextareaHeight({ height: nextHeight });
         if (sanitizedHeight === textareaHeight) {
@@ -289,6 +358,7 @@ export function createNotesFeature() {
         }
 
         textareaHeight = sanitizedHeight;
+        didApplyDesktopDefaultHeight = true;
         textareaHeightWriter.schedule(sanitizedHeight);
       }
 
@@ -348,6 +418,7 @@ export function createNotesFeature() {
             renderSelection();
           }
           surface.render();
+          renderMetaPanels();
           return;
         }
 
@@ -378,10 +449,55 @@ export function createNotesFeature() {
         }
 
         surface.render();
+        renderMetaPanels();
       }, 260);
 
       function getSelectedItem() {
         return NOTES_BOXES.find((item) => item.id === selectedSkillId) ?? null;
+      }
+
+      function renderMetaPanels() {
+        const selectedItem = getSelectedItem();
+        const linkedMarkerColor = getLinkedMarkerColor(selectedSkillId, linkedMarkers);
+        const linkedMarkerLabel = formatLinkedMarkerLabel(linkedMarkerColor);
+        const notedItems = NOTES_BOXES.filter((item) => notedSkillIds.has(item.id));
+
+        selectionInfoPanel.innerHTML = `
+          <p class="notes-feature__meta-eyebrow">Selection</p>
+          <h3 class="notes-feature__meta-title">${selectedItem ? selectedItem.label : "Skill note"}</h3>
+          <p class="notes-feature__meta-copy">Desktop keeps this lower-priority metadata below the selector so the editor stays readable.</p>
+          <div class="notes-feature__meta-row">
+            <span class="selection-chip is-focused">${selectedItem ? selectedItem.label : "No skill"}</span>
+            <span class="selection-chip${linkedMarkerColor !== "none" ? ` is-${linkedMarkerColor}` : ""}">${linkedMarkerLabel}</span>
+            <span class="selection-chip${noteState.text.trim() === "" ? " is-muted" : ""}">${noteState.text.trim() === "" ? "No note" : "Saved note"}</span>
+          </div>
+        `;
+
+        coveragePanel.innerHTML = `
+          <p class="notes-feature__meta-eyebrow">Coverage</p>
+          <h3 class="notes-feature__meta-title">Skills with notes</h3>
+          <p class="notes-feature__meta-copy">The underline glow on the selector mirrors the current skill-state color where notes exist.</p>
+          <div class="notes-feature__linked-skills"></div>
+          <p class="notes-feature__empty${notedItems.length > 0 ? ' is-hidden' : ''}">No saved notes were found in this browser yet.</p>
+        `;
+
+        const linkedSkillsEl = coveragePanel.querySelector(".notes-feature__linked-skills");
+
+        notedItems.forEach((item) => {
+          const button = document.createElement("button");
+          const markerColor = getLinkedMarkerColor(item.id, linkedMarkers);
+          button.type = "button";
+          button.className = [
+            "selection-chip",
+            item.id === selectedSkillId ? "is-focused" : "",
+            markerColor !== "none" ? `is-${markerColor}` : "",
+          ].filter(Boolean).join(" ");
+          button.textContent = item.label;
+          button.addEventListener("click", () => {
+            selectSkill(item.id);
+          });
+          linkedSkillsEl.appendChild(button);
+        });
       }
 
       function renderSelection(syncText = true) {
@@ -399,6 +515,7 @@ export function createNotesFeature() {
           if (syncText) {
             editor.setValue("");
           }
+          renderMetaPanels();
           return;
         }
 
@@ -410,6 +527,7 @@ export function createNotesFeature() {
           if (syncText) {
             editor.setValue("");
           }
+          renderMetaPanels();
           return;
         }
 
@@ -421,6 +539,7 @@ export function createNotesFeature() {
           if (syncText) {
             editor.setValue(noteState.text);
           }
+          renderMetaPanels();
           return;
         }
 
@@ -431,6 +550,8 @@ export function createNotesFeature() {
         if (syncText) {
           editor.setValue(noteState.text);
         }
+
+        renderMetaPanels();
       }
 
       async function hydrateInitialNotesState() {
@@ -527,7 +648,29 @@ export function createNotesFeature() {
         textareaHeightWriter.flush();
       }
 
+      const unsubscribeLayout = layoutEnv?.subscribe?.((mode) => {
+        layoutMode = mode;
+        featureView.dataset.layoutMode = layoutMode;
+
+        if (layoutMode === "desktop") {
+          didApplyDesktopDefaultHeight = false;
+          desktopHeightAttempts = 0;
+          syncDesktopDefaultEditorHeight();
+        }
+      }) ?? (() => {});
+
       resetSizeButton.addEventListener("click", () => {
+        didApplyDesktopDefaultHeight = false;
+
+        if (layoutMode === "desktop") {
+          textareaHeight = DEFAULT_TEXTAREA_HEIGHT;
+          editor.setHeight(DEFAULT_TEXTAREA_HEIGHT);
+          desktopHeightAttempts = 0;
+          syncDesktopDefaultEditorHeight();
+          writeJson(NOTES_TEXTAREA_HEIGHT_KEY, { height: textareaHeight });
+          return;
+        }
+
         textareaHeight = DEFAULT_TEXTAREA_HEIGHT;
         editor.setHeight(DEFAULT_TEXTAREA_HEIGHT);
         writeJson(NOTES_TEXTAREA_HEIGHT_KEY, { height: DEFAULT_TEXTAREA_HEIGHT });
@@ -536,9 +679,11 @@ export function createNotesFeature() {
       window.addEventListener("pagehide", handlePageHide);
       document.addEventListener("visibilitychange", handleVisibilityChange);
 
-      renderSelection();
-      featureView.append(surface.element, notesPanel);
+      featureView.append(selectorColumn, notesPanel);
       panelEl.replaceChildren(featureView);
+      renderSelection();
+      desktopHeightAttempts = 0;
+      syncDesktopDefaultEditorHeight();
       void hydrateInitialNotesState();
 
       return () => {
@@ -546,6 +691,7 @@ export function createNotesFeature() {
         noteLoadToken += 1;
         flushPendingNote();
         textareaHeightWriter.flush();
+        unsubscribeLayout();
         window.removeEventListener("pagehide", handlePageHide);
         document.removeEventListener("visibilitychange", handleVisibilityChange);
         editor.destroy();
