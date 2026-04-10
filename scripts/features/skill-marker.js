@@ -410,14 +410,14 @@ export function createSkillMarkerFeature({ layoutEnv }) {
         const headerTitle = isBoardLocked ? "Skill preview" : "Selection defaults";
         const headerCopy = isBoardLocked
           ? `${selectedSkill?.label ?? "Skill"} selected. Board clicks now inspect notes instead of changing markers.`
-          : "Desktop keeps the board dominant while the selection controls stay compact in a side panel.";
+          : "";
 
         selectionPanel.innerHTML = `
           <div class="skill-marker-feature__panel-header">
             <div class="skill-marker-feature__panel-copy">
               <p class="skill-marker-feature__eyebrow">Selection</p>
               <h2 class="skill-marker-feature__title">${escapeHtml(headerTitle)}</h2>
-              <p class="skill-marker-feature__description">${escapeHtml(headerCopy)}</p>
+              ${headerCopy ? `<p class="skill-marker-feature__description">${escapeHtml(headerCopy)}</p>` : ""}
             </div>
             <button type="button" class="utility-button" data-toggle-lock>${escapeHtml(isBoardLocked ? "Unlock board" : "Lock board")}</button>
           </div>

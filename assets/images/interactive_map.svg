@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="478" height="272" viewBox="0 0 478 272" role="img" aria-labelledby="title desc">
-  <title id="title">OSRS backing map with smaller standard flags that swap to hover flags</title>
-  <desc id="desc">Self-contained SVG generated from Backing_Map.png plus region Top overlays. Standard region flag icons are visible by default at 75 percent scale and switch to hover region flag icons when a region becomes active.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="272" viewBox="0 0 478 272" role="img" aria-label="Interactive region map">
   <metadata>{&quot;generator&quot;:&quot;generate_backing_map_svg.py&quot;,&quot;mapping&quot;:&quot;TopRegionMapping.md&quot;,&quot;regionDefinitions&quot;:&quot;RegionDef.json&quot;,&quot;backingMap&quot;:&quot;Backing_Map.png&quot;,&quot;size&quot;:{&quot;width&quot;:478,&quot;height&quot;:272},&quot;regionCount&quot;:11,&quot;shapeType&quot;:&quot;scanline-rectangles-from-top-png-alpha&quot;,&quot;includesFlags&quot;:true,&quot;hoverFlagKind&quot;:&quot;hover&quot;,&quot;staticFlagKind&quot;:&quot;std&quot;,&quot;flagScale&quot;:0.75}</metadata>
   <style><![CDATA[
     svg { background: transparent; image-rendering: pixelated; }

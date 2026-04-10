@@ -70,6 +70,16 @@ function cloneSvgElement(markup) {
     throw new Error("Map asset did not contain a valid SVG root.");
   }
 
+  [...svgRoot.children].forEach((child) => {
+    const tagName = child.tagName?.toLowerCase();
+    if (tagName === "title" || tagName === "desc") {
+      child.remove();
+    }
+  });
+
+  svgRoot.removeAttribute("aria-labelledby");
+  svgRoot.setAttribute("aria-label", "Interactive region map");
+
   return document.importNode(svgRoot, true);
 }
 

@@ -243,8 +243,8 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
         <div class="map-planner__panel-header map-planner__panel-header--map">
           <div class="map-planner__panel-copy">
             <p class="map-planner__eyebrow">Region Planner</p>
-            <h2 class="map-planner__title">Interactive unlock map</h2>
-            <p class="map-planner__description">Click regions to inspect them. Use Unlock below to add a selectable region to the route.</p>
+            <h2 class="map-planner__title">Interactive region map</h2>
+            <p class="map-planner__description">Click regions to inspect them and manage the route from the focused region panel.</p>
           </div>
           <div class="map-planner__map-header-meta">
             <div class="map-planner__map-route-meta"></div>

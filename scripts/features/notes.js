@@ -465,7 +465,6 @@ export function createNotesFeature({ layoutEnv }) {
         selectionInfoPanel.innerHTML = `
           <p class="notes-feature__meta-eyebrow">Selection</p>
           <h3 class="notes-feature__meta-title">${selectedItem ? selectedItem.label : "Skill note"}</h3>
-          <p class="notes-feature__meta-copy">Desktop keeps this lower-priority metadata below the selector so the editor stays readable.</p>
           <div class="notes-feature__meta-row">
             <span class="selection-chip is-focused">${selectedItem ? selectedItem.label : "No skill"}</span>
             <span class="selection-chip${linkedMarkerColor !== "none" ? ` is-${linkedMarkerColor}` : ""}">${linkedMarkerLabel}</span>
@@ -532,7 +531,7 @@ export function createNotesFeature({ layoutEnv }) {
         }
 
         if (!notesLoaded) {
-          notesMeta.textContent = `${selectedItem.label} selected. This note stays in this browser only.`;
+          notesMeta.textContent = `${selectedItem.label} selected.`;
           noteStatus.textContent = NOTES_LOADING_STATUS;
           editor.setMode("write");
           editor.setDisabled(true);
@@ -543,7 +542,7 @@ export function createNotesFeature({ layoutEnv }) {
           return;
         }
 
-        notesMeta.textContent = `${selectedItem.label} selected. This note stays in this browser only.`;
+        notesMeta.textContent = `${selectedItem.label} selected.`;
         noteStatus.textContent = statusText;
         editor.setDisabled(false);
 
