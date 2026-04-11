@@ -1852,6 +1852,13 @@ button.map-planner__legend-chip--route {
   font-size: 0.8rem;
 }
 
+.map-planner__service-group-label {
+  margin: 2px 0 0;
+  color: var(--text-main);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
 .map-planner__list {
   display: grid;
   gap: 6px;

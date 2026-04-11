@@ -579,6 +579,15 @@
         }
       },
       "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipment": [
+        {
+          "name": "Infernal tecpatl",
+          "url": {
+            "suffix": "/w/Infernal_tecpatl"
+          },
+          "note": "Drop rate 1/30"
+        }
+      ],
       "echoEquipmentSummary": [
         "A twin weapon with increased stats"
       ]
@@ -602,6 +611,15 @@
         }
       },
       "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipment": [
+        {
+          "name": "Fang of the hound",
+          "url": {
+            "suffix": "/w/Fang_of_the_hound"
+          },
+          "note": "Drop rate 1/25"
+        }
+      ],
       "echoEquipmentSummary": [
         "A dagger that can ignite, scales with elemental weaknesses, and has a special attack"
       ]
@@ -625,6 +643,22 @@
         }
       },
       "accessRule": "Requires the Kandarin echo orb; the echo variant no longer requires an active Slayer task once the orb is obtained.",
+      "echoEquipment": [
+        {
+          "name": "Devil's element",
+          "url": {
+            "suffix": "/w/Devil%27s_element"
+          },
+          "note": "Drop rate 1/25"
+        },
+        {
+          "name": "Shadowflame quadrant",
+          "url": {
+            "suffix": "/w/Shadowflame_quadrant"
+          },
+          "note": "Drop rate 1/25"
+        }
+      ],
       "echoEquipmentSummary": [
         "Devil's element",
         "A four-pronged main-hand magic weapon"
@@ -649,6 +683,15 @@
         }
       },
       "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipment": [
+        {
+          "name": "Nature's recurve",
+          "url": {
+            "suffix": "/w/Nature%27s_recurve"
+          },
+          "note": "Drop rate 1/15"
+        }
+      ],
       "echoEquipmentSummary": [
         "A shortbow that restores Hitpoints and Prayer points"
       ]
@@ -672,6 +715,15 @@
         }
       },
       "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipment": [
+        {
+          "name": "V's helm",
+          "url": {
+            "suffix": "/w/V%27s_helm"
+          },
+          "note": "Drop rate 1/25"
+        }
+      ],
       "echoEquipmentSummary": [
         "A best-in-slot viking helmet"
       ]
@@ -695,8 +747,113 @@
         }
       },
       "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipment": [
+        {
+          "name": "King's barrage",
+          "url": {
+            "suffix": "/w/King%27s_barrage"
+          },
+          "note": "Drop rate 1/25"
+        }
+      ],
       "echoEquipmentSummary": [
         "A crossbow with a double hit that counts as one hit and has ice-barrage-like effects"
+      ]
+    },
+    {
+      "regionId": "morytania",
+      "regionName": "Morytania",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Morytania"
+      },
+      "echoBoss": {
+        "name": "Grotesque Guardians (Echo)",
+        "url": {
+          "suffix": "/w/Grotesque_Guardians_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "Grotesque Guardians",
+        "url": {
+          "suffix": "/w/Grotesque_Guardians"
+        }
+      },
+      "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipment": [
+        {
+          "name": "Lithic sceptre",
+          "url": {
+            "suffix": "/w/Lithic_sceptre"
+          },
+          "note": "Drop rate 1/25"
+        }
+      ],
+      "echoEquipmentSummary": [
+        "A powered staff charged with earth and body runes"
+      ]
+    },
+    {
+      "regionId": "desert",
+      "regionName": "Kharidian Desert",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Desert"
+      },
+      "echoBoss": {
+        "name": "Kalphite Queen (Echo)",
+        "url": {
+          "suffix": "/w/Kalphite_Queen_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "Kalphite Queen",
+        "url": {
+          "suffix": "/w/Kalphite_Queen"
+        }
+      },
+      "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipment": [
+        {
+          "name": "Drygore blowpipe",
+          "url": {
+            "suffix": "/w/Drygore_blowpipe"
+          },
+          "note": "Drop rate 1/20"
+        }
+      ],
+      "echoEquipmentSummary": [
+        "Drygore blowpipe"
+      ]
+    },
+    {
+      "regionId": "tirannwn",
+      "regionName": "Tirannwn",
+      "regionUrl": {
+        "suffix": "/w/Demonic_Pacts_League/Areas/Tirannwn"
+      },
+      "echoBoss": {
+        "name": "Corrupted Hunllef (Echo)",
+        "url": {
+          "suffix": "/w/Corrupted_Hunllef_%28Echo%29"
+        }
+      },
+      "baseBoss": {
+        "name": "Corrupted Hunllef",
+        "url": {
+          "suffix": "/w/Corrupted_Hunllef"
+        }
+      },
+      "accessRule": "Requires the region echo orb from the non-echo boss and the relevant region unlocked.",
+      "echoEquipment": [
+        {
+          "name": "Crystal blessing",
+          "url": {
+            "suffix": "/w/Crystal_blessing"
+          },
+          "note": "Drop rate 1/15"
+        }
+      ],
+      "echoEquipmentSummary": [
+        "Crystal blessing"
       ]
     }
   ],
@@ -725,55 +882,1209 @@
         "The Crypt of Tonali"
       ],
       "notableCombatActivities": [
-        "Moons of Peril",
-        "Fortis Colosseum",
-        "Doom of Mokhaiotl",
-        "Vardorvis",
-        "Amoxliatl",
-        "Amoxliatl (Echo)",
-        "Hueycoatl",
-        "Gemstone Crab"
+        {
+          "name": "Moons of Peril",
+          "url": {
+            "suffix": "/w/Moons_of_Peril"
+          }
+        },
+        {
+          "name": "Fortis Colosseum",
+          "url": {
+            "suffix": "/w/Fortis_Colosseum"
+          }
+        },
+        {
+          "name": "Doom of Mokhaiotl",
+          "url": {
+            "suffix": "/w/Doom_of_Mokhaiotl"
+          }
+        },
+        {
+          "name": "Vardorvis",
+          "url": {
+            "suffix": "/w/Vardorvis"
+          }
+        },
+        {
+          "name": "Amoxliatl",
+          "url": {
+            "suffix": "/w/Amoxliatl"
+          }
+        },
+        {
+          "name": "Amoxliatl (Echo)",
+          "url": {
+            "suffix": "/w/Amoxliatl_(Echo)"
+          }
+        },
+        {
+          "name": "Hueycoatl",
+          "url": {
+            "suffix": "/w/The_Hueycoatl"
+          }
+        },
+        {
+          "name": "Gemstone Crab",
+          "url": {
+            "suffix": "/w/Gemstone_Crab"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Wealthy citizen thieving and stealing valuables in Civitas illa Fortis",
-        "Blessed bone shards for Prayer",
-        "Calcified deposit mining",
-        "Sunfire rune crafting",
-        "Hunter's Guild and Hunters' Rumours",
-        "Mastering Mixology",
-        "Colossal Wyrm Agility Course",
-        "Vale Totems"
+        {
+          "name": "Wealthy citizen thieving and stealing valuables in Civitas illa Fortis",
+          "url": {
+            "suffix": "/w/Stealing_valuables"
+          }
+        },
+        {
+          "name": "Blessed bone shards for Prayer",
+          "url": {
+            "suffix": "/w/Blessed_bone_shards"
+          }
+        },
+        {
+          "name": "Calcified deposit mining",
+          "url": {
+            "suffix": "/w/Calcified_deposit"
+          }
+        },
+        {
+          "name": "Sunfire rune crafting",
+          "url": {
+            "suffix": "/w/Sunfire_rune"
+          }
+        },
+        {
+          "name": "Hunter's Guild and Hunters' Rumours",
+          "url": {
+            "suffix": "/w/Hunter_Guild"
+          }
+        },
+        {
+          "name": "Mastering Mixology",
+          "url": {
+            "suffix": "/w/Mastering_Mixology"
+          }
+        },
+        {
+          "name": "Colossal Wyrm Agility Course",
+          "url": {
+            "suffix": "/w/Colossal_Wyrm_Agility_Course"
+          }
+        },
+        {
+          "name": "Vale Totems",
+          "url": {
+            "suffix": "/w/Vale_Totems"
+          }
+        }
       ],
       "notableShopsServices": [
-        "Artima's Crafting Supplies",
-        "Cobado's Groceries",
-        "Fortis Blacksmith",
-        "Fortis Baker's Stall",
-        "Fortis General Store",
-        "Spike's Spikes",
-        "Huita's Herbal Supplies",
-        "The Runic Emporium",
-        "Tizoro's Pickaxes",
-        "Toci's Gem Store",
-        "Yarnio's Baked Goods",
-        "Imia's Supplies",
-        "Pellem's Fur Store",
-        "Picaria's Fishing Shop",
-        "Stonecutter Supplies",
-        "Thurid's Brain Buckets",
-        "Trader Stan's Trading Post",
-        "Faustus' Fruit and Veg",
-        "Moonrise Brewery and Winery",
-        "Mistrock Mining Supplies",
-        "Shields of Mistrock",
-        "Chouani (tanner)",
-        "Lunami's Axe Shop",
-        "Sawmill",
-        "Sebamo's Sublime Staffs",
-        "Arcuani's Archery Supplies",
-        "Dyes to Die For",
-        "Sulisal's Superb Fishing Store",
-        "Tal Teklan Rune Shop"
+        {
+          "name": "Artima's Crafting Supplies",
+          "url": {
+            "suffix": "/w/Artima%27s_Crafting_Supplies"
+          },
+          "serviceType": "Crafting shop",
+          "serviceTypeKey": "crafting_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "crafting",
+          "serviceCategoryLabel": "Crafting",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Artima",
+            "url": {
+              "suffix": "/w/Artima"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Artima's Crafting Supplies",
+            "url": {
+              "suffix": "/w/Artima%27s_Crafting_Supplies"
+            }
+          },
+          "location": "Civitas illa Fortis",
+          "map": {
+            "x": 1766,
+            "y": 3101,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Cobado's Groceries",
+          "url": {
+            "suffix": "/w/Cobado%27s_Groceries"
+          },
+          "serviceType": "Food",
+          "serviceTypeKey": "food",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "food",
+          "serviceCategoryLabel": "Food",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Cobado",
+            "url": {
+              "suffix": "/w/Cobado"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Cobado's Groceries",
+            "url": {
+              "suffix": "/w/Cobado%27s_Groceries"
+            }
+          },
+          "location": "Civitas illa Fortis",
+          "map": {
+            "x": 1702,
+            "y": 3115,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Fortis Blacksmith",
+          "url": {
+            "suffix": "/w/Fortis_Blacksmith"
+          },
+          "serviceType": "Sword shop",
+          "serviceTypeKey": "sword_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "weapons",
+          "serviceCategoryLabel": "Weapons",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Blacksmith",
+            "url": {
+              "suffix": "/w/Blacksmith"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Fortis Blacksmith",
+            "url": {
+              "suffix": "/w/Fortis_Blacksmith"
+            }
+          },
+          "location": "Civitas illa Fortis",
+          "map": {
+            "x": 1659,
+            "y": 3140,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Fortis Baker's Stall",
+          "url": {
+            "suffix": "/w/Fortis_Baker%27s_Stall"
+          },
+          "serviceType": "Food",
+          "serviceTypeKey": "food",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "food",
+          "serviceCategoryLabel": "Food",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Baker",
+            "url": {
+              "suffix": "/w/Baker_(Civitas_illa_Fortis)"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Fortis Baker's Stall",
+            "url": {
+              "suffix": "/w/Fortis_Baker%27s_Stall"
+            }
+          },
+          "location": "Civitas illa Fortis",
+          "map": {
+            "x": 1687,
+            "y": 3112,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Fortis General Store",
+          "url": {
+            "suffix": "/w/Fortis_General_Store"
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Shopkeeper",
+            "url": {
+              "suffix": "/w/Shopkeeper_(Civitas_illa_Fortis)"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Fortis General Store",
+            "url": {
+              "suffix": "/w/Fortis_General_Store"
+            }
+          },
+          "location": "Civitas illa Fortis",
+          "map": {
+            "x": 1669,
+            "y": 3122,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Spike's Spikes",
+          "url": {
+            "suffix": "/w/Spike%27s_Spikes"
+          },
+          "serviceType": "Mace shop",
+          "serviceTypeKey": "mace_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "weapons",
+          "serviceCategoryLabel": "Weapons",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Spike",
+            "url": {
+              "suffix": "/w/Spike"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Spike's Spikes",
+            "url": {
+              "suffix": "/w/Spike%27s_Spikes"
+            }
+          },
+          "location": "Outer Fortis",
+          "map": {
+            "x": 1776,
+            "y": 3059,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Huita's Herbal Supplies",
+          "url": {
+            "suffix": "/w/Huito%27s_Herbal_Supplies"
+          },
+          "serviceType": "Herbalist",
+          "serviceTypeKey": "herbalist",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "herblore",
+          "serviceCategoryLabel": "Herblore",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Huito",
+            "url": {
+              "suffix": "/w/Huito"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Huito's Herbal Supplies",
+            "url": {
+              "suffix": "/w/Huito%27s_Herbal_Supplies"
+            }
+          },
+          "location": "Cam Torum",
+          "map": {
+            "x": 1437,
+            "y": 9553,
+            "mapId": -1,
+            "plane": 1
+          }
+        },
+        {
+          "name": "The Runic Emporium",
+          "url": {
+            "suffix": "/w/The_Runic_Emporium"
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Nahta",
+            "url": {
+              "suffix": "/w/Nahta"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "The Runic Emporium",
+            "url": {
+              "suffix": "/w/The_Runic_Emporium"
+            }
+          },
+          "location": "Cam Torum",
+          "map": {
+            "x": 1426,
+            "y": 9568,
+            "mapId": -1,
+            "plane": 1
+          }
+        },
+        {
+          "name": "Tizoro's Pickaxes",
+          "url": {
+            "suffix": "/w/Tizoro%27s_Pickaxes"
+          },
+          "serviceType": "Mining shop",
+          "serviceTypeKey": "mining_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "mining",
+          "serviceCategoryLabel": "Mining",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Tizoro",
+            "url": {
+              "suffix": "/w/Tizoro"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Tizoro's Pickaxes",
+            "url": {
+              "suffix": "/w/Tizoro%27s_Pickaxes"
+            }
+          },
+          "location": "Cam Torum",
+          "map": {
+            "x": 1443,
+            "y": 9553,
+            "mapId": -1,
+            "plane": 1
+          }
+        },
+        {
+          "name": "Toci's Gem Store",
+          "url": {
+            "suffix": "/w/Toci%27s_Gem_Store"
+          },
+          "serviceType": "Gem shop",
+          "serviceTypeKey": "gem_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "crafting",
+          "serviceCategoryLabel": "Crafting",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Toci",
+            "url": {
+              "suffix": "/w/Toci"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Toci's Gem Store",
+            "url": {
+              "suffix": "/w/Toci%27s_Gem_Store"
+            }
+          },
+          "location": "Aldarin",
+          "map": {
+            "x": 1430,
+            "y": 2975,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Yarnio's Baked Goods",
+          "url": {
+            "suffix": "/w/Yarnio%27s_Baked_Goods"
+          },
+          "serviceType": "Food",
+          "serviceTypeKey": "food",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "food",
+          "serviceCategoryLabel": "Food",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Yarnio",
+            "url": {
+              "suffix": "/w/Yarnio"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Yarnio's Baked Goods",
+            "url": {
+              "suffix": "/w/Yarnio%27s_Baked_Goods"
+            }
+          },
+          "location": "Cam Torum",
+          "map": {
+            "x": 1443,
+            "y": 9559,
+            "mapId": -1,
+            "plane": 1
+          }
+        },
+        {
+          "name": "Imia's Supplies",
+          "url": {
+            "suffix": "/w/Imia%27s_Supplies"
+          },
+          "serviceType": "Hunter shop",
+          "serviceTypeKey": "hunter_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "hunter",
+          "serviceCategoryLabel": "Hunter",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Imia",
+            "url": {
+              "suffix": "/w/Imia"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Imia's Supplies",
+            "url": {
+              "suffix": "/w/Imia%27s_Supplies"
+            }
+          },
+          "location": "Hunter Guild",
+          "map": {
+            "x": 1562,
+            "y": 3060,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Pellem's Fur Store",
+          "url": {
+            "suffix": "/w/Pellem%27s_Fur_Store"
+          },
+          "serviceType": "Fur trader",
+          "serviceTypeKey": "fur_trader",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "crafting",
+          "serviceCategoryLabel": "Crafting",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Pellem",
+            "url": {
+              "suffix": "/w/Pellem"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Pellem's Fur Store",
+            "url": {
+              "suffix": "/w/Pellem%27s_Fur_Store"
+            }
+          },
+          "location": "Hunter Guild",
+          "map": {
+            "x": 1565,
+            "y": 3034,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Picaria's Fishing Shop",
+          "url": {
+            "suffix": "/w/Picaria%27s_Fishing_Shop"
+          },
+          "serviceType": "Fishing shop",
+          "serviceTypeKey": "fishing_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "fishing",
+          "serviceCategoryLabel": "Fishing",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Picaria",
+            "url": {
+              "suffix": "/w/Picaria"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Picaria's Fishing Shop",
+            "url": {
+              "suffix": "/w/Picaria%27s_Fishing_Shop"
+            }
+          },
+          "location": "Sunset Coast",
+          "map": {
+            "x": 1560,
+            "y": 2959,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Stonecutter Supplies",
+          "url": {
+            "suffix": "/w/Stonecutter_Supplies"
+          },
+          "serviceType": "Stonemason",
+          "serviceTypeKey": "stonemason",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "utility",
+          "serviceSkillTypeLabel": "Utility",
+          "serviceCategory": "construction",
+          "serviceCategoryLabel": "Construction",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Metla",
+            "url": {
+              "suffix": "/w/Metla"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Stonecutter Supplies",
+            "url": {
+              "suffix": "/w/Stonecutter_Supplies"
+            }
+          },
+          "location": "Stonecutter Outpost",
+          "map": {
+            "x": 1742,
+            "y": 2977,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Thurid's Brain Buckets",
+          "url": {
+            "suffix": "/w/Thurid%27s_Brain_Buckets"
+          },
+          "serviceType": "Helmet shop",
+          "serviceTypeKey": "helmet_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "armour",
+          "serviceCategoryLabel": "Armour",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Thurid",
+            "url": {
+              "suffix": "/w/Thurid"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Thurid's Brain Buckets",
+            "url": {
+              "suffix": "/w/Thurid%27s_Brain_Buckets"
+            }
+          },
+          "location": "Sunset Coast",
+          "map": {
+            "x": 1515,
+            "y": 2994,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Trader Stan's Trading Post",
+          "url": {
+            "suffix": "/w/Trader_Stan%27s_Trading_Post"
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Trader Stan",
+            "url": {
+              "suffix": "/w/Trader_Stan"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Trader Stan's Trading Post",
+            "url": {
+              "suffix": "/w/Trader_Stan%27s_Trading_Post"
+            }
+          },
+          "location": "Port Sarim",
+          "map": {
+            "x": 3041,
+            "y": 3193,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Faustus' Fruit and Veg",
+          "url": {
+            "suffix": "/w/Faustus%27_Fruit_and_Veg"
+          },
+          "serviceType": "Food",
+          "serviceTypeKey": "food",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "food",
+          "serviceCategoryLabel": "Food",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Faustus",
+            "url": {
+              "suffix": "/w/Faustus"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Faustus' Fruit and Veg",
+            "url": {
+              "suffix": "/w/Faustus%27_Fruit_and_Veg"
+            }
+          },
+          "location": "Aldarin",
+          "map": {
+            "x": 1420,
+            "y": 2981,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Moonrise Brewery and Winery",
+          "url": {
+            "suffix": "/w/Moonrise_Brewery_and_Winery"
+          },
+          "serviceType": "building",
+          "serviceTypeKey": "building",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "miscellaneous",
+          "serviceCategoryLabel": "Miscellaneous",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": null,
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Moonrise Brewery and Winery",
+            "url": {
+              "suffix": "/w/Moonrise_Brewery_and_Winery"
+            }
+          },
+          "location": "Aldarin",
+          "map": {
+            "x": 1360,
+            "y": 2922,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Mistrock Mining Supplies",
+          "url": {
+            "suffix": "/w/Mistrock_Mining_Supplies"
+          },
+          "serviceType": "Mining shop",
+          "serviceTypeKey": "mining_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "mining",
+          "serviceCategoryLabel": "Mining",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Necto",
+            "url": {
+              "suffix": "/w/Necto"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Mistrock Mining Supplies",
+            "url": {
+              "suffix": "/w/Mistrock_Mining_Supplies"
+            }
+          },
+          "location": "Mistrock",
+          "map": {
+            "x": 1400,
+            "y": 2866,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Shields of Mistrock",
+          "url": {
+            "suffix": "/w/Shields_of_Mistrock"
+          },
+          "serviceType": "Shield shop",
+          "serviceTypeKey": "shield_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "armour",
+          "serviceCategoryLabel": "Armour",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Ichta",
+            "url": {
+              "suffix": "/w/Ichta"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Shields of Mistrock",
+            "url": {
+              "suffix": "/w/Shields_of_Mistrock"
+            }
+          },
+          "location": "Mistrock",
+          "map": {
+            "x": 1387,
+            "y": 2868,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Chouani (tanner)",
+          "url": {
+            "suffix": "/w/Chouani"
+          },
+          "serviceType": "Tanner",
+          "serviceTypeKey": "tanner",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "crafting",
+          "serviceCategoryLabel": "Crafting",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": null,
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Chouani",
+            "url": {
+              "suffix": "/w/Chouani"
+            }
+          },
+          "location": "Auburnvale",
+          "map": {
+            "x": 1370,
+            "y": 3359,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Lunami's Axe Shop",
+          "url": {
+            "suffix": "/w/Lunami%27s_Axe_Shop"
+          },
+          "serviceType": "Axe shop",
+          "serviceTypeKey": "axe_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "woodcutting",
+          "serviceCategoryLabel": "Woodcutting",
+          "serviceAdditionalCategories": [
+            {
+              "serviceSection": "combat",
+              "serviceSectionLabel": "Combat",
+              "serviceSkillType": "combat",
+              "serviceSkillTypeLabel": "Combat",
+              "serviceCategory": "weapons",
+              "serviceCategoryLabel": "Weapons",
+              "needsManualReview": false,
+              "reviewReason": null
+            }
+          ],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Lunami",
+            "url": {
+              "suffix": "/w/Lunami"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Lunami's Axe Shop",
+            "url": {
+              "suffix": "/w/Lunami%27s_Axe_Shop"
+            }
+          },
+          "location": "Auburnvale",
+          "map": {
+            "x": 1402,
+            "y": 3342,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Sawmill",
+          "url": {
+            "suffix": "/w/Sawmill"
+          },
+          "serviceType": "Planks",
+          "serviceTypeKey": "planks",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "utility",
+          "serviceSkillTypeLabel": "Utility",
+          "serviceCategory": "construction",
+          "serviceCategoryLabel": "Construction",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Sawmill operator",
+            "url": {
+              "suffix": "/w/Sawmill_operator"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Sawmill",
+            "url": {
+              "suffix": "/w/Sawmill"
+            }
+          },
+          "location": "Lumber Yard",
+          "map": {
+            "x": 3302,
+            "y": 3494,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Sebamo's Sublime Staffs",
+          "url": {
+            "suffix": "/w/Sebamo%27s_Sublime_Staffs"
+          },
+          "serviceType": "Staff shop",
+          "serviceTypeKey": "staff_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Sebamo",
+            "url": {
+              "suffix": "/w/Sebamo"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Sebamo's Sublime Staffs",
+            "url": {
+              "suffix": "/w/Sebamo%27s_Sublime_Staffs"
+            }
+          },
+          "location": "Auburnvale",
+          "map": {
+            "x": 1412,
+            "y": 3343,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Arcuani's Archery Supplies",
+          "url": {
+            "suffix": "/w/Arcuani%27s_Archery_Supplies"
+          },
+          "serviceType": "Archery shop",
+          "serviceTypeKey": "archery_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "ranged",
+          "serviceCategoryLabel": "Ranged",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Arcuani",
+            "url": {
+              "suffix": "/w/Arcuani"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Arcuani's Archery Supplies",
+            "url": {
+              "suffix": "/w/Arcuani%27s_Archery_Supplies"
+            }
+          },
+          "location": "Tal Teklan",
+          "map": {
+            "x": 1210,
+            "y": 3096,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Dyes to Die For",
+          "url": {
+            "suffix": "/w/Dyes_to_Die_For"
+          },
+          "serviceType": "Dye trader",
+          "serviceTypeKey": "dye_trader",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "other",
+          "serviceCategoryLabel": "Other",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Xochitl",
+            "url": {
+              "suffix": "/w/Xochitl"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Dyes to Die For",
+            "url": {
+              "suffix": "/w/Dyes_to_Die_For"
+            }
+          },
+          "location": "Tal Teklan",
+          "map": {
+            "x": 1203,
+            "y": 3119,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Sulisal's Superb Fishing Store",
+          "url": {
+            "suffix": "/w/Sulisal%27s_Superb_Fishing_Store"
+          },
+          "serviceType": "Fishing shop",
+          "serviceTypeKey": "fishing_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "fishing",
+          "serviceCategoryLabel": "Fishing",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Sulisal",
+            "url": {
+              "suffix": "/w/Sulisal"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Sulisal's Superb Fishing Store",
+            "url": {
+              "suffix": "/w/Sulisal%27s_Superb_Fishing_Store"
+            }
+          },
+          "location": "Kastori",
+          "map": {
+            "x": 1375,
+            "y": 3037,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Tal Teklan Rune Shop",
+          "url": {
+            "suffix": "/w/Tal_Teklan_Rune_Shop"
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Teicuh",
+            "url": {
+              "suffix": "/w/Teicuh"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Tal Teklan Rune Shop",
+            "url": {
+              "suffix": "/w/Tal_Teklan_Rune_Shop"
+            }
+          },
+          "location": "Tal Teklan",
+          "map": {
+            "x": 1212,
+            "y": 3120,
+            "mapId": 0,
+            "plane": 0
+          }
+        }
       ],
       "autoUnlocks": {
         "quests": [
@@ -827,23 +2138,42 @@
           },
           {
             "name": "Grub Patrol",
-            "url": null,
+            "url": {
+              "suffix": "/w/Grub_Patrol"
+            },
             "regionRequirements": [
               "varlamore"
             ]
           },
           {
             "name": "Perfect Doom",
-            "url": null,
+            "url": {
+              "suffix": "/w/Perfect_Doom"
+            },
             "regionRequirements": [
               "varlamore"
             ]
           }
         ],
         "slayerContent": [
-          "Ancient Zygomites",
-          "Custodian stalkers",
-          "All types of naguas"
+          {
+            "name": "Ancient Zygomites",
+            "url": {
+              "suffix": "/w/Ancient_Zygomite"
+            }
+          },
+          {
+            "name": "Custodian stalkers",
+            "url": {
+              "suffix": "/w/Custodian_stalker"
+            }
+          },
+          {
+            "name": "All types of naguas",
+            "url": {
+              "suffix": "/w/Nagua"
+            }
+          }
         ],
         "items": [],
         "mechanics": [
@@ -853,7 +2183,7 @@
       "echoBoss": {
         "name": "Amoxliatl (Echo)",
         "url": {
-          "suffix": "/w/Amoxliatl_%28Echo%29"
+          "suffix": "/w/Amoxliatl_(Echo)"
         },
         "baseBoss": {
           "name": "Amoxliatl",
@@ -863,6 +2193,15 @@
         },
         "regionRequirement": "varlamore",
         "additionalRequirement": "Acquire the Varlamore echo orb from Amoxliatl before entering the echo fight.",
+        "echoEquipment": [
+          {
+            "name": "Infernal tecpatl",
+            "url": {
+              "suffix": "/w/Infernal_tecpatl"
+            },
+            "note": "Drop rate 1/30"
+          }
+        ],
         "echoEquipmentSummary": [
           "A twin weapon with increased stats"
         ],
@@ -873,10 +2212,86 @@
       "notableDrops": [
         {
           "itemNames": [
+            "Loop half of key (moon key)"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Loop_half_of_key_(moon_key)"
+          ],
+          "sourceNames": [
+            "Mining",
+            "Woodcutting",
+            "Fishing",
+            "Ruins of Tapoyauik",
+            "Cam Torum"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Mining",
+            "/w/Woodcutting",
+            "/w/Fishing",
+            "/w/Ruins_of_Tapoyauik",
+            "/w/Cam_Torum"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal whip"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_whip"
+          ],
+          "sourceNames": [
+            "Abyssal demon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Abyssal_demon"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Abyssal dagger"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Abyssal_dagger"
+          ],
+          "sourceNames": [
+            "Abyssal demon"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Abyssal_demon"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Unsired"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Unsired"
+          ],
+          "sourceNames": [
+            "Abyssal Sire"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Abyssal_Sire"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
             "All unique rewards"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Lunar_Chest"
           ],
           "sourceNames": [
             "Moons of Peril"
@@ -884,7 +2299,6 @@
           "sourceUrlSuffixes": [
             "/w/Moons_of_Peril"
           ],
-          "note": "Aggregate league-table label.",
           "regionRequirements": [
             "varlamore"
           ]
@@ -928,7 +2342,7 @@
             "Tooth half of key"
           ],
           "itemUrlSuffixes": [
-            "/w/Tooth_half_of_key"
+            "/w/Tooth_half_of_key_(moon_key)"
           ],
           "sourceNames": [
             "Amoxliatl"
@@ -951,7 +2365,7 @@
             "Frost nagua"
           ],
           "sourceUrlSuffixes": [
-            "/w/Frost_nagua"
+            "/w/Frost_Nagua"
           ],
           "regionRequirements": [
             "varlamore"
@@ -968,7 +2382,7 @@
             "Frost nagua"
           ],
           "sourceUrlSuffixes": [
-            "/w/Frost_nagua"
+            "/w/Frost_Nagua"
           ],
           "regionRequirements": [
             "varlamore"
@@ -979,13 +2393,30 @@
             "Tooth half of key"
           ],
           "itemUrlSuffixes": [
-            "/w/Tooth_half_of_key"
+            "/w/Tooth_half_of_key_(moon_key)"
           ],
           "sourceNames": [
             "Frost nagua"
           ],
           "sourceUrlSuffixes": [
-            "/w/Frost_nagua"
+            "/w/Frost_Nagua"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Earthbound tecpatl"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Earthbound_tecpatl"
+          ],
+          "sourceNames": [
+            "Earthen nagua"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Earthen_Nagua"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1002,7 +2433,7 @@
             "Sulphur nagua"
           ],
           "sourceUrlSuffixes": [
-            "/w/Sulphur_nagua"
+            "/w/Sulphur_Nagua"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1019,7 +2450,7 @@
             "Hueycoatl"
           ],
           "sourceUrlSuffixes": [
-            "/w/Hueycoatl"
+            "/w/The_Hueycoatl"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1036,7 +2467,7 @@
             "Hueycoatl"
           ],
           "sourceUrlSuffixes": [
-            "/w/Hueycoatl"
+            "/w/The_Hueycoatl"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1053,7 +2484,7 @@
             "Hueycoatl"
           ],
           "sourceUrlSuffixes": [
-            "/w/Hueycoatl"
+            "/w/The_Hueycoatl"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1064,13 +2495,13 @@
             "Tooth half of key"
           ],
           "itemUrlSuffixes": [
-            "/w/Tooth_half_of_key"
+            "/w/Tooth_half_of_key_(moon_key)"
           ],
           "sourceNames": [
             "Hueycoatl"
           ],
           "sourceUrlSuffixes": [
-            "/w/Hueycoatl"
+            "/w/The_Hueycoatl"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1078,10 +2509,12 @@
         },
         {
           "itemNames": [
-            "Soulreaper axe pieces"
+            "Soulreaper axe",
+            "Desert Treasure II"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Soulreaper_axe",
+            "/w/Desert_Treasure_II_-_The_Fallen_Empire"
           ],
           "sourceNames": [
             "Vardorvis"
@@ -1089,17 +2522,18 @@
           "sourceUrlSuffixes": [
             "/w/Vardorvis"
           ],
-          "note": "Aggregate piece set; league rule allows any DT2 boss to drop all pieces.",
           "regionRequirements": [
             "varlamore"
           ]
         },
         {
           "itemNames": [
-            "Ultor ring"
+            "Ultor ring",
+            "gold ring"
           ],
           "itemUrlSuffixes": [
-            "/w/Ultor_ring"
+            "/w/Ultor_ring",
+            "/w/Gold_ring"
           ],
           "sourceNames": [
             "Vardorvis"
@@ -1150,13 +2584,13 @@
             "Hunters' Guild loot sack rares"
           ],
           "itemUrlSuffixes": [
-            "/w/Hunter%27s_loot_sack"
+            "/w/Hunters%27_loot_sack"
           ],
           "sourceNames": [
             "Hunter rumours"
           ],
           "sourceUrlSuffixes": [
-            "/w/Hunter_Rumours"
+            "/w/Hunters%27_Rumours"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1173,58 +2607,7 @@
             "Hunting"
           ],
           "sourceUrlSuffixes": [
-            "/w/Hunting"
-          ],
-          "regionRequirements": [
-            "varlamore"
-          ]
-        },
-        {
-          "itemNames": [
-            "Avernic treads"
-          ],
-          "itemUrlSuffixes": [
-            "/w/Avernic_treads"
-          ],
-          "sourceNames": [
-            "Doom of Mokhaiotl"
-          ],
-          "sourceUrlSuffixes": [
-            "/w/Doom_of_Mokhaiotl"
-          ],
-          "regionRequirements": [
-            "varlamore"
-          ]
-        },
-        {
-          "itemNames": [
-            "Mokhaiotl cloth"
-          ],
-          "itemUrlSuffixes": [
-            "/w/Mokhaiotl_cloth"
-          ],
-          "sourceNames": [
-            "Doom of Mokhaiotl"
-          ],
-          "sourceUrlSuffixes": [
-            "/w/Doom_of_Mokhaiotl"
-          ],
-          "regionRequirements": [
-            "varlamore"
-          ]
-        },
-        {
-          "itemNames": [
-            "Eye of ayak (uncharged)"
-          ],
-          "itemUrlSuffixes": [
-            "/w/Eye_of_ayak_%28uncharged%29"
-          ],
-          "sourceNames": [
-            "Doom of Mokhaiotl"
-          ],
-          "sourceUrlSuffixes": [
-            "/w/Doom_of_Mokhaiotl"
+            "/w/Hunter"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1235,7 +2618,7 @@
             "Tooth half of key"
           ],
           "itemUrlSuffixes": [
-            "/w/Tooth_half_of_key"
+            "/w/Tooth_half_of_key_(moon_key)"
           ],
           "sourceNames": [
             "Doom of Mokhaiotl"
@@ -1258,7 +2641,7 @@
             "Vale offerings"
           ],
           "sourceUrlSuffixes": [
-            null
+            "/w/Vale_offerings"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1275,7 +2658,7 @@
             "Vale offerings"
           ],
           "sourceUrlSuffixes": [
-            null
+            "/w/Vale_offerings"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1292,7 +2675,7 @@
             "Vale offerings"
           ],
           "sourceUrlSuffixes": [
-            null
+            "/w/Vale_offerings"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1306,12 +2689,27 @@
             "/w/Antler_guard"
           ],
           "sourceNames": [
-            "Elder custodian stalker",
+            "Elder custodian stalker"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Elder_custodian_stalker"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Antler guard"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Antler_guard"
+          ],
+          "sourceNames": [
             "Mature custodian stalker"
           ],
           "sourceUrlSuffixes": [
-            null,
-            null
+            "/w/Mature_custodian_stalker"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1336,16 +2734,20 @@
         },
         {
           "itemNames": [
-            "Sunfire fanatic armour"
+            "Sunfire fanatic helm",
+            "Sunfire fanatic cuirass",
+            "Sunfire fanatic chausses"
           ],
           "itemUrlSuffixes": [
-            "/w/Sunfire_fanatic_armour"
+            "/w/Sunfire_fanatic_helm",
+            "/w/Sunfire_fanatic_cuirass",
+            "/w/Sunfire_fanatic_chausses"
           ],
           "sourceNames": [
-            "Fortis Colosseum"
+            "Sunfire fanatic armour"
           ],
           "sourceUrlSuffixes": [
-            "/w/Fortis_Colosseum"
+            "/w/Sunfire_fanatic_armour"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1363,6 +2765,57 @@
           ],
           "sourceUrlSuffixes": [
             "/w/Fortis_Colosseum"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Mokhaiotl cloth"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Mokhaiotl_cloth"
+          ],
+          "sourceNames": [
+            "Doom of Mokhaiotl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Doom_of_Mokhaiotl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Eye of ayak"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Eye_of_ayak"
+          ],
+          "sourceNames": [
+            "Doom of Mokhaiotl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Doom_of_Mokhaiotl"
+          ],
+          "regionRequirements": [
+            "varlamore"
+          ]
+        },
+        {
+          "itemNames": [
+            "Avernic treads"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Avernic_treads"
+          ],
+          "sourceNames": [
+            "Doom of Mokhaiotl"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Doom_of_Mokhaiotl"
           ],
           "regionRequirements": [
             "varlamore"
@@ -1406,28 +2859,421 @@
         "Realm of the Fisher King"
       ],
       "notableCombatActivities": [
-        "Brimhaven Dungeon",
-        "Tai Bwo Wannai Dungeon",
-        "The Fight Caves",
-        "The Fight Pits",
-        "TzHaar-Ket-Rak's Challenges",
-        "The Inferno",
-        "TzHaar creatures"
+        {
+          "name": "Brimhaven Dungeon",
+          "url": {
+            "suffix": "/w/Brimhaven_Dungeon"
+          }
+        },
+        {
+          "name": "Tai Bwo Wannai Dungeon",
+          "url": {
+            "suffix": "/w/Tai_Bwo_Wannai"
+          }
+        },
+        {
+          "name": "The Fight Caves",
+          "url": {
+            "suffix": "/w/TzHaar_Fight_Cave"
+          }
+        },
+        {
+          "name": "The Fight Pits",
+          "url": {
+            "suffix": "/w/TzHaar_Fight_Pit"
+          }
+        },
+        {
+          "name": "TzHaar-Ket-Rak's Challenges",
+          "url": {
+            "suffix": "/w/TzHaar-Ket-Rak%27s_Challenges"
+          }
+        },
+        {
+          "name": "The Inferno",
+          "url": {
+            "suffix": "/w/Inferno"
+          }
+        },
+        {
+          "name": "TzHaar creatures",
+          "url": {
+            "suffix": "/w/TzHaar"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Brimhaven Agility Arena",
-        "Brimhaven house portal",
-        "Calquat tree patch",
-        "Infernal eel fishing",
-        "Fruit tree patch",
-        "Karambwan fishing",
-        "Nature Altar",
-        "Tai Bwo Wannai Cleanup",
-        "Teak and mahogany woodcutting",
-        "TzHaar pickpocketing",
-        "TzHaar gem shop thieving"
+        {
+          "name": "Brimhaven Agility Arena",
+          "url": {
+            "suffix": "/w/Brimhaven_Agility_Arena"
+          }
+        },
+        {
+          "name": "Brimhaven house portal",
+          "url": {
+            "suffix": "/w/Portal_(Player-owned_house)"
+          }
+        },
+        {
+          "name": "Calquat tree patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Infernal eel fishing",
+          "url": {
+            "suffix": "/w/Infernal_eel"
+          }
+        },
+        {
+          "name": "Fruit tree patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Karambwan fishing",
+          "url": {
+            "suffix": "/w/Raw_karambwan"
+          }
+        },
+        {
+          "name": "Nature Altar",
+          "url": {
+            "suffix": "/w/Nature_Altar"
+          }
+        },
+        {
+          "name": "Tai Bwo Wannai Cleanup",
+          "url": {
+            "suffix": "/w/Tai_Bwo_Wannai_Cleanup"
+          }
+        },
+        {
+          "name": "Teak and mahogany woodcutting",
+          "url": null
+        },
+        {
+          "name": "TzHaar pickpocketing",
+          "url": {
+            "suffix": "/w/TzHaar"
+          }
+        },
+        {
+          "name": "TzHaar gem shop thieving",
+          "url": {
+            "suffix": "/w/TzHaar-Hur-Rin's_Ore_and_Gem_Store"
+          }
+        }
       ],
-      "notableShopsServices": [],
+      "notableShopsServices": [
+        {
+          "name": "Fernahei's Fishing Hut",
+          "url": {
+            "suffix": "/w/Fernahei%27s_Fishing_Hut."
+          },
+          "serviceType": "Fishing shop",
+          "serviceTypeKey": "fishing_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "fishing",
+          "serviceCategoryLabel": "Fishing",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Fernahei",
+            "url": {
+              "suffix": "/w/Fernahei"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Fernahei's Fishing Hut.",
+            "url": {
+              "suffix": "/w/Fernahei%27s_Fishing_Hut."
+            }
+          },
+          "location": "Shilo Village",
+          "map": {
+            "x": 2871,
+            "y": 2969,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "TzHaar-Hur-Tel's Equipment Store",
+          "url": {
+            "suffix": "/w/TzHaar-Hur-Tel%27s_Equipment_Store"
+          },
+          "serviceType": "Sword shop",
+          "serviceTypeKey": "sword_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "weapons",
+          "serviceCategoryLabel": "Weapons",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "TzHaar-Hur-Tel",
+            "url": {
+              "suffix": "/w/TzHaar-Hur-Tel"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "TzHaar-Hur-Tel's Equipment Store",
+            "url": {
+              "suffix": "/w/TzHaar-Hur-Tel%27s_Equipment_Store"
+            }
+          },
+          "location": "Mor Ul Rek",
+          "map": {
+            "x": 2478,
+            "y": 5147,
+            "mapId": 23,
+            "plane": 0
+          }
+        },
+        {
+          "name": "TzHaar-Mej-Roh's Rune Store",
+          "url": {
+            "suffix": "/w/TzHaar-Mej-Roh%27s_Rune_Store"
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "TzHaar-Mej-Roh",
+            "url": {
+              "suffix": "/w/TzHaar-Mej-Roh"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "TzHaar-Mej-Roh's Rune Store",
+            "url": {
+              "suffix": "/w/TzHaar-Mej-Roh%27s_Rune_Store"
+            }
+          },
+          "location": "Mor Ul Rek",
+          "map": {
+            "x": 2462,
+            "y": 5125,
+            "mapId": 23,
+            "plane": 0
+          }
+        },
+        {
+          "name": "TzHaar-Hur-Lek's Ore and Gem Store",
+          "url": {
+            "suffix": "/w/TzHaar-Hur-Lek%27s_Ore_and_Gem_Store"
+          },
+          "serviceType": "Gem shop",
+          "serviceTypeKey": "gem_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "crafting",
+          "serviceCategoryLabel": "Crafting",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "TzHaar-Hur-Lek",
+            "url": {
+              "suffix": "/w/TzHaar-Hur-Lek"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "TzHaar-Hur-Lek's Ore and Gem Store",
+            "url": {
+              "suffix": "/w/TzHaar-Hur-Lek%27s_Ore_and_Gem_Store"
+            }
+          },
+          "location": "Mor Ul Rek",
+          "map": {
+            "x": 2465,
+            "y": 5149,
+            "mapId": 23,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Jiminua's Jungle Store",
+          "url": {
+            "suffix": "/w/Jiminua%27s_Jungle_Store."
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Jiminua",
+            "url": {
+              "suffix": "/w/Jiminua"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Jiminua's Jungle Store.",
+            "url": {
+              "suffix": "/w/Jiminua%27s_Jungle_Store."
+            }
+          },
+          "location": "Karamja",
+          "map": {
+            "x": 2767,
+            "y": 3122,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Obli's General Store",
+          "url": {
+            "suffix": "/w/Obli%27s_General_Store."
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Obli",
+            "url": {
+              "suffix": "/w/Obli"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Obli's General Store.",
+            "url": {
+              "suffix": "/w/Obli%27s_General_Store."
+            }
+          },
+          "location": "Shilo Village",
+          "map": {
+            "x": 2825,
+            "y": 2959,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "The Shrimp and Parrot",
+          "url": {
+            "suffix": "/w/The_Shrimp_and_Parrot"
+          },
+          "serviceType": "Food",
+          "serviceTypeKey": "food",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "food",
+          "serviceCategoryLabel": "Food",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Alfonse the waiter",
+            "url": {
+              "suffix": "/w/Alfonse_the_waiter"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "The Shrimp and Parrot",
+            "url": {
+              "suffix": "/w/The_Shrimp_and_Parrot"
+            }
+          },
+          "location": "Brimhaven",
+          "map": {
+            "x": 2794,
+            "y": 3187,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Tiadeche's Karambwan Stall",
+          "url": {
+            "suffix": "/w/Tiadeche%27s_Karambwan_Stall"
+          },
+          "serviceType": "Food",
+          "serviceTypeKey": "food",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "food",
+          "serviceCategoryLabel": "Food",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Tiadeche",
+            "url": {
+              "suffix": "/w/Tiadeche"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Tiadeche's Karambwan Stall",
+            "url": {
+              "suffix": "/w/Tiadeche%27s_Karambwan_Stall"
+            }
+          },
+          "location": "Tai Bwo Wannai",
+          "map": {
+            "x": 2781,
+            "y": 3058,
+            "mapId": 0,
+            "plane": 0
+          }
+        }
+      ],
       "autoUnlocks": {
         "quests": [
           {
@@ -1468,7 +3314,8 @@
             ],
             "regionRequirements": [
               "karamja"
-            ]
+            ],
+            "name": "Karamja Diary"
           }
         ],
         "combatAchievements": [],
@@ -1484,8 +3331,8 @@
         {
           "itemNames": [
             "Obsidian helmet",
-            "Obsidian platebody",
-            "Obsidian platelegs"
+            "platebody",
+            "legs"
           ],
           "itemUrlSuffixes": [
             "/w/Obsidian_helmet",
@@ -1507,7 +3354,7 @@
             "TzHaar weaponry"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Obsidian_equipment"
           ],
           "sourceNames": [
             "TzHaar-Ket",
@@ -1565,8 +3412,8 @@
             "/w/Draconic_visage"
           ],
           "sourceNames": [
-            "Steel dragon",
-            "Iron dragon"
+            "Steel",
+            "Iron dragons"
           ],
           "sourceUrlSuffixes": [
             "/w/Steel_dragon",
@@ -1635,42 +3482,399 @@
         "Void Knights' Outpost"
       ],
       "notableCombatActivities": [
-        "Asgarnia Ice Dungeon",
-        "Cerberus",
-        "Giant Mole",
-        "God Wars Dungeon (including Nex)",
-        "Pest Control",
-        "Royal Titans",
-        "Taverley Dungeon",
-        "Warriors' Guild",
-        "The Whisperer"
+        {
+          "name": "Asgarnia Ice Dungeon",
+          "url": {
+            "suffix": "/w/Asgarnian_Ice_Dungeon"
+          }
+        },
+        {
+          "name": "Cerberus",
+          "url": {
+            "suffix": "/w/Cerberus"
+          }
+        },
+        {
+          "name": "Giant Mole",
+          "url": {
+            "suffix": "/w/Giant_Mole"
+          }
+        },
+        {
+          "name": "God Wars Dungeon (including Nex)",
+          "url": {
+            "suffix": "/w/God_Wars_Dungeon"
+          }
+        },
+        {
+          "name": "Pest Control",
+          "url": {
+            "suffix": "/w/Pest_Control"
+          }
+        },
+        {
+          "name": "Royal Titans",
+          "url": {
+            "suffix": "/w/Royal_Titans"
+          }
+        },
+        {
+          "name": "Taverley Dungeon",
+          "url": {
+            "suffix": "/w/Taverley_Dungeon"
+          }
+        },
+        {
+          "name": "Warriors' Guild",
+          "url": {
+            "suffix": "/w/Warriors%27_Guild"
+          }
+        },
+        {
+          "name": "The Whisperer",
+          "url": {
+            "suffix": "/w/The_Whisperer"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Air Altar",
-        "Body Altar",
-        "Law Altar",
-        "Mind Altar",
-        "Crafting Guild",
-        "Falador Rooftop Course",
-        "Falador tree patch",
-        "Falador allotment patch",
-        "Heroes' Guild",
-        "Motherlode Mine",
-        "Rimmington house portal",
-        "Rogues' Den",
-        "Taverley house portal",
-        "Taverley tree patch",
-        "Troll Stronghold herb patch",
-        "Fire Obelisk",
-        "Water Obelisk"
+        {
+          "name": "Air Altar",
+          "url": {
+            "suffix": "/w/Air_Altar"
+          }
+        },
+        {
+          "name": "Body Altar",
+          "url": {
+            "suffix": "/w/Body_Altar"
+          }
+        },
+        {
+          "name": "Law Altar",
+          "url": {
+            "suffix": "/w/Law_Altar"
+          }
+        },
+        {
+          "name": "Mind Altar",
+          "url": {
+            "suffix": "/w/Mind_Altar"
+          }
+        },
+        {
+          "name": "Crafting Guild",
+          "url": {
+            "suffix": "/w/Crafting_Guild"
+          }
+        },
+        {
+          "name": "Falador Rooftop Course",
+          "url": {
+            "suffix": "/w/Falador_Rooftop_Course"
+          }
+        },
+        {
+          "name": "Falador tree patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Falador allotment patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Heroes' Guild",
+          "url": {
+            "suffix": "/w/Heroes%27_Guild"
+          }
+        },
+        {
+          "name": "Motherlode Mine",
+          "url": {
+            "suffix": "/w/Motherlode_Mine"
+          }
+        },
+        {
+          "name": "Rimmington house portal",
+          "url": {
+            "suffix": "/w/Portal_(Player-owned_house)"
+          }
+        },
+        {
+          "name": "Rogues' Den",
+          "url": {
+            "suffix": "/w/Rogues%27_Den"
+          }
+        },
+        {
+          "name": "Taverley house portal",
+          "url": {
+            "suffix": "/w/Portal_(Player-owned_house)"
+          }
+        },
+        {
+          "name": "Taverley tree patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Troll Stronghold herb patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Fire Obelisk",
+          "url": {
+            "suffix": "/w/Obelisk_of_Fire"
+          }
+        },
+        {
+          "name": "Water Obelisk",
+          "url": {
+            "suffix": "/w/Obelisk_of_Water"
+          }
+        }
       ],
       "notableShopsServices": [
-        "Betty's Magic Emporium",
-        "Garden supplier",
-        "Happy Heroes' H'emporium",
-        "Multicannon parts for sale",
-        "Nurmof's Pickaxe Shop",
-        "Prospector Percy's Nugget Shop"
+        {
+          "name": "Betty's Magic Emporium",
+          "url": {
+            "suffix": "/w/Betty%27s_Magic_Emporium."
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Betty",
+            "url": {
+              "suffix": "/w/Betty"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Betty's Magic Emporium.",
+            "url": {
+              "suffix": "/w/Betty%27s_Magic_Emporium."
+            }
+          },
+          "location": "Port Sarim",
+          "map": {
+            "x": 3014,
+            "y": 3259,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Garden supplier",
+          "url": {
+            "suffix": "/w/Garden_supplier"
+          },
+          "serviceType": "Garden supplier",
+          "serviceTypeKey": "garden_supplier",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "farming",
+          "serviceCategoryLabel": "Farming",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "npc",
+          "owner": {
+            "name": "Garden supplier",
+            "url": {
+              "suffix": "/w/Garden_supplier"
+            }
+          },
+          "linkedShop": {
+            "name": "Garden Centre",
+            "url": {
+              "suffix": "/w/Garden_Centre"
+            }
+          },
+          "canonicalService": {
+            "name": "Garden Centre",
+            "url": {
+              "suffix": "/w/Garden_Centre"
+            }
+          },
+          "location": "Falador Park",
+          "map": {
+            "x": 3018,
+            "y": 3373,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Happy Heroes' H'emporium",
+          "url": {
+            "suffix": "/w/Happy_Heroes%27_H%27emporium."
+          },
+          "serviceType": "Dragon weapons",
+          "serviceTypeKey": "dragon_weapons",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "weapons",
+          "serviceCategoryLabel": "Weapons",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Helemos",
+            "url": {
+              "suffix": "/w/Helemos"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Happy Heroes' H'emporium.",
+            "url": {
+              "suffix": "/w/Happy_Heroes%27_H%27emporium."
+            }
+          },
+          "location": "1 st  floor [ UK ] 2 nd  floor [ US ] of the Heroes' Guild",
+          "map": {
+            "x": 2895,
+            "y": 3511,
+            "mapId": 0,
+            "plane": 1
+          }
+        },
+        {
+          "name": "Multicannon parts for sale",
+          "url": {
+            "suffix": "/w/Multicannon_parts_for_sale"
+          },
+          "serviceType": "Dwarf multicannon parts",
+          "serviceTypeKey": "dwarf_multicannon_parts",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "ranged",
+          "serviceCategoryLabel": "Ranged",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Nulodion",
+            "url": {
+              "suffix": "/w/Nulodion"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Multicannon parts for sale",
+            "url": {
+              "suffix": "/w/Multicannon_parts_for_sale"
+            }
+          },
+          "location": "Ice Mountain workshop",
+          "map": {
+            "x": 3011,
+            "y": 3452,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Nurmof's Pickaxe Shop",
+          "url": {
+            "suffix": "/w/Nurmof%27s_Pickaxe_Shop."
+          },
+          "serviceType": "Mining shop",
+          "serviceTypeKey": "mining_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "mining",
+          "serviceCategoryLabel": "Mining",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Nurmof",
+            "url": {
+              "suffix": "/w/Nurmof"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Nurmof's Pickaxe Shop.",
+            "url": {
+              "suffix": "/w/Nurmof%27s_Pickaxe_Shop."
+            }
+          },
+          "location": "Dwarven Mines",
+          "map": {
+            "x": 2998,
+            "y": 9845,
+            "mapId": 6,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Prospector Percy's Nugget Shop",
+          "url": {
+            "suffix": "/w/Prospector_Percy%27s_Nugget_Shop"
+          },
+          "serviceType": "Clothing",
+          "serviceTypeKey": "clothing",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "mining",
+          "serviceCategoryLabel": "Mining",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Prospector Percy",
+            "url": {
+              "suffix": "/w/Prospector_Percy"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Prospector Percy's Nugget Shop",
+            "url": {
+              "suffix": "/w/Prospector_Percy%27s_Nugget_Shop"
+            }
+          },
+          "location": "Motherlode Mine",
+          "map": {
+            "x": 3116,
+            "y": 9698,
+            "mapId": 6,
+            "plane": 0
+          }
+        }
       ],
       "autoUnlocks": {
         "quests": [
@@ -1743,7 +3947,8 @@
             ],
             "regionRequirements": [
               "asgarnia"
-            ]
+            ],
+            "name": "Falador Diary"
           }
         ],
         "combatAchievements": [
@@ -1784,7 +3989,7 @@
       "echoBoss": {
         "name": "Cerberus (Echo)",
         "url": {
-          "suffix": "/w/Cerberus_%28Echo%29"
+          "suffix": "/w/Cerberus_(Echo)"
         },
         "baseBoss": {
           "name": "Cerberus",
@@ -1794,6 +3999,15 @@
         },
         "regionRequirement": "asgarnia",
         "additionalRequirement": "Acquire the Asgarnia echo orb from Cerberus before entering the echo fight.",
+        "echoEquipment": [
+          {
+            "name": "Fang of the hound",
+            "url": {
+              "suffix": "/w/Fang_of_the_hound"
+            },
+            "note": "Drop rate 1/25"
+          }
+        ],
         "echoEquipmentSummary": [
           "A dagger that can ignite, scales with elemental weaknesses, and has a special attack"
         ],
@@ -1804,21 +4018,11 @@
       "notableDrops": [
         {
           "itemNames": [
-            "Bronze defender",
-            "Iron defender",
-            "Steel defender",
-            "Black defender",
-            "Mithril defender",
-            "Adamant defender",
-            "Rune defender"
+            "Bronze",
+            "rune"
           ],
           "itemUrlSuffixes": [
             "/w/Bronze_defender",
-            "/w/Iron_defender",
-            "/w/Steel_defender",
-            "/w/Black_defender",
-            "/w/Mithril_defender",
-            "/w/Adamant_defender",
             "/w/Rune_defender"
           ],
           "sourceNames": [
@@ -1850,8 +4054,8 @@
         },
         {
           "itemNames": [
-            "Primordial crystal",
-            "Pegasian crystal"
+            "Primordial",
+            "Pegasian crystals"
           ],
           "itemUrlSuffixes": [
             "/w/Primordial_crystal",
@@ -2107,10 +4311,10 @@
         },
         {
           "itemNames": [
-            "Any Godsword shard"
+            "Godsword shard"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Godsword_shard"
           ],
           "sourceNames": [
             "Kree'arra",
@@ -2139,7 +4343,7 @@
             "Spiritual mages"
           ],
           "sourceUrlSuffixes": [
-            "/w/Spiritual_mages"
+            "/w/Spiritual_mage"
           ],
           "regionRequirements": [
             "asgarnia"
@@ -2156,7 +4360,7 @@
             "Skeletal wyvern"
           ],
           "sourceUrlSuffixes": [
-            "/w/Skeletal_wyvern"
+            "/w/Skeletal_Wyvern"
           ],
           "regionRequirements": [
             "asgarnia"
@@ -2232,10 +4436,12 @@
         },
         {
           "itemNames": [
-            "Bellator ring"
+            "Bellator ring",
+            "gold ring"
           ],
           "itemUrlSuffixes": [
-            "/w/Bellator_ring"
+            "/w/Bellator_ring",
+            "/w/Gold_ring"
           ],
           "sourceNames": [
             "The Whisperer"
@@ -2249,10 +4455,12 @@
         },
         {
           "itemNames": [
-            "Soulreaper axe pieces"
+            "Soulreaper axe",
+            "Desert Treasure II"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Soulreaper_axe",
+            "/w/Desert_Treasure_II_-_The_Fallen_Empire"
           ],
           "sourceNames": [
             "The Whisperer"
@@ -2260,7 +4468,6 @@
           "sourceUrlSuffixes": [
             "/w/The_Whisperer"
           ],
-          "note": "Aggregate piece set; league rule allows any DT2 boss to drop all pieces.",
           "regionRequirements": [
             "asgarnia"
           ]
@@ -2310,7 +4517,7 @@
             "Hellhounds"
           ],
           "sourceUrlSuffixes": [
-            "/w/Hellhounds"
+            "/w/Hellhound"
           ],
           "regionRequirements": [
             "asgarnia"
@@ -2445,32 +4652,361 @@
         "Weiss"
       ],
       "notableCombatActivities": [
-        "Basilisk Knights",
-        "Duke Sucellus",
-        "Phantom Muspah",
-        "Dagannoth Kings",
-        "Dagannoth Kings (Echo)",
-        "Rellekka Slayer Cave",
-        "Waterbirth Island Dungeon",
-        "Vorkath"
+        {
+          "name": "Basilisk Knights",
+          "url": {
+            "suffix": "/w/Basilisk_Knight"
+          }
+        },
+        {
+          "name": "Duke Sucellus",
+          "url": {
+            "suffix": "/w/Duke_Sucellus"
+          }
+        },
+        {
+          "name": "Phantom Muspah",
+          "url": {
+            "suffix": "/w/Phantom_Muspah"
+          }
+        },
+        {
+          "name": "Dagannoth Kings",
+          "url": {
+            "suffix": "/w/Dagannoth_Kings"
+          }
+        },
+        {
+          "name": "Dagannoth Kings (Echo)",
+          "url": {
+            "suffix": "/w/Dagannoth_Kings_(Echo)"
+          }
+        },
+        {
+          "name": "Rellekka Slayer Cave",
+          "url": {
+            "suffix": "/w/Fremennik_Slayer_Dungeon"
+          }
+        },
+        {
+          "name": "Waterbirth Island Dungeon",
+          "url": {
+            "suffix": "/w/Waterbirth_Island_Dungeon"
+          }
+        },
+        {
+          "name": "Vorkath",
+          "url": {
+            "suffix": "/w/Vorkath"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Blast Furnace",
-        "Kingdom Management",
-        "Penguin Agility Course",
-        "Rellekka house portal",
-        "Rellekka Rooftop Course",
-        "Astral Altar",
-        "Weiss herb patch"
+        {
+          "name": "Blast Furnace",
+          "url": {
+            "suffix": "/w/Blast_Furnace"
+          }
+        },
+        {
+          "name": "Kingdom Management",
+          "url": {
+            "suffix": "/w/Managing_Miscellania"
+          }
+        },
+        {
+          "name": "Penguin Agility Course",
+          "url": {
+            "suffix": "/w/Penguin_Agility_Course"
+          }
+        },
+        {
+          "name": "Rellekka house portal",
+          "url": {
+            "suffix": "/w/Portal_(Player-owned_house)"
+          }
+        },
+        {
+          "name": "Rellekka Rooftop Course",
+          "url": {
+            "suffix": "/w/Rellekka_Rooftop_Course"
+          }
+        },
+        {
+          "name": "Astral Altar",
+          "url": {
+            "suffix": "/w/Astral_Altar"
+          }
+        },
+        {
+          "name": "Weiss herb patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        }
       ],
       "notableShopsServices": [
-        "Mawnis Burowgar",
-        "Skulgrimen's Battle Gear",
-        "Baba Yaga's Magic Shop",
-        "Moon Clan Fine Clothes",
-        "Ore Store",
-        "Keldagrim Stonemason",
-        "Blast Furnace ore seller"
+        {
+          "name": "Mawnis Burowgar",
+          "url": {
+            "suffix": "/w/Mawnis_Burowgar"
+          },
+          "serviceType": "Helmet shop",
+          "serviceTypeKey": "helmet_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "armour",
+          "serviceCategoryLabel": "Armour",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "npc",
+          "owner": null,
+          "linkedShop": {
+            "name": "Helm of Neitiznot",
+            "url": {
+              "suffix": "/w/Helm_of_Neitiznot"
+            }
+          },
+          "canonicalService": {
+            "name": "Helm of Neitiznot",
+            "url": {
+              "suffix": "/w/Helm_of_Neitiznot"
+            }
+          },
+          "location": "Neitiznot",
+          "map": {
+            "x": 2335,
+            "y": 3799,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Skulgrimen's Battle Gear",
+          "url": {
+            "suffix": "/w/Skulgrimen%27s_Battle_Gear"
+          },
+          "serviceType": "Helmet shop",
+          "serviceTypeKey": "helmet_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "armour",
+          "serviceCategoryLabel": "Armour",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Skulgrimen",
+            "url": {
+              "suffix": "/w/Skulgrimen"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Skulgrimen's Battle Gear",
+            "url": {
+              "suffix": "/w/Skulgrimen%27s_Battle_Gear"
+            }
+          },
+          "location": "Rellekka",
+          "map": {
+            "x": 2665,
+            "y": 3693,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Baba Yaga's Magic Shop",
+          "url": {
+            "suffix": "/w/Baba_Yaga%27s_Magic_Shop."
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Baba Yaga",
+            "url": {
+              "suffix": "/w/Baba_Yaga"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Baba Yaga's Magic Shop.",
+            "url": {
+              "suffix": "/w/Baba_Yaga%27s_Magic_Shop."
+            }
+          },
+          "location": "Lunar Isle",
+          "map": {
+            "x": 2086,
+            "y": 3931,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Moon Clan Fine Clothes",
+          "url": {
+            "suffix": "/w/Moon_Clan_Fine_Clothes."
+          },
+          "serviceType": "Clothes shop",
+          "serviceTypeKey": "clothes_shop",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "other",
+          "serviceCategoryLabel": "Other",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Rimae Sirsalis",
+            "url": {
+              "suffix": "/w/Rimae_Sirsalis"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Moon Clan Fine Clothes.",
+            "url": {
+              "suffix": "/w/Moon_Clan_Fine_Clothes."
+            }
+          },
+          "location": "Lunar Isle",
+          "map": {
+            "x": 2105,
+            "y": 3908,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Ore Store",
+          "url": {
+            "suffix": "/w/Ore_store"
+          },
+          "serviceType": "Mining shop",
+          "serviceTypeKey": "mining_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "mining",
+          "serviceCategoryLabel": "Mining",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Hring Hring",
+            "url": {
+              "suffix": "/w/Hring_Hring"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Ore store",
+            "url": {
+              "suffix": "/w/Ore_store"
+            }
+          },
+          "location": "Jatizso",
+          "map": {
+            "x": 2397,
+            "y": 3797,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Keldagrim Stonemason",
+          "url": {
+            "suffix": "/w/Keldagrim_Stonemason"
+          },
+          "serviceType": "Stonemason",
+          "serviceTypeKey": "stonemason",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "utility",
+          "serviceSkillTypeLabel": "Utility",
+          "serviceCategory": "construction",
+          "serviceCategoryLabel": "Construction",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Stonemason",
+            "url": {
+              "suffix": "/w/Stonemason"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Keldagrim Stonemason",
+            "url": {
+              "suffix": "/w/Keldagrim_Stonemason"
+            }
+          },
+          "location": "Keldagrim",
+          "map": {
+            "x": 2849,
+            "y": 10184,
+            "mapId": 10,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Blast Furnace Ore seller",
+          "url": {
+            "suffix": "/w/Blast_Furnace"
+          },
+          "serviceType": "Ore shop",
+          "serviceTypeKey": "ore_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "mining",
+          "serviceCategoryLabel": "Mining",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": null,
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Blast Furnace",
+            "url": {
+              "suffix": "/w/Blast_Furnace"
+            }
+          },
+          "location": "Keldagrim",
+          "map": {
+            "x": 2930,
+            "y": 10197,
+            "mapId": 10,
+            "plane": 0
+          }
+        }
       ],
       "autoUnlocks": {
         "quests": [
@@ -2550,7 +5086,8 @@
             ],
             "regionRequirements": [
               "fremennik"
-            ]
+            ],
+            "name": "Fremennik Diary"
           }
         ],
         "combatAchievements": [
@@ -2592,7 +5129,7 @@
       "echoBoss": {
         "name": "Dagannoth Kings (Echo)",
         "url": {
-          "suffix": "/w/Dagannoth_Kings_%28Echo%29"
+          "suffix": "/w/Dagannoth_Kings_(Echo)"
         },
         "baseBoss": {
           "name": "Dagannoth Kings",
@@ -2602,6 +5139,15 @@
         },
         "regionRequirement": "fremennik",
         "additionalRequirement": "Acquire the Fremennik echo orb from the Dagannoth Kings before entering the echo fight.",
+        "echoEquipment": [
+          {
+            "name": "V's helm",
+            "url": {
+              "suffix": "/w/V%27s_helm"
+            },
+            "note": "Drop rate 1/25"
+          }
+        ],
         "echoEquipmentSummary": [
           "A best-in-slot viking helmet"
         ],
@@ -2612,7 +5158,7 @@
       "notableDrops": [
         {
           "itemNames": [
-            "Draconic visage",
+            "Draconic",
             "Skeletal visage"
           ],
           "itemUrlSuffixes": [
@@ -2648,10 +5194,10 @@
         },
         {
           "itemNames": [
-            "Dagannoth King rings"
+            "Dagannoth King"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Dagannoth_Kings"
           ],
           "sourceNames": [
             "Dagannoth Kings"
@@ -2665,24 +5211,7 @@
         },
         {
           "itemNames": [
-            "Dagannoth King non-ring unique table items"
-          ],
-          "itemUrlSuffixes": [
-            null
-          ],
-          "sourceNames": [
-            "Dagannoth Kings"
-          ],
-          "sourceUrlSuffixes": [
-            "/w/Dagannoth_Kings"
-          ],
-          "regionRequirements": [
-            "fremennik"
-          ]
-        },
-        {
-          "itemNames": [
-            "Dragon axe"
+            "Dragon Axe"
           ],
           "itemUrlSuffixes": [
             "/w/Dragon_axe"
@@ -2699,10 +5228,12 @@
         },
         {
           "itemNames": [
-            "Basilisk jaw"
+            "Basilisk jaw",
+            "Slayer task"
           ],
           "itemUrlSuffixes": [
-            "/w/Basilisk_jaw"
+            "/w/Basilisk_jaw",
+            "/w/Slayer_task"
           ],
           "sourceNames": [
             "Basilisk Knight"
@@ -2761,7 +5292,7 @@
           ],
           "sourceUrlSuffixes": [
             "/w/Kurask",
-            "/w/King_Kurask"
+            "/w/King_kurask"
           ],
           "regionRequirements": [
             "fremennik"
@@ -2786,10 +5317,12 @@
         },
         {
           "itemNames": [
-            "Magus ring"
+            "Magus ring",
+            "gold ring"
           ],
           "itemUrlSuffixes": [
-            "/w/Magus_ring"
+            "/w/Magus_ring",
+            "/w/Gold_ring"
           ],
           "sourceNames": [
             "Duke Sucellus"
@@ -2803,10 +5336,12 @@
         },
         {
           "itemNames": [
-            "Soulreaper axe pieces"
+            "Soulreaper axe",
+            "Desert Treasure II"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Soulreaper_axe",
+            "/w/Desert_Treasure_II_-_The_Fallen_Empire"
           ],
           "sourceNames": [
             "Duke Sucellus"
@@ -2814,7 +5349,6 @@
           "sourceUrlSuffixes": [
             "/w/Duke_Sucellus"
           ],
-          "note": "Aggregate piece set; league rule allows any DT2 boss to drop all pieces.",
           "regionRequirements": [
             "fremennik"
           ]
@@ -2947,49 +5481,498 @@
         "Yanille"
       ],
       "notableCombatActivities": [
-        "Ancient Cavern",
-        "Ape Atoll Dungeon",
-        "Kruk's Dungeon",
-        "Barbarian Assault",
-        "Castle Wars",
-        "Demonic gorillas",
-        "Kraken",
-        "Stronghold Slayer Cave",
-        "Smoke devils",
-        "Thermonuclear Smoke Devil",
-        "Thermonuclear smoke devil (Echo)",
-        "Waterfall Dungeon",
-        "Poison Waste Dungeon"
+        {
+          "name": "Ancient Cavern",
+          "url": {
+            "suffix": "/w/Ancient_Cavern"
+          }
+        },
+        {
+          "name": "Ape Atoll Dungeon",
+          "url": {
+            "suffix": "/w/Ape_Atoll_Dungeon"
+          }
+        },
+        {
+          "name": "Kruk's Dungeon",
+          "url": {
+            "suffix": "/w/Kruk%27s_Dungeon"
+          }
+        },
+        {
+          "name": "Barbarian Assault",
+          "url": {
+            "suffix": "/w/Barbarian_Assault"
+          }
+        },
+        {
+          "name": "Castle Wars",
+          "url": {
+            "suffix": "/w/Castle_Wars"
+          }
+        },
+        {
+          "name": "Demonic gorillas",
+          "url": {
+            "suffix": "/w/Demonic_gorilla"
+          }
+        },
+        {
+          "name": "Kraken",
+          "url": {
+            "suffix": "/w/Kraken"
+          }
+        },
+        {
+          "name": "Stronghold Slayer Cave",
+          "url": {
+            "suffix": "/w/Stronghold_Slayer_Cave"
+          }
+        },
+        {
+          "name": "Smoke devils",
+          "url": {
+            "suffix": "/w/Smoke_devil"
+          }
+        },
+        {
+          "name": "Thermonuclear Smoke Devil",
+          "url": {
+            "suffix": "/w/Thermonuclear_smoke_devil"
+          }
+        },
+        {
+          "name": "Thermonuclear smoke devil (Echo)",
+          "url": {
+            "suffix": "/w/Thermonuclear_smoke_devil_(Echo)"
+          }
+        },
+        {
+          "name": "Waterfall Dungeon",
+          "url": {
+            "suffix": "/w/Waterfall_Dungeon"
+          }
+        },
+        {
+          "name": "Poison Waste Dungeon",
+          "url": {
+            "suffix": "/w/Poison_Waste_Dungeon"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Ardougne Market thieving",
-        "Ardougne Rooftop Course",
-        "Barbarian fishing",
-        "Barbarian Outpost Agility Course",
-        "Catherby fishing spots",
-        "Chompy bird hunting",
-        "Hunter training",
-        "Myths' Guild and Wrath Altar",
-        "Gnome Stronghold Agility Course",
-        "Ardougne/Catherby/Tree Gnome farming patches",
-        "Fishing Trawler",
-        "Fishing Guild",
-        "Piscatoris Hunter area",
-        "Ourania Altar",
-        "Seers' Village Rooftop Course",
-        "Spirit trees",
-        "Tower of Life",
-        "Yanille house portal"
+        {
+          "name": "Ardougne Market thieving",
+          "url": {
+            "suffix": "/w/Ardougne_Market"
+          }
+        },
+        {
+          "name": "Ardougne Rooftop Course",
+          "url": {
+            "suffix": "/w/Ardougne_Rooftop_Course"
+          }
+        },
+        {
+          "name": "Barbarian fishing",
+          "url": {
+            "suffix": "/w/Barbarian_Training"
+          }
+        },
+        {
+          "name": "Barbarian Outpost Agility Course",
+          "url": {
+            "suffix": "/w/Barbarian_Outpost_Agility_Course"
+          }
+        },
+        {
+          "name": "Catherby fishing spots",
+          "url": null
+        },
+        {
+          "name": "Chompy bird hunting",
+          "url": {
+            "suffix": "/w/Chompy_bird_hunting"
+          }
+        },
+        {
+          "name": "Hunter training",
+          "url": {
+            "suffix": "/w/Hunter_training"
+          }
+        },
+        {
+          "name": "Myths' Guild and Wrath Altar",
+          "url": {
+            "suffix": "/w/Myths'_Guild"
+          }
+        },
+        {
+          "name": "Gnome Stronghold Agility Course",
+          "url": {
+            "suffix": "/w/Gnome_Stronghold_Agility_Course"
+          }
+        },
+        {
+          "name": "Ardougne/Catherby/Tree Gnome farming patches",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Fishing Trawler",
+          "url": {
+            "suffix": "/w/Fishing_Trawler"
+          }
+        },
+        {
+          "name": "Fishing Guild",
+          "url": {
+            "suffix": "/w/Fishing_Guild"
+          }
+        },
+        {
+          "name": "Piscatoris Hunter area",
+          "url": {
+            "suffix": "/w/Piscatoris_Hunter_area"
+          }
+        },
+        {
+          "name": "Ourania Altar",
+          "url": {
+            "suffix": "/w/Ourania_Altar"
+          }
+        },
+        {
+          "name": "Seers' Village Rooftop Course",
+          "url": {
+            "suffix": "/w/Seers%27_Village_Rooftop_Course"
+          }
+        },
+        {
+          "name": "Spirit trees",
+          "url": {
+            "suffix": "/w/Spirit_tree"
+          }
+        },
+        {
+          "name": "Tower of Life",
+          "url": {
+            "suffix": "/w/Tower_of_Life"
+          }
+        },
+        {
+          "name": "Yanille house portal",
+          "url": {
+            "suffix": "/w/Portal_(Player-owned_house)"
+          }
+        }
       ],
       "notableShopsServices": [
-        "Hickton's Archery Emporium",
-        "Dargaud's Bow and Arrows",
-        "Daga's Scimitar Smithy",
-        "Rasolo the Wandering Merchant",
-        "Myths' Guild Weaponry",
-        "Magic Guild Store (Runes and Staves)",
-        "Magic Guild Store (Mystic Robes)",
-        "Aleck's Hunter Emporium"
+        {
+          "name": "Hickton's Archery Emporium",
+          "url": {
+            "suffix": "/w/Hickton%27s_Archery_Emporium."
+          },
+          "serviceType": "Archery shop",
+          "serviceTypeKey": "archery_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "ranged",
+          "serviceCategoryLabel": "Ranged",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Hickton",
+            "url": {
+              "suffix": "/w/Hickton"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Hickton's Archery Emporium.",
+            "url": {
+              "suffix": "/w/Hickton%27s_Archery_Emporium."
+            }
+          },
+          "location": "Catherby",
+          "map": {
+            "x": 2823,
+            "y": 3443,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Dargaud's Bow and Arrows",
+          "url": {
+            "suffix": "/w/Dargaud%27s_Bow_and_Arrows."
+          },
+          "serviceType": "Archery shop",
+          "serviceTypeKey": "archery_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "ranged",
+          "serviceCategoryLabel": "Ranged",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Bow and Arrow salesman",
+            "url": {
+              "suffix": "/w/Bow_and_Arrow_salesman"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Dargaud's Bow and Arrows.",
+            "url": {
+              "suffix": "/w/Dargaud%27s_Bow_and_Arrows."
+            }
+          },
+          "location": "Ranging Guild",
+          "map": {
+            "x": 2672,
+            "y": 3434,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Daga's Scimitar Smithy",
+          "url": {
+            "suffix": "/w/Daga%27s_Scimitar_Smithy"
+          },
+          "serviceType": "Scimitar shop",
+          "serviceTypeKey": "scimitar_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "weapons",
+          "serviceCategoryLabel": "Weapons",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Daga",
+            "url": {
+              "suffix": "/w/Daga"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Daga's Scimitar Smithy",
+            "url": {
+              "suffix": "/w/Daga%27s_Scimitar_Smithy"
+            }
+          },
+          "location": "Ape Atoll",
+          "map": {
+            "x": 2759,
+            "y": 2774,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Rasolo the Wandering Merchant",
+          "url": {
+            "suffix": "/w/Rasolo_the_Wandering_Merchant"
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Rasolo",
+            "url": {
+              "suffix": "/w/Rasolo"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Rasolo the Wandering Merchant",
+            "url": {
+              "suffix": "/w/Rasolo_the_Wandering_Merchant"
+            }
+          },
+          "location": "South of Baxtorian Falls",
+          "map": {
+            "x": 2535,
+            "y": 3429,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Myths' Guild Weaponry",
+          "url": {
+            "suffix": "/w/Myths%27_Guild_Weaponry"
+          },
+          "serviceType": "Sword shop",
+          "serviceTypeKey": "sword_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "weapons",
+          "serviceCategoryLabel": "Weapons",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Diana",
+            "url": {
+              "suffix": "/w/Diana"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Myths' Guild Weaponry",
+            "url": {
+              "suffix": "/w/Myths%27_Guild_Weaponry"
+            }
+          },
+          "location": "2 nd  floor [ UK ] 3 rd  floor [ US ] of Myths' Guild",
+          "map": {
+            "x": 2464,
+            "y": 2847,
+            "mapId": 0,
+            "plane": 2
+          }
+        },
+        {
+          "name": "Magic Guild Store (Runes and Staves)",
+          "url": {
+            "suffix": "/w/Magic_Guild_Store_(Runes_and_Staves)"
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Wizard Akutha",
+            "url": {
+              "suffix": "/w/Wizard_Akutha"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Magic Guild Store (Runes and Staves)",
+            "url": {
+              "suffix": "/w/Magic_Guild_Store_(Runes_and_Staves)"
+            }
+          },
+          "location": "Wizards' Guild",
+          "map": {
+            "x": 2595,
+            "y": 3088,
+            "mapId": 0,
+            "plane": 1
+          }
+        },
+        {
+          "name": "Magic Guild Store (Mystic Robes)",
+          "url": {
+            "suffix": "/w/Magic_Guild_Store_(Mystic_Robes)"
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Wizard Sinina",
+            "url": {
+              "suffix": "/w/Wizard_Sinina"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Magic Guild Store (Mystic Robes)",
+            "url": {
+              "suffix": "/w/Magic_Guild_Store_(Mystic_Robes)"
+            }
+          },
+          "location": "Wizards' Guild",
+          "map": {
+            "x": 2595,
+            "y": 3089,
+            "mapId": 0,
+            "plane": 1
+          }
+        },
+        {
+          "name": "Aleck's Hunter Emporium",
+          "url": {
+            "suffix": "/w/Aleck%27s_Hunter_Emporium."
+          },
+          "serviceType": "Hunter shop",
+          "serviceTypeKey": "hunter_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "hunter",
+          "serviceCategoryLabel": "Hunter",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Aleck",
+            "url": {
+              "suffix": "/w/Aleck"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Aleck's Hunter Emporium.",
+            "url": {
+              "suffix": "/w/Aleck%27s_Hunter_Emporium."
+            }
+          },
+          "location": "Yanille",
+          "map": {
+            "x": 2567,
+            "y": 3082,
+            "mapId": 0,
+            "plane": 0
+          }
+        }
       ],
       "autoUnlocks": {
         "quests": [
@@ -3059,7 +6042,8 @@
             ],
             "regionRequirements": [
               "kandarin"
-            ]
+            ],
+            "name": "Kandarin Diary"
           },
           {
             "diary": "Western Provinces Diary",
@@ -3076,7 +6060,8 @@
             ],
             "regionRequirements": [
               "kandarin"
-            ]
+            ],
+            "name": "Western Provinces Diary"
           },
           {
             "diary": "Ardougne Diary",
@@ -3096,18 +6081,54 @@
             ],
             "regionRequirements": [
               "kandarin"
-            ]
+            ],
+            "name": "Ardougne Diary"
           }
         ],
         "combatAchievements": [],
         "slayerContent": [
-          "Ogres (40-90)",
-          "Black Demons (80-126)",
-          "Hellhounds (75-126)",
-          "Waterfiends (75-110)",
-          "Cave Kraken (80-126)",
-          "Mithril Dragons (3-126)",
-          "Smoke Devils (85-126)"
+          {
+            "name": "Ogres (40-90)",
+            "url": {
+              "suffix": "/w/Ogre"
+            }
+          },
+          {
+            "name": "Black Demons (80-126)",
+            "url": {
+              "suffix": "/w/Black_demon"
+            }
+          },
+          {
+            "name": "Hellhounds (75-126)",
+            "url": {
+              "suffix": "/w/Hellhound"
+            }
+          },
+          {
+            "name": "Waterfiends (75-110)",
+            "url": {
+              "suffix": "/w/Waterfiend"
+            }
+          },
+          {
+            "name": "Cave Kraken (80-126)",
+            "url": {
+              "suffix": "/w/Cave_kraken"
+            }
+          },
+          {
+            "name": "Mithril Dragons (3-126)",
+            "url": {
+              "suffix": "/w/Mithril_dragon"
+            }
+          },
+          {
+            "name": "Smoke Devils (85-126)",
+            "url": {
+              "suffix": "/w/Smoke_devil"
+            }
+          }
         ],
         "items": [],
         "mechanics": [
@@ -3117,16 +6138,32 @@
       "echoBoss": {
         "name": "Thermonuclear smoke devil (Echo)",
         "url": {
-          "suffix": "/w/Thermonuclear_smoke_devil_%28Echo%29"
+          "suffix": "/w/Thermonuclear_smoke_devil_(Echo)"
         },
         "baseBoss": {
           "name": "Thermonuclear Smoke Devil",
           "url": {
-            "suffix": "/w/Thermonuclear_Smoke_Devil"
+            "suffix": "/w/Thermonuclear_smoke_devil"
           }
         },
         "regionRequirement": "kandarin",
         "additionalRequirement": "Acquire the Kandarin echo orb from Thermonuclear Smoke Devil. The echo variant does not require an active Slayer task once the orb is obtained.",
+        "echoEquipment": [
+          {
+            "name": "Devil's element",
+            "url": {
+              "suffix": "/w/Devil%27s_element"
+            },
+            "note": "Drop rate 1/25"
+          },
+          {
+            "name": "Shadowflame quadrant",
+            "url": {
+              "suffix": "/w/Shadowflame_quadrant"
+            },
+            "note": "Drop rate 1/25"
+          }
+        ],
         "echoEquipmentSummary": [
           "Devil's element",
           "A four-pronged main-hand magic weapon"
@@ -3192,7 +6229,7 @@
             "Ballista limbs"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Ballista_limbs"
           ],
           "sourceNames": [
             "Tortured gorilla"
@@ -3209,7 +6246,7 @@
             "Ballista limbs"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Ballista_limbs"
           ],
           "sourceNames": [
             "Demonic gorilla"
@@ -3413,13 +6450,13 @@
             "Uncharged trident"
           ],
           "itemUrlSuffixes": [
-            "/w/Uncharged_trident"
+            "/w/Trident_of_the_seas"
           ],
           "sourceNames": [
             "Cave Kraken"
           ],
           "sourceUrlSuffixes": [
-            "/w/Cave_Kraken"
+            "/w/Cave_kraken"
           ],
           "regionRequirements": [
             "kandarin"
@@ -3434,7 +6471,7 @@
           ],
           "sourceNames": [
             "Nuclear smoke devil",
-            "Smoke devil"
+            "smoke devil"
           ],
           "sourceUrlSuffixes": [
             "/w/Nuclear_smoke_devil",
@@ -3455,7 +6492,7 @@
             "Thermonuclear Smoke Devil"
           ],
           "sourceUrlSuffixes": [
-            "/w/Thermonuclear_Smoke_Devil"
+            "/w/Thermonuclear_smoke_devil"
           ],
           "regionRequirements": [
             "kandarin"
@@ -3472,7 +6509,7 @@
             "Thermonuclear Smoke Devil"
           ],
           "sourceUrlSuffixes": [
-            "/w/Thermonuclear_Smoke_Devil"
+            "/w/Thermonuclear_smoke_devil"
           ],
           "regionRequirements": [
             "kandarin"
@@ -3489,7 +6526,7 @@
             "Thermonuclear Smoke Devil"
           ],
           "sourceUrlSuffixes": [
-            "/w/Thermonuclear_Smoke_Devil"
+            "/w/Thermonuclear_smoke_devil"
           ],
           "regionRequirements": [
             "kandarin"
@@ -3575,8 +6612,8 @@
             "Warped tortoise"
           ],
           "sourceUrlSuffixes": [
-            "/w/Warped_terrorbird",
-            "/w/Warped_tortoise"
+            "/w/Warped_Terrorbird",
+            "/w/Warped_Tortoise"
           ],
           "regionRequirements": [
             "kandarin"
@@ -3593,7 +6630,7 @@
             "Hellhounds"
           ],
           "sourceUrlSuffixes": [
-            "/w/Hellhounds"
+            "/w/Hellhound"
           ],
           "regionRequirements": [
             "kandarin"
@@ -3640,37 +6677,399 @@
         "Sophanem"
       ],
       "notableCombatActivities": [
-        "Bandits",
-        "Kalphite Queen",
-        "Pollnivneach Slayer Dungeon",
-        "Tombs of Amascut",
-        "The Leviathan"
+        {
+          "name": "Bandits",
+          "url": {
+            "suffix": "/w/Bandit_(Bandit_Camp)"
+          }
+        },
+        {
+          "name": "Kalphite Queen",
+          "url": {
+            "suffix": "/w/Kalphite_Queen"
+          }
+        },
+        {
+          "name": "Pollnivneach Slayer Dungeon",
+          "url": {
+            "suffix": "/w/Smoke_Dungeon"
+          }
+        },
+        {
+          "name": "Tombs of Amascut",
+          "url": {
+            "suffix": "/w/Tombs_of_Amascut"
+          }
+        },
+        {
+          "name": "The Leviathan",
+          "url": {
+            "suffix": "/w/The_Leviathan"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Agility Pyramid",
-        "Mage Training Arena",
-        "Giants' Foundry",
-        "Guardians of the Rift",
-        "Nardah",
-        "Elidinis statuette",
-        "Pollnivneach blackjacking",
-        "Pollnivneach house portal",
-        "Pollnivneach Rooftop Course",
-        "Pyramid Plunder",
-        "Fire Altar",
-        "Sandstone and granite mining",
-        "Sandstorm Machine",
-        "Sorceress' Garden",
-        "Zahur's Herblore Services",
-        "Tempoross"
+        {
+          "name": "Agility Pyramid",
+          "url": {
+            "suffix": "/w/Agility_Pyramid"
+          }
+        },
+        {
+          "name": "Mage Training Arena",
+          "url": {
+            "suffix": "/w/Mage_Training_Arena"
+          }
+        },
+        {
+          "name": "Giants' Foundry",
+          "url": {
+            "suffix": "/w/Giants%27_Foundry"
+          }
+        },
+        {
+          "name": "Guardians of the Rift",
+          "url": {
+            "suffix": "/w/Guardians_of_the_Rift"
+          }
+        },
+        {
+          "name": "Nardah",
+          "url": {
+            "suffix": "/w/Nardah"
+          }
+        },
+        {
+          "name": "Elidinis statuette",
+          "url": {
+            "suffix": "/w/Elidinis_Statuette"
+          }
+        },
+        {
+          "name": "Pollnivneach blackjacking",
+          "url": {
+            "suffix": "/w/Pollnivneach"
+          }
+        },
+        {
+          "name": "Pollnivneach house portal",
+          "url": {
+            "suffix": "/w/Portal_(Player-owned_house)"
+          }
+        },
+        {
+          "name": "Pollnivneach Rooftop Course",
+          "url": {
+            "suffix": "/w/Pollnivneach_Rooftop_Course"
+          }
+        },
+        {
+          "name": "Pyramid Plunder",
+          "url": {
+            "suffix": "/w/Pyramid_Plunder"
+          }
+        },
+        {
+          "name": "Fire Altar",
+          "url": {
+            "suffix": "/w/Fire_Altar"
+          }
+        },
+        {
+          "name": "Sandstone and granite mining",
+          "url": {
+            "suffix": "/w/Bandit_Camp_Quarry"
+          }
+        },
+        {
+          "name": "Sandstorm Machine",
+          "url": {
+            "suffix": "/w/Sandstorm"
+          }
+        },
+        {
+          "name": "Sorceress' Garden",
+          "url": {
+            "suffix": "/w/Sorceress%27s_Garden"
+          }
+        },
+        {
+          "name": "Zahur's Herblore Services",
+          "url": {
+            "suffix": "/w/Zahur"
+          }
+        },
+        {
+          "name": "Tempoross",
+          "url": {
+            "suffix": "/w/Tempoross"
+          }
+        }
       ],
-      "notableShopsServices": [],
+      "notableShopsServices": [
+        {
+          "name": "Blackjack seller",
+          "url": {
+            "suffix": "/w/Blackjack_seller"
+          },
+          "serviceType": "Blackjack seller",
+          "serviceTypeKey": "blackjack_seller",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "utility",
+          "serviceSkillTypeLabel": "Utility",
+          "serviceCategory": "thieving",
+          "serviceCategoryLabel": "Thieving",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "npc",
+          "owner": null,
+          "linkedShop": {
+            "name": "Blackjack",
+            "url": {
+              "suffix": "/w/Blackjack"
+            }
+          },
+          "canonicalService": {
+            "name": "Blackjack",
+            "url": {
+              "suffix": "/w/Blackjack"
+            }
+          },
+          "location": "Pollnivneach",
+          "map": {
+            "x": 3350,
+            "y": 2971,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Rewards Guardian",
+          "url": {
+            "suffix": "/w/Rewards_Guardian_(Mage_Training_Arena)"
+          },
+          "serviceType": "Magic rewards",
+          "serviceTypeKey": "magic_rewards",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": null,
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Rewards Guardian (Mage Training Arena)",
+            "url": {
+              "suffix": "/w/Rewards_Guardian_(Mage_Training_Arena)"
+            }
+          },
+          "location": "Mage Training Arena",
+          "map": {
+            "x": 3363,
+            "y": 3318,
+            "mapId": 0,
+            "plane": 1
+          }
+        },
+        {
+          "name": "Ali's Discount Wares",
+          "url": {
+            "suffix": "/w/Ali%27s_Discount_Wares."
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Ali Morrisane",
+            "url": {
+              "suffix": "/w/Ali_Morrisane"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Ali's Discount Wares.",
+            "url": {
+              "suffix": "/w/Ali%27s_Discount_Wares."
+            }
+          },
+          "location": "Al Kharid",
+          "map": {
+            "x": 3302,
+            "y": 3211,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Shantay Pass Shop",
+          "url": {
+            "suffix": "/w/Shantay_Pass_Shop"
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Shantay",
+            "url": {
+              "suffix": "/w/Shantay"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Shantay Pass Shop",
+            "url": {
+              "suffix": "/w/Shantay_Pass_Shop"
+            }
+          },
+          "location": "Shantay Pass",
+          "map": {
+            "x": 3304,
+            "y": 3123,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Nardah Hunter Shop",
+          "url": {
+            "suffix": "/w/Nardah_Hunter_Shop."
+          },
+          "serviceType": "Hunter shop",
+          "serviceTypeKey": "hunter_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "hunter",
+          "serviceCategoryLabel": "Hunter",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Artimeus",
+            "url": {
+              "suffix": "/w/Artimeus"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Nardah Hunter Shop.",
+            "url": {
+              "suffix": "/w/Nardah_Hunter_Shop."
+            }
+          },
+          "location": "Nardah",
+          "map": {
+            "x": 3441,
+            "y": 2902,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Gem Trader",
+          "url": {
+            "suffix": "/w/Gem_Trader."
+          },
+          "serviceType": "Gem shop",
+          "serviceTypeKey": "gem_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "crafting",
+          "serviceCategoryLabel": "Crafting",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Gem trader",
+            "url": {
+              "suffix": "/w/Gem_trader"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Gem Trader.",
+            "url": {
+              "suffix": "/w/Gem_Trader."
+            }
+          },
+          "location": "Al Kharid",
+          "map": {
+            "x": 3287,
+            "y": 3211,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Zahur's Herblore services in Nardah",
+          "url": {
+            "suffix": "/w/Zahur"
+          },
+          "serviceType": "Herblore service",
+          "serviceTypeKey": "herblore_service",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "herblore",
+          "serviceCategoryLabel": "Herblore",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": null,
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Zahur",
+            "url": {
+              "suffix": "/w/Zahur"
+            }
+          },
+          "location": "Nardah",
+          "map": {
+            "x": 3425,
+            "y": 2908,
+            "mapId": 0,
+            "plane": 0
+          }
+        }
+      ],
       "autoUnlocks": {
         "quests": [
           {
             "name": "Desert Treasure II",
             "url": {
-              "suffix": "/w/Desert_Treasure_II"
+              "suffix": "/w/Desert_Treasure_II_-_The_Fallen_Empire"
             },
             "includesPrerequisites": true,
             "regionRequirements": [
@@ -3722,7 +7121,35 @@
           "The Emir's Arena minigame is unavailable during the league, though the building remains accessible."
         ]
       },
-      "echoBoss": null,
+      "echoBoss": {
+        "name": "Kalphite Queen (Echo)",
+        "url": {
+          "suffix": "/w/Kalphite_Queen_(Echo)"
+        },
+        "baseBoss": {
+          "name": "Kalphite Queen",
+          "url": {
+            "suffix": "/w/Kalphite_Queen"
+          }
+        },
+        "regionRequirement": "desert",
+        "additionalRequirement": "Acquire the Desert echo orb from Kalphite Queen before entering the echo fight.",
+        "echoEquipment": [
+          {
+            "name": "Drygore blowpipe",
+            "url": {
+              "suffix": "/w/Drygore_blowpipe"
+            },
+            "note": "Drop rate 1/20"
+          }
+        ],
+        "echoEquipmentSummary": [
+          "Drygore blowpipe"
+        ],
+        "regionRequirements": [
+          "desert"
+        ]
+      },
       "notableDrops": [
         {
           "itemNames": [
@@ -3746,7 +7173,7 @@
             "All unique rewards"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Chest_(Tombs_of_Amascut)"
           ],
           "sourceNames": [
             "Tombs of Amascut"
@@ -3754,20 +7181,21 @@
           "sourceUrlSuffixes": [
             "/w/Tombs_of_Amascut"
           ],
-          "note": "Aggregate league-table label.",
           "regionRequirements": [
             "desert"
           ]
         },
         {
           "itemNames": [
-            "Pharaoh's sceptre"
+            "Pharaoh's sceptre",
+            "Pyramid Plunder#Sceptre"
           ],
           "itemUrlSuffixes": [
-            "/w/Pharaoh%27s_sceptre"
+            "/w/Pharaoh%27s_sceptre",
+            "/w/Pyramid_Plunder"
           ],
           "sourceNames": [
-            "Pyramid Plunder"
+            "Pyramid plunder"
           ],
           "sourceUrlSuffixes": [
             "/w/Pyramid_Plunder"
@@ -3863,10 +7291,12 @@
         },
         {
           "itemNames": [
-            "Venator ring"
+            "Venator ring",
+            "gold ring"
           ],
           "itemUrlSuffixes": [
-            "/w/Venator_ring"
+            "/w/Venator_ring",
+            "/w/Gold_ring"
           ],
           "sourceNames": [
             "The Leviathan"
@@ -3880,10 +7310,12 @@
         },
         {
           "itemNames": [
-            "Soulreaper axe pieces"
+            "Soulreaper axe",
+            "Desert Treasure II"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Soulreaper_axe",
+            "/w/Desert_Treasure_II_-_The_Fallen_Empire"
           ],
           "sourceNames": [
             "The Leviathan"
@@ -3891,7 +7323,6 @@
           "sourceUrlSuffixes": [
             "/w/The_Leviathan"
           ],
-          "note": "Aggregate piece set; league rule allows any DT2 boss to drop all pieces.",
           "regionRequirements": [
             "desert"
           ]
@@ -4087,30 +7518,359 @@
         "Mount Quidamortem"
       ],
       "notableCombatActivities": [
-        "Chambers of Xeric",
-        "Lizardman shamans",
-        "Mount Karuulm Slayer Dungeon",
-        "Sarachnis (Forthos Dungeon)",
-        "Catacombs of Kourend",
-        "Giants' Den",
-        "Yama",
-        "Hespori (Echo)"
+        {
+          "name": "Chambers of Xeric",
+          "url": {
+            "suffix": "/w/Chambers_of_Xeric"
+          }
+        },
+        {
+          "name": "Lizardman shamans",
+          "url": {
+            "suffix": "/w/Lizardman_shaman"
+          }
+        },
+        {
+          "name": "Mount Karuulm Slayer Dungeon",
+          "url": {
+            "suffix": "/w/Mount_Karuulm"
+          }
+        },
+        {
+          "name": "Sarachnis (Forthos Dungeon)",
+          "url": {
+            "suffix": "/w/Sarachnis"
+          }
+        },
+        {
+          "name": "Catacombs of Kourend",
+          "url": {
+            "suffix": "/w/Catacombs_of_Kourend"
+          }
+        },
+        {
+          "name": "Giants' Den",
+          "url": {
+            "suffix": "/w/Giants%27_Den"
+          }
+        },
+        {
+          "name": "Yama",
+          "url": {
+            "suffix": "/w/Yama"
+          }
+        },
+        {
+          "name": "Hespori (Echo)",
+          "url": {
+            "suffix": "/w/Hespori_(Echo)"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Farming Guild",
-        "Woodcutting Guild",
-        "Arceuus Library",
-        "Hosidius house portal",
-        "Tithe Farm",
-        "Lake Molch",
-        "Aerial Fishing",
-        "Wintertodt",
-        "Soul Altar",
-        "Blood Altar",
-        "Blast Mine",
-        "Hosidius patches"
+        {
+          "name": "Farming Guild",
+          "url": {
+            "suffix": "/w/Farming_Guild"
+          }
+        },
+        {
+          "name": "Woodcutting Guild",
+          "url": {
+            "suffix": "/w/Woodcutting_Guild"
+          }
+        },
+        {
+          "name": "Arceuus Library",
+          "url": {
+            "suffix": "/w/Arceuus_Library"
+          }
+        },
+        {
+          "name": "Hosidius house portal",
+          "url": {
+            "suffix": "/w/Portal_(Player-owned_house)"
+          }
+        },
+        {
+          "name": "Tithe Farm",
+          "url": {
+            "suffix": "/w/Tithe_Farm"
+          }
+        },
+        {
+          "name": "Lake Molch",
+          "url": {
+            "suffix": "/w/Lake_Molch"
+          }
+        },
+        {
+          "name": "Aerial Fishing",
+          "url": {
+            "suffix": "/w/Aerial_fishing"
+          }
+        },
+        {
+          "name": "Wintertodt",
+          "url": {
+            "suffix": "/w/Wintertodt"
+          }
+        },
+        {
+          "name": "Soul Altar",
+          "url": {
+            "suffix": "/w/Soul_Altar"
+          }
+        },
+        {
+          "name": "Blood Altar",
+          "url": {
+            "suffix": "/w/Blood_Altar"
+          }
+        },
+        {
+          "name": "Blast Mine",
+          "url": {
+            "suffix": "/w/Blast_mine"
+          }
+        },
+        {
+          "name": "Hosidius patches",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        }
       ],
-      "notableShopsServices": [],
+      "notableShopsServices": [
+        {
+          "name": "Kourend Castle Gem Stall",
+          "url": {
+            "suffix": "/w/Kourend_Castle_Gem_Stall."
+          },
+          "serviceType": "Gem shop",
+          "serviceTypeKey": "gem_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "production",
+          "serviceSkillTypeLabel": "Production",
+          "serviceCategory": "crafting",
+          "serviceCategoryLabel": "Crafting",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Gem merchant",
+            "url": {
+              "suffix": "/w/Gem_merchant_(Kourend_Castle)"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Kourend Castle Gem Stall.",
+            "url": {
+              "suffix": "/w/Kourend_Castle_Gem_Stall."
+            }
+          },
+          "location": "Kourend Castle",
+          "map": {
+            "x": 1634,
+            "y": 3684,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Thyria's Wares",
+          "url": {
+            "suffix": "/w/Thyria%27s_Wares"
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Thyria",
+            "url": {
+              "suffix": "/w/Thyria"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Thyria's Wares",
+            "url": {
+              "suffix": "/w/Thyria%27s_Wares"
+            }
+          },
+          "location": "Arceuus",
+          "map": {
+            "x": 1722,
+            "y": 3743,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Toothy's Pickaxes",
+          "url": {
+            "suffix": "/w/Toothy%27s_Pickaxes"
+          },
+          "serviceType": "Mining shop",
+          "serviceTypeKey": "mining_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "mining",
+          "serviceCategoryLabel": "Mining",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Toothy",
+            "url": {
+              "suffix": "/w/Toothy"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Toothy's Pickaxes",
+            "url": {
+              "suffix": "/w/Toothy%27s_Pickaxes"
+            }
+          },
+          "location": "Lovakengj",
+          "map": {
+            "x": 1454,
+            "y": 3858,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Frankie's Fishing Emporium",
+          "url": {
+            "suffix": "/w/Frankie%27s_Fishing_Emporium"
+          },
+          "serviceType": "Food",
+          "serviceTypeKey": "food",
+          "serviceSection": "other",
+          "serviceSectionLabel": "Other",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "food",
+          "serviceCategoryLabel": "Food",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Frankie",
+            "url": {
+              "suffix": "/w/Frankie"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Frankie's Fishing Emporium",
+            "url": {
+              "suffix": "/w/Frankie%27s_Fishing_Emporium"
+            }
+          },
+          "location": "Port Piscarilius",
+          "map": {
+            "x": 1831,
+            "y": 3720,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Daryl's Ranging Surplus",
+          "url": {
+            "suffix": "/w/Daryl%27s_Ranging_Surplus"
+          },
+          "serviceType": "Archery shop",
+          "serviceTypeKey": "archery_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "ranged",
+          "serviceCategoryLabel": "Ranged",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Daryl",
+            "url": {
+              "suffix": "/w/Daryl"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Daryl's Ranging Surplus",
+            "url": {
+              "suffix": "/w/Daryl%27s_Ranging_Surplus"
+            }
+          },
+          "location": "Shayzien",
+          "map": {
+            "x": 1540,
+            "y": 3556,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Little Shop of Horace",
+          "url": {
+            "suffix": "/w/Little_Shop_of_Horace"
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Horace",
+            "url": {
+              "suffix": "/w/Horace"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Little Shop of Horace",
+            "url": {
+              "suffix": "/w/Little_Shop_of_Horace"
+            }
+          },
+          "location": "Hosidius",
+          "map": {
+            "x": 1773,
+            "y": 3588,
+            "mapId": 0,
+            "plane": 0
+          }
+        }
+      ],
       "autoUnlocks": {
         "quests": [
           {
@@ -4128,14 +7888,15 @@
           {
             "diary": "Kourend and Kebos Diary",
             "url": {
-              "suffix": "/w/Kourend_and_Kebos_Diary"
+              "suffix": "/w/Kourend_%26_Kebos_Diary"
             },
             "tasks": [
               "Cast Monster Examine on a mountain troll south of Mount Quidamortem"
             ],
             "regionRequirements": [
               "kourend"
-            ]
+            ],
+            "name": "Kourend and Kebos Diary"
           }
         ],
         "combatAchievements": [
@@ -4169,7 +7930,7 @@
           {
             "name": "Chambers of Xeric: CM Master",
             "url": {
-              "suffix": "/w/Chambers_of_Xeric%3A_CM_Master"
+              "suffix": "/w/Chambers_of_Xeric:_CM_Master"
             },
             "regionRequirements": [
               "kourend"
@@ -4178,7 +7939,7 @@
           {
             "name": "Chambers of Xeric: CM GrandMaster",
             "url": {
-              "suffix": "/w/Chambers_of_Xeric%3A_CM_GrandMaster"
+              "suffix": "/w/Chambers_of_Xeric:_CM_GrandMaster"
             },
             "regionRequirements": [
               "kourend"
@@ -4204,7 +7965,12 @@
           }
         ],
         "slayerContent": [
-          "Konar assigns tasks based on the areas the player has unlocked."
+          {
+            "name": "Konar assigns tasks based on the areas the player has unlocked.",
+            "url": {
+              "suffix": "/w/Konar_quo_Maten"
+            }
+          }
         ],
         "items": [],
         "mechanics": [
@@ -4215,7 +7981,7 @@
       "echoBoss": {
         "name": "Hespori (Echo)",
         "url": {
-          "suffix": "/w/Hespori_%28Echo%29"
+          "suffix": "/w/Hespori_(Echo)"
         },
         "baseBoss": {
           "name": "Hespori",
@@ -4225,8 +7991,17 @@
         },
         "regionRequirement": "kourend",
         "additionalRequirement": "Acquire the Kourend echo orb from Hespori before entering the echo fight.",
+        "echoEquipment": [
+          {
+            "name": "Nature's recurve",
+            "url": {
+              "suffix": "/w/Nature%27s_recurve"
+            },
+            "note": "Drop rate 1/15"
+          }
+        ],
         "echoEquipmentSummary": [
-          "A shortbow that restores both Prayer and Hitpoints"
+          "A shortbow that restores Hitpoints and Prayer points"
         ],
         "regionRequirements": [
           "kourend"
@@ -4238,7 +8013,7 @@
             "Unique reward"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Ancient_chest"
           ],
           "sourceNames": [
             "Chambers of Xeric"
@@ -4253,7 +8028,7 @@
         {
           "itemNames": [
             "Warm gloves",
-            "Bruma torch"
+            "bruma torch"
           ],
           "itemUrlSuffixes": [
             "/w/Warm_gloves",
@@ -4274,7 +8049,7 @@
             "Pyromancer outfit"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Pyromancer_outfit"
           ],
           "sourceNames": [
             "Wintertodt"
@@ -4291,7 +8066,7 @@
             "Tome of fire (empty)"
           ],
           "itemUrlSuffixes": [
-            "/w/Tome_of_fire_%28empty%29"
+            "/w/Tome_of_fire"
           ],
           "sourceNames": [
             "Wintertodt"
@@ -4340,11 +8115,13 @@
         {
           "itemNames": [
             "Dragon sword",
-            "Dragon harpoon"
+            "dragon harpoon",
+            "Slayer task"
           ],
           "itemUrlSuffixes": [
             "/w/Dragon_sword",
-            "/w/Dragon_harpoon"
+            "/w/Dragon_harpoon",
+            "/w/Slayer_task"
           ],
           "sourceNames": [
             "Wyrm"
@@ -4397,8 +8174,8 @@
         {
           "itemNames": [
             "Hydra's fang",
-            "Hydra's heart",
-            "Hydra's eye"
+            "heart",
+            "eye"
           ],
           "itemUrlSuffixes": [
             "/w/Hydra%27s_fang",
@@ -4418,13 +8195,15 @@
         {
           "itemNames": [
             "Hydra's fang",
-            "Hydra's heart",
-            "Hydra's eye"
+            "heart",
+            "eye",
+            "Slayer task"
           ],
           "itemUrlSuffixes": [
             "/w/Hydra%27s_fang",
             "/w/Hydra%27s_heart",
-            "/w/Hydra%27s_eye"
+            "/w/Hydra%27s_eye",
+            "/w/Slayer_task"
           ],
           "sourceNames": [
             "Hydra"
@@ -4524,11 +8303,13 @@
         {
           "itemNames": [
             "Drake's claw",
-            "Drake's tooth"
+            "tooth",
+            "Slayer task"
           ],
           "itemUrlSuffixes": [
             "/w/Drake%27s_claw",
-            "/w/Drake%27s_tooth"
+            "/w/Drake%27s_tooth",
+            "/w/Slayer_task"
           ],
           "sourceNames": [
             "Drake"
@@ -4565,7 +8346,7 @@
             "/w/Draconic_visage"
           ],
           "sourceNames": [
-            "Dragons in the Catacombs of Kourend"
+            "Catacombs of Kourend"
           ],
           "sourceUrlSuffixes": [
             "/w/Catacombs_of_Kourend"
@@ -4630,7 +8411,7 @@
             "Dusk Mystic"
           ],
           "itemUrlSuffixes": [
-            "/w/Dusk_Mystic"
+            "/w/Mystic_robes"
           ],
           "sourceNames": [
             "Brimstone chest"
@@ -4738,7 +8519,7 @@
             "Aerial fishing"
           ],
           "sourceUrlSuffixes": [
-            "/w/Aerial_Fishing"
+            "/w/Aerial_fishing"
           ],
           "regionRequirements": [
             "kourend"
@@ -4749,7 +8530,7 @@
             "Oathplate armour"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Oathplate_armour"
           ],
           "sourceNames": [
             "Yama"
@@ -4819,37 +8600,268 @@
         "Harmony Island"
       ],
       "notableCombatActivities": [
-        "Barrows",
-        "Cave horrors",
-        "Fenkenstrain's experiments",
-        "Grotesque Guardians",
-        "Haunted Mine",
-        "Morytania Spider Cave",
-        "The Nightmare of Ashihama",
-        "Lair of Tarn Razorlor",
-        "Shades of Mort'ton",
-        "Slayer Tower",
-        "Theatre of Blood",
-        "Vyrewatch Sentinels",
-        "Araxxor",
-        "Phosani's Nightmare"
+        {
+          "name": "Barrows",
+          "url": {
+            "suffix": "/w/Barrows"
+          }
+        },
+        {
+          "name": "Cave horrors",
+          "url": {
+            "suffix": "/w/Cave_horror"
+          }
+        },
+        {
+          "name": "Fenkenstrain's experiments",
+          "url": {
+            "suffix": "/w/Experiment"
+          }
+        },
+        {
+          "name": "Grotesque Guardians",
+          "url": {
+            "suffix": "/w/Grotesque_Guardians"
+          }
+        },
+        {
+          "name": "Haunted Mine",
+          "url": {
+            "suffix": "/w/Haunted_Mine"
+          }
+        },
+        {
+          "name": "Morytania Spider Cave",
+          "url": {
+            "suffix": "/w/Morytania_Spider_Cave"
+          }
+        },
+        {
+          "name": "The Nightmare of Ashihama",
+          "url": {
+            "suffix": "/w/The_Nightmare"
+          }
+        },
+        {
+          "name": "Lair of Tarn Razorlor",
+          "url": {
+            "suffix": "/w/Lair_of_Tarn_Razorlor"
+          }
+        },
+        {
+          "name": "Shades of Mort'ton",
+          "url": {
+            "suffix": "/w/Shades_of_Mort%27ton"
+          }
+        },
+        {
+          "name": "Slayer Tower",
+          "url": {
+            "suffix": "/w/Slayer_Tower"
+          }
+        },
+        {
+          "name": "Theatre of Blood",
+          "url": {
+            "suffix": "/w/Theatre_of_Blood"
+          }
+        },
+        {
+          "name": "Vyrewatch Sentinels",
+          "url": {
+            "suffix": "/w/Vyrewatch_Sentinel"
+          }
+        },
+        {
+          "name": "Araxxor",
+          "url": {
+            "suffix": "/w/Araxxor"
+          }
+        },
+        {
+          "name": "Phosani's Nightmare",
+          "url": {
+            "suffix": "/w/Phosani%27s_Nightmare"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Canifis Rooftop Course",
-        "Daeyalt Essence mining",
-        "Ectofuntus prayer training",
-        "Hallowed Sepulchre",
-        "Harmony Island herb patch",
-        "Port Phasmatys allotment patch",
-        "Temple Trekking",
-        "True Blood Altar",
-        "Vyrelord pickpocketing",
-        "Werewolf Agility Course"
+        {
+          "name": "Canifis Rooftop Course",
+          "url": {
+            "suffix": "/w/Canifis_Rooftop_Course"
+          }
+        },
+        {
+          "name": "Daeyalt Essence mining",
+          "url": {
+            "suffix": "/w/Daeyalt_essence"
+          }
+        },
+        {
+          "name": "Ectofuntus prayer training",
+          "url": {
+            "suffix": "/w/Ectofuntus"
+          }
+        },
+        {
+          "name": "Hallowed Sepulchre",
+          "url": {
+            "suffix": "/w/Hallowed_Sepulchre"
+          }
+        },
+        {
+          "name": "Harmony Island herb patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Port Phasmatys allotment patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Temple Trekking",
+          "url": {
+            "suffix": "/w/Temple_Trekking"
+          }
+        },
+        {
+          "name": "True Blood Altar",
+          "url": {
+            "suffix": "/w/Blood_Altar"
+          }
+        },
+        {
+          "name": "Vyre pickpocketing",
+          "url": {
+            "suffix": "/w/Vyre"
+          }
+        },
+        {
+          "name": "Werewolf Agility Course",
+          "url": {
+            "suffix": "/w/Werewolf_Agility_Course"
+          }
+        }
       ],
       "notableShopsServices": [
-        "Ak-Haranu's Exotic Shop",
-        "Canifis General Store",
-        "Smithing Smith's Shop"
+        {
+          "name": "Ak-Haranu's Exotic Shop",
+          "url": {
+            "suffix": "/w/Ak-Haranu%27s_Exotic_Shop."
+          },
+          "serviceType": "Bolt racks",
+          "serviceTypeKey": "bolt_racks",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "ranged",
+          "serviceCategoryLabel": "Ranged",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Ak-Haranu",
+            "url": {
+              "suffix": "/w/Ak-Haranu"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Ak-Haranu's Exotic Shop.",
+            "url": {
+              "suffix": "/w/Ak-Haranu%27s_Exotic_Shop."
+            }
+          },
+          "location": "Port Phasmatys docks",
+          "map": {
+            "x": 3691,
+            "y": 3496,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Canifis General Store, which will sell blood talismans during the league",
+          "url": {
+            "suffix": "/w/General_Store_(Canifis)"
+          },
+          "serviceType": "General store",
+          "serviceTypeKey": "general_store",
+          "serviceSection": "general_store",
+          "serviceSectionLabel": "General store",
+          "serviceSkillType": null,
+          "serviceSkillTypeLabel": null,
+          "serviceCategory": "general_store",
+          "serviceCategoryLabel": "General store",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Fidelio",
+            "url": {
+              "suffix": "/w/Fidelio"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "General Store (Canifis)",
+            "url": {
+              "suffix": "/w/General_Store_(Canifis)"
+            }
+          },
+          "location": "Canifis",
+          "map": {
+            "x": 3477,
+            "y": 3496,
+            "mapId": 0,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Smithing Smith's Shop",
+          "url": {
+            "suffix": "/w/Smithing_Smith%27s_Shop."
+          },
+          "serviceType": "Sword shop",
+          "serviceTypeKey": "sword_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "weapons",
+          "serviceCategoryLabel": "Weapons",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Smith",
+            "url": {
+              "suffix": "/w/Smith"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Smithing Smith's Shop.",
+            "url": {
+              "suffix": "/w/Smithing_Smith%27s_Shop."
+            }
+          },
+          "location": "Mos Le'Harmless",
+          "map": {
+            "x": 3689,
+            "y": 2954,
+            "mapId": 0,
+            "plane": 0
+          }
+        }
       ],
       "autoUnlocks": {
         "quests": [
@@ -4908,7 +8920,8 @@
             ],
             "regionRequirements": [
               "morytania"
-            ]
+            ],
+            "name": "Morytania Diary"
           }
         ],
         "combatAchievements": [
@@ -4942,7 +8955,7 @@
           {
             "name": "Theatre of Blood: HM Grandmaster",
             "url": {
-              "suffix": "/w/Theatre_of_Blood%3A_HM_Grandmaster"
+              "suffix": "/w/Theatre_of_Blood:_HM_Grandmaster"
             },
             "regionRequirements": [
               "morytania"
@@ -4983,14 +8996,44 @@
           "In Theatre of Blood: Hard Mode, if one player rolls a unique, all party members receive a unique item."
         ]
       },
-      "echoBoss": null,
+      "echoBoss": {
+        "name": "Grotesque Guardians (Echo)",
+        "url": {
+          "suffix": "/w/Grotesque_Guardians_(Echo)"
+        },
+        "baseBoss": {
+          "name": "Grotesque Guardians",
+          "url": {
+            "suffix": "/w/Grotesque_Guardians"
+          }
+        },
+        "regionRequirement": "morytania",
+        "additionalRequirement": "Acquire the Morytania echo orb from the Grotesque Guardians before entering the echo fight.",
+        "echoEquipment": [
+          {
+            "name": "Lithic sceptre",
+            "url": {
+              "suffix": "/w/Lithic_sceptre"
+            },
+            "note": "Drop rate 1/25"
+          }
+        ],
+        "echoEquipmentSummary": [
+          "A powered staff charged with earth and body runes"
+        ],
+        "regionRequirements": [
+          "morytania"
+        ]
+      },
       "notableDrops": [
         {
           "itemNames": [
-            "Barrows armour pieces"
+            "Barrows armour pieces",
+            "Chest"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Barrows",
+            "/w/Chest_(Barrows)"
           ],
           "sourceNames": [
             "Barrows"
@@ -5075,7 +9118,7 @@
             "Ring of endurance (uncharged)"
           ],
           "itemUrlSuffixes": [
-            "/w/Ring_of_endurance_%28uncharged%29"
+            "/w/Ring_of_endurance"
           ],
           "sourceNames": [
             "Grand Hallowed Coffin"
@@ -5092,7 +9135,7 @@
             "Unique reward"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Monumental_chest"
           ],
           "sourceNames": [
             "Theatre of Blood"
@@ -5109,7 +9152,7 @@
             "Unique reward"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Monumental_chest"
           ],
           "sourceNames": [
             "Theatre of Blood/Hard Mode"
@@ -5143,7 +9186,7 @@
             "Inquisitor's armour"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Inquisitor%27s_armour"
           ],
           "sourceNames": [
             "The Nightmare"
@@ -5177,7 +9220,7 @@
             "Nightmare staff orbs"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Nightmare_staff"
           ],
           "sourceNames": [
             "The Nightmare"
@@ -5217,7 +9260,7 @@
             "Vyrewatch sentinel"
           ],
           "sourceUrlSuffixes": [
-            "/w/Vyrewatch_sentinel"
+            "/w/Vyrewatch_Sentinel"
           ],
           "regionRequirements": [
             "morytania"
@@ -5262,7 +9305,7 @@
             "Inquisitor's armour"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Inquisitor%27s_armour"
           ],
           "sourceNames": [
             "Phosani's Nightmare"
@@ -5296,7 +9339,7 @@
             "Nightmare staff orbs"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Nightmare_staff"
           ],
           "sourceNames": [
             "Phosani's Nightmare"
@@ -5313,13 +9356,13 @@
             "Zealot's robes"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Zealot%27s_robes"
           ],
           "sourceNames": [
             "Shades of Mort'ton"
           ],
           "sourceUrlSuffixes": [
-            "/w/Shades_of_Mort%27ton"
+            "/w/Shades_of_Mort%27ton_(minigame)"
           ],
           "regionRequirements": [
             "morytania"
@@ -5327,16 +9370,18 @@
         },
         {
           "itemNames": [
-            "Runescroll of swampbark"
+            "Runescroll of swampbark",
+            "Gold Chest (brown)"
           ],
           "itemUrlSuffixes": [
-            "/w/Runescroll_of_swampbark"
+            "/w/Runescroll_of_swampbark",
+            "/w/Gold_Chest_(brown)"
           ],
           "sourceNames": [
             "Shades of Mort'ton"
           ],
           "sourceUrlSuffixes": [
-            "/w/Shades_of_Mort%27ton"
+            "/w/Shades_of_Mort%27ton_(minigame)"
           ],
           "regionRequirements": [
             "morytania"
@@ -5353,7 +9398,7 @@
             "Shades of Mort'ton"
           ],
           "sourceUrlSuffixes": [
-            "/w/Shades_of_Mort%27ton"
+            "/w/Shades_of_Mort%27ton_(minigame)"
           ],
           "regionRequirements": [
             "morytania"
@@ -5381,7 +9426,7 @@
             "Noxious halberd pieces"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Noxious_halberd"
           ],
           "sourceNames": [
             "Araxxor"
@@ -5395,10 +9440,12 @@
         },
         {
           "itemNames": [
-            "Aranea boots"
+            "Aranea boots",
+            "Slayer task"
           ],
           "itemUrlSuffixes": [
-            "/w/Aranea_boots"
+            "/w/Aranea_boots",
+            "/w/Slayer_task"
           ],
           "sourceNames": [
             "Araxyte"
@@ -5474,31 +9521,262 @@
         "Zul-Andra"
       ],
       "notableCombatActivities": [
-        "A 'Rabbit'",
-        "Iorwerth Dungeon",
-        "The Gauntlet",
-        "The Corrupted Gauntlet",
-        "Zulrah",
-        "Zalcano"
+        {
+          "name": "A 'Rabbit'",
+          "url": {
+            "suffix": "/w/Rabbit_(Prifddinas)"
+          }
+        },
+        {
+          "name": "Iorwerth Dungeon",
+          "url": {
+            "suffix": "/w/Iorwerth_Dungeon"
+          }
+        },
+        {
+          "name": "The Gauntlet",
+          "url": {
+            "suffix": "/w/The_Gauntlet"
+          }
+        },
+        {
+          "name": "The Corrupted Gauntlet",
+          "url": {
+            "suffix": "/w/The_Gauntlet#Corrupted_Gauntlet"
+          }
+        },
+        {
+          "name": "Zulrah",
+          "url": {
+            "suffix": "/w/Zulrah"
+          }
+        },
+        {
+          "name": "Zalcano",
+          "url": {
+            "suffix": "/w/Zalcano"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Elven Crystal Chest",
-        "Death Altar",
-        "Gwenith Hunter area",
-        "Lletya fruit tree patch",
-        "Pickpocketing elves",
-        "Prifddinas allotment patch",
-        "Prifddinas Agility Course",
-        "Crystal implings",
-        "Prifddinas house portal",
-        "Prifddinas teak and mahogany trees",
-        "Sacred eel fishing"
+        {
+          "name": "Elven Crystal Chest",
+          "url": {
+            "suffix": "/w/Elven_Crystal_Chest"
+          }
+        },
+        {
+          "name": "Death Altar",
+          "url": {
+            "suffix": "/w/Death_Altar"
+          }
+        },
+        {
+          "name": "Gwenith Hunter area",
+          "url": {
+            "suffix": "/w/Gwenith_Hunter_area"
+          }
+        },
+        {
+          "name": "Lletya fruit tree patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Pickpocketing elves",
+          "url": {
+            "suffix": "/w/Elf_(Thieving)"
+          }
+        },
+        {
+          "name": "Prifddinas allotment patch",
+          "url": {
+            "suffix": "/w/Farming/Patch_locations"
+          }
+        },
+        {
+          "name": "Prifddinas Agility Course",
+          "url": {
+            "suffix": "/w/Prifddinas_Agility_Course"
+          }
+        },
+        {
+          "name": "Crystal implings",
+          "url": {
+            "suffix": "/w/Crystal_impling"
+          }
+        },
+        {
+          "name": "Prifddinas house portal",
+          "url": {
+            "suffix": "/w/Portal_(Player-owned_house)"
+          }
+        },
+        {
+          "name": "Prifddinas teak and mahogany trees",
+          "url": null
+        },
+        {
+          "name": "Sacred eel fishing",
+          "url": {
+            "suffix": "/w/Sacred_eel"
+          }
+        }
       ],
       "notableShopsServices": [
-        "Sian's Ranged Weaponry",
-        "Iorwerth's Arms",
-        "Amlodd's Magical Supplies",
-        "Gwyn's Mining Emporium"
+        {
+          "name": "Sian's Ranged Weaponry",
+          "url": {
+            "suffix": "/w/Sian%27s_Ranged_Weaponry"
+          },
+          "serviceType": "Archery shop",
+          "serviceTypeKey": "archery_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "ranged",
+          "serviceCategoryLabel": "Ranged",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Sian",
+            "url": {
+              "suffix": "/w/Sian"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Sian's Ranged Weaponry",
+            "url": {
+              "suffix": "/w/Sian%27s_Ranged_Weaponry"
+            }
+          },
+          "location": "Prifddinas",
+          "map": {
+            "x": 3306,
+            "y": 6074,
+            "mapId": 29,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Iorwerth's Arms",
+          "url": {
+            "suffix": "/w/Iorwerth%27s_Arms"
+          },
+          "serviceType": "Sword shop",
+          "serviceTypeKey": "sword_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "weapons",
+          "serviceCategoryLabel": "Weapons",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Celyn",
+            "url": {
+              "suffix": "/w/Celyn"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Iorwerth's Arms",
+            "url": {
+              "suffix": "/w/Iorwerth%27s_Arms"
+            }
+          },
+          "location": "Prifddinas",
+          "map": {
+            "x": 3259,
+            "y": 6059,
+            "mapId": 29,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Amlodd's Magical Supplies",
+          "url": {
+            "suffix": "/w/Amlodd%27s_Magical_Supplies"
+          },
+          "serviceType": "Magic shop",
+          "serviceTypeKey": "magic_shop",
+          "serviceSection": "combat",
+          "serviceSectionLabel": "Combat",
+          "serviceSkillType": "combat",
+          "serviceSkillTypeLabel": "Combat",
+          "serviceCategory": "magic",
+          "serviceCategoryLabel": "Magic",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Efa",
+            "url": {
+              "suffix": "/w/Efa"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Amlodd's Magical Supplies",
+            "url": {
+              "suffix": "/w/Amlodd%27s_Magical_Supplies"
+            }
+          },
+          "location": "Prifddinas",
+          "map": {
+            "x": 3222,
+            "y": 6115,
+            "mapId": 29,
+            "plane": 0
+          }
+        },
+        {
+          "name": "Gwyn's Mining Emporium",
+          "url": {
+            "suffix": "/w/Gwyn%27s_Mining_Emporium"
+          },
+          "serviceType": "Mining shop",
+          "serviceTypeKey": "mining_shop",
+          "serviceSection": "skilling",
+          "serviceSectionLabel": "Skilling",
+          "serviceSkillType": "gathering",
+          "serviceSkillTypeLabel": "Gathering",
+          "serviceCategory": "mining",
+          "serviceCategoryLabel": "Mining",
+          "serviceAdditionalCategories": [],
+          "needsManualReview": false,
+          "reviewReason": null,
+          "pageKind": "service",
+          "owner": {
+            "name": "Gwyn",
+            "url": {
+              "suffix": "/w/Gwyn"
+            }
+          },
+          "linkedShop": null,
+          "canonicalService": {
+            "name": "Gwyn's Mining Emporium",
+            "url": {
+              "suffix": "/w/Gwyn%27s_Mining_Emporium"
+            }
+          },
+          "location": "Prifddinas",
+          "map": {
+            "x": 3290,
+            "y": 6044,
+            "mapId": 29,
+            "plane": 0
+          }
+        }
       ],
       "autoUnlocks": {
         "quests": [
@@ -5516,12 +9794,15 @@
         "achievementDiaryTasks": [
           {
             "diary": "Tirannwn",
-            "url": null,
+            "url": {
+              "suffix": "/w/Tirannwn"
+            },
             "tasks": [],
             "note": "No achievement diary tasks are auto-completed for Tirannwn.",
             "regionRequirements": [
               "tirannwn"
-            ]
+            ],
+            "name": "Tirannwn"
           }
         ],
         "combatAchievements": [
@@ -5539,7 +9820,35 @@
         "items": [],
         "mechanics": []
       },
-      "echoBoss": null,
+      "echoBoss": {
+        "name": "Corrupted Hunllef (Echo)",
+        "url": {
+          "suffix": "/w/Corrupted_Hunllef_(Echo)"
+        },
+        "baseBoss": {
+          "name": "Corrupted Hunllef",
+          "url": {
+            "suffix": "/w/Corrupted_Hunllef"
+          }
+        },
+        "regionRequirement": "tirannwn",
+        "additionalRequirement": "Acquire the Tirannwn echo orb from the Corrupted Hunllef before entering the echo fight.",
+        "echoEquipment": [
+          {
+            "name": "Crystal blessing",
+            "url": {
+              "suffix": "/w/Crystal_blessing"
+            },
+            "note": "Drop rate 1/15"
+          }
+        ],
+        "echoEquipmentSummary": [
+          "Crystal blessing"
+        ],
+        "regionRequirements": [
+          "tirannwn"
+        ]
+      },
       "notableDrops": [
         {
           "itemNames": [
@@ -5607,7 +9916,7 @@
             "The Corrupted Gauntlet"
           ],
           "sourceUrlSuffixes": [
-            "/w/The_Corrupted_Gauntlet"
+            "/w/The_Gauntlet#Corrupted_Gauntlet"
           ],
           "regionRequirements": [
             "tirannwn"
@@ -5624,7 +9933,7 @@
             "The Corrupted Gauntlet"
           ],
           "sourceUrlSuffixes": [
-            "/w/The_Corrupted_Gauntlet"
+            "/w/The_Gauntlet#Corrupted_Gauntlet"
           ],
           "regionRequirements": [
             "tirannwn"
@@ -5667,7 +9976,7 @@
         {
           "itemNames": [
             "Tanzanite fang",
-            "Serpentine visage"
+            "serpentine visage"
           ],
           "itemUrlSuffixes": [
             "/w/Tanzanite_fang",
@@ -5688,7 +9997,7 @@
             "Uncharged toxic trident"
           ],
           "itemUrlSuffixes": [
-            "/w/Uncharged_toxic_trident"
+            "/w/Trident_of_the_swamp"
           ],
           "sourceNames": [
             "Zulrah"
@@ -5739,13 +10048,13 @@
             "Dragonstone armour"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Dragonstone_armour"
           ],
           "sourceNames": [
             "Enhanced crystal chest"
           ],
           "sourceUrlSuffixes": [
-            "/w/Enhanced_crystal_chest"
+            "/w/Elven_Crystal_Chest"
           ],
           "regionRequirements": [
             "tirannwn"
@@ -5764,8 +10073,8 @@
             "Iorwerth Warrior"
           ],
           "sourceUrlSuffixes": [
-            null,
-            null,
+            "/w/Elf_(Thieving)",
+            "/w/Guard_(Prifddinas)",
             "/w/Iorwerth_Warrior"
           ],
           "regionRequirements": [
@@ -5802,7 +10111,7 @@
           ],
           "sourceUrlSuffixes": [
             "/w/Kurask",
-            "/w/King_Kurask"
+            "/w/King_kurask"
           ],
           "regionRequirements": [
             "tirannwn"
@@ -5821,7 +10130,7 @@
           ],
           "sourceUrlSuffixes": [
             "/w/Kurask",
-            "/w/King_Kurask"
+            "/w/King_kurask"
           ],
           "regionRequirements": [
             "tirannwn"
@@ -5857,35 +10166,170 @@
         "Pirates' Hideout"
       ],
       "notableCombatActivities": [
-        "Callisto",
-        "Artio",
-        "Chaos Elemental",
-        "Chaos Fanatic",
-        "Corporeal Beast",
-        "Crazy Archaeologist",
-        "King Black Dragon",
-        "King Black Dragon (Echo)",
-        "Lava dragons",
-        "Mage Arena",
-        "Mage Arena II",
-        "Scorpia",
-        "Venenatis",
-        "Spindel",
-        "Vet'ion",
-        "Calvar'ion",
-        "Wilderness God Wars Dungeon",
-        "Wilderness Slayer Cave"
+        {
+          "name": "Callisto",
+          "url": {
+            "suffix": "/w/Callisto"
+          }
+        },
+        {
+          "name": "Artio",
+          "url": {
+            "suffix": "/w/Artio"
+          }
+        },
+        {
+          "name": "Chaos Elemental",
+          "url": {
+            "suffix": "/w/Chaos_Elemental"
+          }
+        },
+        {
+          "name": "Chaos Fanatic",
+          "url": {
+            "suffix": "/w/Chaos_Fanatic"
+          }
+        },
+        {
+          "name": "Corporeal Beast",
+          "url": {
+            "suffix": "/w/Corporeal_Beast"
+          }
+        },
+        {
+          "name": "Crazy Archaeologist",
+          "url": {
+            "suffix": "/w/Crazy_archaeologist"
+          }
+        },
+        {
+          "name": "King Black Dragon",
+          "url": {
+            "suffix": "/w/King_Black_Dragon"
+          }
+        },
+        {
+          "name": "King Black Dragon (Echo)",
+          "url": {
+            "suffix": "/w/King_Black_Dragon_(Echo)"
+          }
+        },
+        {
+          "name": "Lava dragons",
+          "url": {
+            "suffix": "/w/Lava_dragon"
+          }
+        },
+        {
+          "name": "Mage Arena",
+          "url": {
+            "suffix": "/w/Mage_Arena"
+          }
+        },
+        {
+          "name": "Mage Arena II",
+          "url": {
+            "suffix": "/w/Mage_Arena_II"
+          }
+        },
+        {
+          "name": "Scorpia",
+          "url": {
+            "suffix": "/w/Scorpia"
+          }
+        },
+        {
+          "name": "Venenatis",
+          "url": {
+            "suffix": "/w/Venenatis"
+          }
+        },
+        {
+          "name": "Spindel",
+          "url": {
+            "suffix": "/w/Spindel"
+          }
+        },
+        {
+          "name": "Vet'ion",
+          "url": {
+            "suffix": "/w/Vet%27ion"
+          }
+        },
+        {
+          "name": "Calvar'ion",
+          "url": {
+            "suffix": "/w/Calvar%27ion"
+          }
+        },
+        {
+          "name": "Wilderness God Wars Dungeon",
+          "url": {
+            "suffix": "/w/Wilderness_God_Wars_Dungeon"
+          }
+        },
+        {
+          "name": "Wilderness Slayer Cave",
+          "url": {
+            "suffix": "/w/Wilderness_Slayer_Cave"
+          }
+        }
       ],
       "notableNonCombatActivities": [
-        "Abyss runecrafting",
-        "Black chinchompas",
-        "Black salamanders",
-        "Dark crab fishing",
-        "Fountain of Rune",
-        "Chaos Altar",
-        "Wilderness Agility Course",
-        "Wilderness Resource Area",
-        "Rogues' Castle chests"
+        {
+          "name": "Abyss runecrafting",
+          "url": {
+            "suffix": "/w/Abyss"
+          }
+        },
+        {
+          "name": "Black chinchompas",
+          "url": {
+            "suffix": "/w/Black_chinchompa"
+          }
+        },
+        {
+          "name": "Black salamanders",
+          "url": {
+            "suffix": "/w/Black_salamander"
+          }
+        },
+        {
+          "name": "Dark crab fishing",
+          "url": {
+            "suffix": "/w/Raw_dark_crab"
+          }
+        },
+        {
+          "name": "Fountain of Rune",
+          "url": {
+            "suffix": "/w/Fountain_of_Rune"
+          }
+        },
+        {
+          "name": "Chaos Altar",
+          "url": {
+            "suffix": "/w/Chaos_Altar"
+          }
+        },
+        {
+          "name": "Wilderness Agility Course",
+          "url": {
+            "suffix": "/w/Wilderness_Agility_Course"
+          }
+        },
+        {
+          "name": "Wilderness Resource Area",
+          "url": {
+            "suffix": "/w/Resource_Area"
+          }
+        },
+        {
+          "name": "Rogues' Castle chests",
+          "url": {
+            "suffix": "/w/Rogues%27_Castle"
+          }
+        }
       ],
       "notableShopsServices": [],
       "autoUnlocks": {
@@ -5919,7 +10363,8 @@
             ],
             "regionRequirements": [
               "wilderness"
-            ]
+            ],
+            "name": "Wilderness Diary"
           }
         ],
         "combatAchievements": [
@@ -5934,7 +10379,12 @@
           }
         ],
         "slayerContent": [
-          "Krystilia assigns tasks like any other Slayer Master rather than Wilderness-specific tasks."
+          {
+            "name": "Krystilia assigns tasks like any other Slayer Master rather than Wilderness-specific tasks.",
+            "url": {
+              "suffix": "/w/Krystilia"
+            }
+          }
         ],
         "items": [],
         "mechanics": [
@@ -5949,7 +10399,7 @@
       "echoBoss": {
         "name": "King Black Dragon (Echo)",
         "url": {
-          "suffix": "/w/King_Black_Dragon_%28Echo%29"
+          "suffix": "/w/King_Black_Dragon_(Echo)"
         },
         "baseBoss": {
           "name": "King Black Dragon",
@@ -5959,8 +10409,17 @@
         },
         "regionRequirement": "wilderness",
         "additionalRequirement": "Acquire the Wilderness echo orb from King Black Dragon before entering the echo fight.",
+        "echoEquipment": [
+          {
+            "name": "King's barrage",
+            "url": {
+              "suffix": "/w/King%27s_barrage"
+            },
+            "note": "Drop rate 1/25"
+          }
+        ],
         "echoEquipmentSummary": [
-          "A crossbow with a double hit that counts as one hit and ice-barrage-like effects"
+          "A crossbow with a double hit that counts as one hit and has ice-barrage-like effects"
         ],
         "regionRequirements": [
           "wilderness"
@@ -5969,33 +10428,20 @@
       "notableDrops": [
         {
           "itemNames": [
-            "Wilderness weapons (Off-task)"
+            "Wilderness weapons"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Wilderness_weapons"
           ],
           "sourceNames": [
-            "Revenants"
+            "Revenants",
+            "Revenant knight",
+            "dragon"
           ],
           "sourceUrlSuffixes": [
-            "/w/Revenants"
-          ],
-          "regionRequirements": [
-            "wilderness"
-          ]
-        },
-        {
-          "itemNames": [
-            "Wilderness weapons (On-task)"
-          ],
-          "itemUrlSuffixes": [
-            null
-          ],
-          "sourceNames": [
-            "Revenants"
-          ],
-          "sourceUrlSuffixes": [
-            "/w/Revenants"
+            "/w/Revenants",
+            "/w/Revenant_knight",
+            "/w/Revenant_dragon"
           ],
           "regionRequirements": [
             "wilderness"
@@ -6020,10 +10466,10 @@
         },
         {
           "itemNames": [
-            "Any Ancient artefact"
+            "Ancient artefact"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Ancient_artefacts"
           ],
           "sourceNames": [
             "Revenants"
@@ -6054,8 +10500,8 @@
         },
         {
           "itemNames": [
-            "Yew seed",
-            "Magic seed"
+            "Yew",
+            "magic seeds"
           ],
           "itemUrlSuffixes": [
             "/w/Yew_seed",
@@ -6073,21 +10519,27 @@
         },
         {
           "itemNames": [
-            "Malediction shard",
-            "Odium shard"
+            "Malediction",
+            "Odium"
           ],
           "itemUrlSuffixes": [
-            "/w/Malediction_shard",
-            "/w/Odium_shard"
+            "/w/Malediction_ward",
+            "/w/Odium_ward"
           ],
           "sourceNames": [
+            "Chaos Fanatic",
+            "Crazy Archaeologist",
+            "Scorpia",
             "Chaos Fanatic",
             "Crazy Archaeologist",
             "Scorpia"
           ],
           "sourceUrlSuffixes": [
             "/w/Chaos_Fanatic",
-            "/w/Crazy_Archaeologist",
+            "/w/Crazy_archaeologist",
+            "/w/Scorpia",
+            "/w/Chaos_Fanatic",
+            "/w/Crazy_archaeologist",
             "/w/Scorpia"
           ],
           "regionRequirements": [
@@ -6105,7 +10557,7 @@
             "Crazy Archaeologist"
           ],
           "sourceUrlSuffixes": [
-            "/w/Crazy_Archaeologist"
+            "/w/Crazy_archaeologist"
           ],
           "regionRequirements": [
             "wilderness"
@@ -6140,6 +10592,23 @@
           ],
           "sourceUrlSuffixes": [
             "/w/Chaos_Elemental"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
+        },
+        {
+          "itemNames": [
+            "Dragon 2h sword"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Dragon_2h_sword"
+          ],
+          "sourceNames": [
+            "Scorpia"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Scorpia"
           ],
           "regionRequirements": [
             "wilderness"
@@ -6239,7 +10708,7 @@
             "/w/Dragon_pickaxe"
           ],
           "sourceNames": [
-            "King Black Dragon"
+            "King black dragon"
           ],
           "sourceUrlSuffixes": [
             "/w/King_Black_Dragon"
@@ -6250,20 +10719,26 @@
         },
         {
           "itemNames": [
-            "Voidwaker pieces"
+            "Voidwaker"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Voidwaker"
           ],
           "sourceNames": [
             "Callisto",
             "Venenatis",
-            "Vet'ion"
+            "Vet'ion",
+            "Voidwaker hilt",
+            "Voidwaker gem",
+            "Voidwaker blade"
           ],
           "sourceUrlSuffixes": [
             "/w/Callisto",
             "/w/Venenatis",
-            "/w/Vet%27ion"
+            "/w/Vet%27ion",
+            "/w/Voidwaker_hilt",
+            "/w/Voidwaker_gem",
+            "/w/Voidwaker_blade"
           ],
           "regionRequirements": [
             "wilderness"
@@ -6271,20 +10746,26 @@
         },
         {
           "itemNames": [
-            "Voidwaker pieces"
+            "Voidwaker"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Voidwaker"
           ],
           "sourceNames": [
             "Artio",
             "Spindel",
-            "Calvar'ion"
+            "Calvar'ion",
+            "Voidwaker hilt",
+            "Voidwaker gem",
+            "Voidwaker blade"
           ],
           "sourceUrlSuffixes": [
             "/w/Artio",
             "/w/Spindel",
-            "/w/Calvar%27ion"
+            "/w/Calvar%27ion",
+            "/w/Voidwaker_hilt",
+            "/w/Voidwaker_gem",
+            "/w/Voidwaker_blade"
           ],
           "regionRequirements": [
             "wilderness"
@@ -6292,10 +10773,10 @@
         },
         {
           "itemNames": [
-            "Wilderness weapon upgrades"
+            "Wilderness weapon"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Wilderness_weapons"
           ],
           "sourceNames": [
             "Callisto",
@@ -6338,10 +10819,10 @@
         },
         {
           "itemNames": [
-            "Wilderness weapon upgrades"
+            "Wilderness weapon"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Wilderness_weapons"
           ],
           "sourceNames": [
             "Artio",
@@ -6391,7 +10872,7 @@
           ],
           "sourceNames": [
             "Black dragon",
-            "Lava dragon"
+            "lava dragon"
           ],
           "sourceUrlSuffixes": [
             "/w/Black_dragon",
@@ -6409,11 +10890,13 @@
             "/w/Draconic_visage"
           ],
           "sourceNames": [
-            "King Black Dragon",
-            "Black dragon"
+            "King black dragon",
+            "Black dragon",
+            "Black dragons"
           ],
           "sourceUrlSuffixes": [
             "/w/King_Black_Dragon",
+            "/w/Black_dragon",
             "/w/Black_dragon"
           ],
           "regionRequirements": [
@@ -6442,7 +10925,7 @@
             "Dagon'hai robes"
           ],
           "itemUrlSuffixes": [
-            null
+            "/w/Dagon%27hai_robes"
           ],
           "sourceNames": [
             "Larran's big chest"
@@ -6465,7 +10948,7 @@
             "Corporeal beast"
           ],
           "sourceUrlSuffixes": [
-            "/w/Corporeal_beast"
+            "/w/Corporeal_Beast"
           ],
           "regionRequirements": [
             "wilderness"
@@ -6482,7 +10965,7 @@
             "Corporeal beast"
           ],
           "sourceUrlSuffixes": [
-            "/w/Corporeal_beast"
+            "/w/Corporeal_Beast"
           ],
           "regionRequirements": [
             "wilderness"
@@ -6499,7 +10982,7 @@
             "Corporeal beast"
           ],
           "sourceUrlSuffixes": [
-            "/w/Corporeal_beast"
+            "/w/Corporeal_Beast"
           ],
           "regionRequirements": [
             "wilderness"
@@ -6606,6 +11089,23 @@
           "regionRequirements": [
             "wilderness"
           ]
+        },
+        {
+          "itemNames": [
+            "Elder chaos robes"
+          ],
+          "itemUrlSuffixes": [
+            "/w/Elder_chaos_druid_robes"
+          ],
+          "sourceNames": [
+            "Elder chaos druid"
+          ],
+          "sourceUrlSuffixes": [
+            "/w/Elder_Chaos_druid"
+          ],
+          "regionRequirements": [
+            "wilderness"
+          ]
         }
       ],
       "dataGaps": [
@@ -6620,6 +11120,37 @@
         },
         {
           "suffix": "/w/Demonic_Pacts_League/Echo_bosses_and_echo_equipment"
+        }
+      ]
+    },
+    {
+      "id": "misthalin",
+      "name": "Misthalin",
+      "url": null,
+      "unlockMode": "unavailable",
+      "regionRequirements": [],
+      "notableSettlements": [],
+      "notableCombatActivities": [],
+      "notableNonCombatActivities": [],
+      "notableShopsServices": [],
+      "autoUnlocks": {
+        "quests": [],
+        "achievementDiaryTasks": [],
+        "combatAchievements": [],
+        "slayerContent": [],
+        "items": [],
+        "mechanics": [
+          "Misthalin is unavailable in the Demonic Pacts League and is included as a stub so the map can support future leagues without missing-region warnings."
+        ]
+      },
+      "echoBoss": null,
+      "notableDrops": [],
+      "dataGaps": [
+        "Misthalin is not unlockable in the Demonic Pacts League and has no current area-specific relationship data."
+      ],
+      "sourcePages": [
+        {
+          "suffix": "/w/Demonic_Pacts_League"
         }
       ]
     }

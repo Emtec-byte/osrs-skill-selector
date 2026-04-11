@@ -30,7 +30,11 @@ function renderLinkedName(name, url) {
     return escapeHtml(name);
   }
 
-  return `<a class="map-planner__link" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">${escapeHtml(name)}</a>`;
+  return `<a class="map-planner__link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(name)}</a>`;
+}
+
+function renderLinkedNames(names, urls) {
+  return (Array.isArray(names) ? names : []).map((name, index) => renderLinkedName(name, urls?.[index] ?? null)).join(", ");
 }
 
 function renderEmptyState(message) {
@@ -71,6 +75,174 @@ function renderNamedList(items, emptyText) {
   return `<ul class="map-planner__list">${items.map((item) => renderNamedEntry(item)).join("")}</ul>`;
 }
 
+const SERVICE_SECTION_ORDER = new Map([
+  ["General store", 0],
+  ["Combat", 1],
+  ["Skilling", 2],
+  ["Other", 3],
+]);
+
+const SERVICE_SKILL_TYPE_ORDER = new Map([
+  ["Combat", 0],
+  ["Gathering", 1],
+  ["Production", 2],
+  ["Utility", 3],
+  ["Unclassified", 4],
+]);
+
+function compareLabels(left, right, orderMap) {
+  const leftLabel = String(left ?? "");
+  const rightLabel = String(right ?? "");
+  const leftOrder = orderMap.get(leftLabel) ?? 99;
+  const rightOrder = orderMap.get(rightLabel) ?? 99;
+
+  if (leftOrder !== rightOrder) {
+    return leftOrder - rightOrder;
+  }
+
+  return leftLabel.localeCompare(rightLabel);
+}
+
+function renderServiceEntry(service) {
+  const parts = [];
+  if (service.serviceType) {
+    parts.push(escapeHtml(service.serviceType));
+  }
+
+  const additionalCategories = (Array.isArray(service.serviceAdditionalCategories) ? service.serviceAdditionalCategories : [])
+    .map((category) => category.serviceCategoryLabel)
+    .filter((label) => typeof label === "string" && label.trim() !== "");
+
+  if (additionalCategories.length > 0) {
+    parts.push(`Also: ${additionalCategories.map((label) => escapeHtml(label)).join(", ")}`);
+  }
+
+  return `<li>${renderLinkedName(service.name, service.url)}${parts.length ? ` <span class="map-planner__entry-meta">${parts.join(" · ")}</span>` : ""}</li>`;
+}
+
+function buildServiceGroups(services) {
+  const sectionMap = new Map();
+
+  for (const service of Array.isArray(services) ? services : []) {
+    const sectionLabel = service.serviceSectionLabel || "Other";
+    const sectionKey = service.serviceSection || sectionLabel.toLowerCase();
+    let section = sectionMap.get(sectionKey);
+    if (!section) {
+      section = {
+        key: sectionKey,
+        label: sectionLabel,
+        skillGroups: new Map(),
+      };
+      sectionMap.set(sectionKey, section);
+    }
+
+    const skillLabel = sectionLabel === "Skilling"
+      ? (service.serviceSkillTypeLabel || "Unclassified")
+      : null;
+    const skillKey = skillLabel
+      ? (service.serviceSkillType || skillLabel.toLowerCase())
+      : "__section";
+    let skillGroup = section.skillGroups.get(skillKey);
+    if (!skillGroup) {
+      skillGroup = {
+        key: skillKey,
+        label: skillLabel,
+        categoryGroups: new Map(),
+      };
+      section.skillGroups.set(skillKey, skillGroup);
+    }
+
+    const categoryLabel = service.serviceCategoryLabel || "Other";
+    const categoryKey = service.serviceCategory || categoryLabel.toLowerCase();
+    let categoryGroup = skillGroup.categoryGroups.get(categoryKey);
+    if (!categoryGroup) {
+      categoryGroup = {
+        key: categoryKey,
+        label: categoryLabel,
+        items: [],
+      };
+      skillGroup.categoryGroups.set(categoryKey, categoryGroup);
+    }
+
+    categoryGroup.items.push(service);
+  }
+
+  return [...sectionMap.values()]
+    .sort((left, right) => compareLabels(left.label, right.label, SERVICE_SECTION_ORDER))
+    .map((section) => {
+      const skillGroups = [...section.skillGroups.values()]
+        .sort((left, right) => compareLabels(left.label, right.label, SERVICE_SKILL_TYPE_ORDER))
+        .map((skillGroup) => ({
+          ...skillGroup,
+          showLabel: section.label === "Skilling" && Boolean(skillGroup.label),
+          categoryGroups: [...skillGroup.categoryGroups.values()]
+            .sort((left, right) => left.label.localeCompare(right.label))
+            .map((categoryGroup) => ({
+              ...categoryGroup,
+              showLabel: categoryGroup.label !== section.label,
+              items: [...categoryGroup.items].sort((left, right) => left.name.localeCompare(right.name)),
+            })),
+        }));
+
+      return {
+        ...section,
+        skillGroups,
+      };
+    });
+}
+
+function renderGroupedServiceList(services, emptyText) {
+  if (!services || services.length === 0) {
+    return renderEmptyState(emptyText);
+  }
+
+  return buildServiceGroups(services).map((section) => `
+    <div class="map-planner__subsection">
+      <h3>${escapeHtml(section.label)}</h3>
+      ${section.skillGroups.map((skillGroup) => `
+        ${skillGroup.showLabel ? `<p class="map-planner__section-label">${escapeHtml(skillGroup.label)}</p>` : ""}
+        ${skillGroup.categoryGroups.map((categoryGroup) => `
+          ${categoryGroup.showLabel ? `<p class="map-planner__service-group-label">${escapeHtml(categoryGroup.label)}</p>` : ""}
+          <ul class="map-planner__list">${categoryGroup.items.map((service) => renderServiceEntry(service)).join("")}</ul>
+        `).join("")}
+      `).join("")}
+    </div>
+  `).join("");
+}
+
+function renderEchoEquipmentItems(items) {
+  if (!items || items.length === 0) {
+    return "";
+  }
+
+  return items.map((item) => {
+    const meta = item.note ? ` <span class="map-planner__entry-meta">${escapeHtml(item.note)}</span>` : "";
+    return `<li>Echo equipment: ${renderLinkedName(item.name, item.url)}${meta}</li>`;
+  }).join("");
+}
+
+function renderEchoEquipmentInline(items) {
+  if (!items || items.length === 0) {
+    return "";
+  }
+
+  return items.map((item) => {
+    const meta = item.note ? ` <span class="map-planner__entry-meta">${escapeHtml(item.note)}</span>` : "";
+    return `${renderLinkedName(item.name, item.url)}${meta}`;
+  }).join(", ");
+}
+
+function renderEchoEquipmentSummaryItems(items, summary) {
+  const linkedNames = new Set((Array.isArray(items) ? items : [])
+    .map((item) => String(item?.name ?? "").trim().toLowerCase())
+    .filter(Boolean));
+
+  return (Array.isArray(summary) ? summary : [])
+    .filter((item) => !linkedNames.has(String(item ?? "").trim().toLowerCase()))
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("");
+}
+
 function renderDropList(items, emptyText) {
   if (!items || items.length === 0) {
     return renderEmptyState(emptyText);
@@ -79,10 +251,10 @@ function renderDropList(items, emptyText) {
   return `
     <ul class="map-planner__list">
       ${items.map((entry) => {
-        const itemLabel = entry.itemNames.join(", ");
-        const sourceLabel = entry.sourceNames.join(", ");
+        const itemLabel = renderLinkedNames(entry.itemNames, entry.itemUrls);
+        const sourceLabel = renderLinkedNames(entry.sourceNames, entry.sourceUrls);
         const meta = entry.note ? ` <span class="map-planner__entry-meta">${escapeHtml(entry.note)}</span>` : "";
-        return `<li><strong>${escapeHtml(itemLabel)}</strong> <span class="map-planner__entry-meta">from ${escapeHtml(sourceLabel)}</span>${meta}</li>`;
+        return `<li><strong>${itemLabel}</strong> <span class="map-planner__entry-meta">from ${sourceLabel}</span>${meta}</li>`;
       }).join("")}
     </ul>
   `;
@@ -445,7 +617,7 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
           <div class="map-planner__panel-header map-planner__panel-header--compact">
             <div>
               <p class="map-planner__eyebrow">Focused Region</p>
-              <h2 class="map-planner__title">${escapeHtml(region.name)}</h2>
+                <h2 class="map-planner__title">${renderLinkedName(region.name, relationship.url ?? region.url)}</h2>
               <p class="map-planner__description">${escapeHtml(region.section || "Region overview")}</p>
             </div>
             <button type="button" class="utility-button" data-toggle-region ${isSelectable ? "" : "disabled"}>${escapeHtml(actionLabel)}</button>
@@ -464,7 +636,7 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
             sectionKey: "region-combat",
             title: "Combat activities",
             summary: `${relationship.notableCombatActivities.length} entries`,
-            bodyHtml: renderStringList(relationship.notableCombatActivities, "No combat activities captured for this region yet."),
+            bodyHtml: renderNamedList(relationship.notableCombatActivities, "No combat activities captured for this region yet."),
             collapsedSections,
             defaultOpen: true,
           })}
@@ -472,14 +644,14 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
             sectionKey: "region-non-combat",
             title: "Non-combat activities",
             summary: `${relationship.notableNonCombatActivities.length} entries`,
-            bodyHtml: renderStringList(relationship.notableNonCombatActivities, "No non-combat activities captured for this region yet."),
+            bodyHtml: renderNamedList(relationship.notableNonCombatActivities, "No non-combat activities captured for this region yet."),
             collapsedSections,
           })}
           ${renderDetailBlock({
             sectionKey: "region-services",
             title: "Shops and services",
             summary: `${relationship.notableShopsServices.length} entries`,
-            bodyHtml: renderStringList(relationship.notableShopsServices, "No notable services captured for this region yet."),
+            bodyHtml: renderGroupedServiceList(relationship.notableShopsServices, "No notable services captured for this region yet."),
             collapsedSections,
           })}
           ${renderDetailBlock({
@@ -505,7 +677,7 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
               </div>
               <div class="map-planner__subsection">
                 <h3>Slayer content</h3>
-                ${renderStringList(autoUnlocks.slayerContent, "No slayer content notes captured for this region.")}
+                ${renderNamedList(autoUnlocks.slayerContent, "No slayer content notes captured for this region.")}
               </div>
               <div class="map-planner__subsection">
                 <h3>Mechanics</h3>
@@ -524,7 +696,8 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
                     <li>${renderLinkedName(relationship.echoBoss.name, relationship.echoBoss.url)}</li>
                     ${relationship.echoBoss.baseBoss ? `<li>Base boss: ${renderLinkedName(relationship.echoBoss.baseBoss.name, relationship.echoBoss.baseBoss.url)}</li>` : ""}
                     ${relationship.echoBoss.additionalRequirement ? `<li>${escapeHtml(relationship.echoBoss.additionalRequirement)}</li>` : ""}
-                    ${relationship.echoBoss.echoEquipmentSummary.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+                    ${renderEchoEquipmentItems(relationship.echoBoss.echoEquipment)}
+                    ${renderEchoEquipmentSummaryItems(relationship.echoBoss.echoEquipment, relationship.echoBoss.echoEquipmentSummary)}
                   </ul>
                 `
               : renderEmptyState("This region does not have an echo boss entry in the current relationship data."),
@@ -595,7 +768,11 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
             title: "Combined echo bosses",
             summary: `${summary.echoBosses.length} entries`,
             bodyHtml: summary.echoBosses.length > 0
-              ? `<ul class="map-planner__list">${summary.echoBosses.map((entry) => `<li>${escapeHtml(entry.regionName)}: ${renderLinkedName(entry.echoBoss.name, entry.echoBoss.url)}</li>`).join("")}</ul>`
+              ? `<ul class="map-planner__list">${summary.echoBosses.map((entry) => {
+                const equipment = renderEchoEquipmentInline(entry.echoBoss.echoEquipment);
+                const meta = equipment ? ` <span class="map-planner__entry-meta">Echo equipment: ${equipment}</span>` : "";
+                return `<li>${escapeHtml(entry.regionName)}: ${renderLinkedName(entry.echoBoss.name, entry.echoBoss.url)}${meta}</li>`;
+              }).join("")}</ul>`
               : renderEmptyState("No echo boss entries are available in the current route."),
             collapsedSections,
             defaultOpen: true,
@@ -604,21 +781,21 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
             sectionKey: "summary-combat",
             title: "Combined combat activities",
             summary: `${summary.combatActivities.length} entries`,
-            bodyHtml: renderStringList(summary.combatActivities, "No combined combat activities were found for this route."),
+            bodyHtml: renderNamedList(summary.combatActivities, "No combined combat activities were found for this route."),
             collapsedSections,
           })}
           ${renderDetailBlock({
             sectionKey: "summary-non-combat",
             title: "Combined non-combat activities",
             summary: `${summary.nonCombatActivities.length} entries`,
-            bodyHtml: renderStringList(summary.nonCombatActivities, "No combined non-combat activities were found for this route."),
+            bodyHtml: renderNamedList(summary.nonCombatActivities, "No combined non-combat activities were found for this route."),
             collapsedSections,
           })}
           ${renderDetailBlock({
             sectionKey: "summary-services",
             title: "Combined services",
             summary: `${summary.services.length} entries`,
-            bodyHtml: renderStringList(summary.services, "No combined services were found for this route."),
+            bodyHtml: renderGroupedServiceList(summary.services, "No combined services were found for this route."),
             collapsedSections,
           })}
           ${renderDetailBlock({
@@ -644,7 +821,7 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
               </div>
               <div class="map-planner__subsection">
                 <h3>Slayer content</h3>
-                ${renderStringList(summary.autoUnlocks.slayerContent, "No route-wide slayer content notes are available.")}
+                ${renderNamedList(summary.autoUnlocks.slayerContent, "No route-wide slayer content notes are available.")}
               </div>
               <div class="map-planner__subsection">
                 <h3>Mechanics</h3>

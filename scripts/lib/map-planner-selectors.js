@@ -92,6 +92,20 @@ function collectNamedEntries(regions, key) {
   );
 }
 
+function collectRegionEntries(regions, key) {
+  return uniqueBy(
+    regions.flatMap((region) => region[key] ?? []),
+    (entry) => entry.name,
+  );
+}
+
+function collectServiceEntries(regions) {
+  return uniqueBy(
+    regions.flatMap((region) => region.notableShopsServices ?? []),
+    (entry) => (entry.canonicalService?.name ?? entry.name).toLowerCase(),
+  );
+}
+
 function collectStringEntries(regions, key) {
   return uniqueStrings(regions.flatMap((region) => region.autoUnlocks?.[key] ?? []));
 }
@@ -116,10 +130,10 @@ export function collectRegionPlanSummary({ leagueConfig, mergedRegionsById, glob
     routeIds,
     selectedRegions,
     totalRegions: selectedRegions.length,
-    combatActivities: uniqueStrings(relationshipRegions.flatMap((region) => region.notableCombatActivities ?? [])),
-    nonCombatActivities: uniqueStrings(relationshipRegions.flatMap((region) => region.notableNonCombatActivities ?? [])),
+    combatActivities: collectRegionEntries(relationshipRegions, "notableCombatActivities"),
+    nonCombatActivities: collectRegionEntries(relationshipRegions, "notableNonCombatActivities"),
     settlements: uniqueStrings(relationshipRegions.flatMap((region) => region.notableSettlements ?? [])),
-    services: uniqueStrings(relationshipRegions.flatMap((region) => region.notableShopsServices ?? [])),
+    services: collectServiceEntries(relationshipRegions),
     echoBosses: relationshipRegions
       .filter((region) => region.echoBoss)
       .map((region) => ({
@@ -131,7 +145,7 @@ export function collectRegionPlanSummary({ leagueConfig, mergedRegionsById, glob
       quests: collectNamedEntries(relationshipRegions, "quests"),
       achievementDiaryTasks: collectNamedEntries(relationshipRegions, "achievementDiaryTasks"),
       combatAchievements: collectNamedEntries(relationshipRegions, "combatAchievements"),
-      slayerContent: collectStringEntries(relationshipRegions, "slayerContent"),
+      slayerContent: collectNamedEntries(relationshipRegions, "slayerContent"),
       items: collectNamedEntries(relationshipRegions, "items"),
       mechanics: collectStringEntries(relationshipRegions, "mechanics"),
     },
