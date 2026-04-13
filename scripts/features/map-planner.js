@@ -1,6 +1,7 @@
 import { createDebouncedWriter } from "../lib/storage.js";
 import { loadLeagueData, mergeLeagueMapRegions } from "../lib/league-data.js";
 import {
+  aggregateNotableDrops,
   collectRegionPlanSummary,
   getPlannedRouteIds,
   getRegionStatusLabel,
@@ -33,8 +34,25 @@ function renderLinkedName(name, url) {
   return `<a class="map-planner__link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(name)}</a>`;
 }
 
-function renderLinkedNames(names, urls) {
-  return (Array.isArray(names) ? names : []).map((name, index) => renderLinkedName(name, urls?.[index] ?? null)).join(", ");
+function joinRenderedList(items, conjunction = "and") {
+  if (!items || items.length === 0) {
+    return "";
+  }
+
+  if (items.length === 1) {
+    return items[0];
+  }
+
+  if (items.length === 2) {
+    return `${items[0]} ${conjunction} ${items[1]}`;
+  }
+
+  return `${items.slice(0, -1).join(", ")}, ${conjunction} ${items[items.length - 1]}`;
+}
+
+function renderLinkedNames(names, urls, { natural = false, conjunction = "and" } = {}) {
+  const renderedNames = (Array.isArray(names) ? names : []).map((name, index) => renderLinkedName(name, urls?.[index] ?? null));
+  return natural ? joinRenderedList(renderedNames, conjunction) : renderedNames.join(", ");
 }
 
 function renderEmptyState(message) {
@@ -252,7 +270,7 @@ function renderDropList(items, emptyText) {
     <ul class="map-planner__list">
       ${items.map((entry) => {
         const itemLabel = renderLinkedNames(entry.itemNames, entry.itemUrls);
-        const sourceLabel = renderLinkedNames(entry.sourceNames, entry.sourceUrls);
+        const sourceLabel = renderLinkedNames(entry.sourceNames, entry.sourceUrls, { natural: true });
         const meta = entry.note ? ` <span class="map-planner__entry-meta">${escapeHtml(entry.note)}</span>` : "";
         return `<li><strong>${itemLabel}</strong> <span class="map-planner__entry-meta">from ${sourceLabel}</span>${meta}</li>`;
       }).join("")}
@@ -308,7 +326,7 @@ function createRegionLegendClass(region, focusedRegionId, optionalRegionIds) {
 export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
   return {
     id: "map-planner",
-    label: activeLeague.shortLabel || "Map",
+    label: activeLeague.shortLabel || "Areas",
 
     async mount({ panelEl, toolbarEl }) {
       let isDisposed = false;
@@ -611,6 +629,7 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
 
         const relationship = region.relationship;
         const autoUnlocks = relationship.autoUnlocks;
+        const notableDrops = aggregateNotableDrops(relationship.notableDrops);
         const relatedGlobalRules = leagueData.globalRules.filter((rule) => rule.relatedRegionIds.includes(region.regionId));
 
         regionPanelEl.innerHTML = `
@@ -630,7 +649,7 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
             ${renderCountPill(relationship.notableCombatActivities.length, "Combat")}
             ${renderCountPill(relationship.notableNonCombatActivities.length, "Non-combat")}
             ${renderCountPill(relationship.notableShopsServices.length, "Services")}
-            ${renderCountPill(relationship.notableDrops.length, "Drops")}
+            ${renderCountPill(notableDrops.length, "Drops")}
           </div>
           ${renderDetailBlock({
             sectionKey: "region-combat",
@@ -713,8 +732,8 @@ export function createMapPlannerFeature({ activeLeague, layoutEnv }) {
           ${renderDetailBlock({
             sectionKey: "region-drops",
             title: "Notable drops",
-            summary: `${relationship.notableDrops.length} entries`,
-            bodyHtml: renderDropList(relationship.notableDrops, "No notable drop entries are captured for this region yet."),
+            summary: `${notableDrops.length} entries`,
+            bodyHtml: renderDropList(notableDrops, "No notable drop entries are captured for this region yet."),
             collapsedSections,
           })}
           ${renderDetailBlock({

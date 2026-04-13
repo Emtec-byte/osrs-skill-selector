@@ -6,7 +6,7 @@ function createLazyMapPlannerFeature({ activeLeague, layoutEnv }) {
 
   return {
     id: "map-planner",
-    label: activeLeague.shortLabel || "Map",
+    label: activeLeague.shortLabel || "Areas",
 
     async mount(context) {
       if (!loadedFeaturePromise) {

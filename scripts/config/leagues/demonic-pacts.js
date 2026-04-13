@@ -4,7 +4,7 @@ const dataBaseUrl = new URL("../../../assets/data/", import.meta.url);
 export const DEMONIC_PACTS_LEAGUE = {
   id: "demonic-pacts",
   label: "Demonic Pacts",
-  shortLabel: "Map",
+  shortLabel: "Areas",
   capabilities: {
     mapPlanner: true,
     relicPlanner: false,

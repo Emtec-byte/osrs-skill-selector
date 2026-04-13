@@ -32,6 +32,41 @@ function uniqueBy(items, getKey) {
   });
 }
 
+function getUrlKey(url) {
+  return typeof url?.href === "string" && url.href.trim() !== "" ? url.href.trim() : "";
+}
+
+function buildDropItemKey(entry) {
+  return (Array.isArray(entry?.itemNames) ? entry.itemNames : [])
+    .map((name, index) => `${String(name ?? "").trim().toLowerCase()}::${getUrlKey(entry.itemUrls?.[index])}`)
+    .sort()
+    .join("|");
+}
+
+function buildDropSourceKey(name, url) {
+  return `${String(name ?? "").trim().toLowerCase()}::${getUrlKey(url)}`;
+}
+
+function appendUniqueDropSources(targetEntry, sourceNames, sourceUrls) {
+  const seenSources = new Set(
+    targetEntry.sourceNames.map((name, index) => buildDropSourceKey(name, targetEntry.sourceUrls[index])),
+  );
+
+  for (let index = 0; index < (Array.isArray(sourceNames) ? sourceNames : []).length; index += 1) {
+    const sourceName = sourceNames[index];
+    const sourceUrl = sourceUrls?.[index] ?? null;
+    const sourceKey = buildDropSourceKey(sourceName, sourceUrl);
+
+    if (seenSources.has(sourceKey)) {
+      continue;
+    }
+
+    seenSources.add(sourceKey);
+    targetEntry.sourceNames.push(sourceName);
+    targetEntry.sourceUrls.push(sourceUrl);
+  }
+}
+
 export function getRegionStatusLabel(status) {
   return REGION_STATUS_LABELS[status] ?? REGION_STATUS_LABELS.reference;
 }
@@ -110,11 +145,38 @@ function collectStringEntries(regions, key) {
   return uniqueStrings(regions.flatMap((region) => region.autoUnlocks?.[key] ?? []));
 }
 
+export function aggregateNotableDrops(entries) {
+  const groupedEntries = new Map();
+
+  for (const entry of Array.isArray(entries) ? entries : []) {
+    const noteKey = typeof entry?.note === "string" ? entry.note.trim() : "";
+    const groupKey = `${buildDropItemKey(entry)}::${noteKey}`;
+    let groupedEntry = groupedEntries.get(groupKey);
+
+    if (!groupedEntry) {
+      groupedEntry = {
+        itemNames: [...(Array.isArray(entry.itemNames) ? entry.itemNames : [])],
+        itemUrls: [...(Array.isArray(entry.itemUrls) ? entry.itemUrls : [])],
+        sourceNames: [],
+        sourceUrls: [],
+        note: typeof entry.note === "string" ? entry.note : null,
+        regionRequirements: uniqueStrings(entry.regionRequirements),
+      };
+      groupedEntries.set(groupKey, groupedEntry);
+    }
+
+    appendUniqueDropSources(groupedEntry, entry.sourceNames, entry.sourceUrls);
+    groupedEntry.regionRequirements = uniqueStrings([
+      ...groupedEntry.regionRequirements,
+      ...(Array.isArray(entry.regionRequirements) ? entry.regionRequirements : []),
+    ]);
+  }
+
+  return [...groupedEntries.values()];
+}
+
 function collectDrops(regions) {
-  return uniqueBy(
-    regions.flatMap((region) => region.notableDrops ?? []),
-    (entry) => `${entry.itemNames.join("|")}:${entry.sourceNames.join("|")}:${entry.note ?? ""}`,
-  );
+  return aggregateNotableDrops(regions.flatMap((region) => region.notableDrops ?? []));
 }
 
 export function collectRegionPlanSummary({ leagueConfig, mergedRegionsById, globalRules, globalAutoUnlocks, optionalRegionIds }) {
