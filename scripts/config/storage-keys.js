@@ -15,3 +15,7 @@ export const NOTES_TEXTAREA_HEIGHT_KEY = `${NAMESPACE}:notes:textarea-height:v1`
 export const NOTES_STORAGE_MIGRATION_KEY = `${NAMESPACE}:notes:migration:indexeddb:v1`;
 export const NOTES_LEGACY_NOTE_KEY_PREFIX = `${NAMESPACE}:notes:skill:`;
 export const NOTES_LEGACY_NOTE_KEY_SUFFIX = ":v1";
+
+export const SHOPS_BROWSER_STATE_KEY = `${NAMESPACE}:shops:browser-state:v1`;
+export const WORLD_MAP_BROWSER_STATE_KEY = `${NAMESPACE}:world-map:browser-state:v2`;
+export const WORLD_MAP_VIEW_STATE_KEY = `${NAMESPACE}:world-map:view-state:v2`;

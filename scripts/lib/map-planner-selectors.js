@@ -78,6 +78,14 @@ export function getFixedRouteIds(leagueConfig) {
   ];
 }
 
+export function getAccessibleRegionIds(leagueConfig) {
+  return new Set(uniqueStrings([
+    ...leagueConfig.rules.startingRegionIds,
+    ...leagueConfig.rules.forcedRegionIds,
+    ...leagueConfig.rules.selectableRegionIds,
+  ]));
+}
+
 export function getPlannedRouteIds(leagueConfig, optionalRegionIds = []) {
   return uniqueStrings([
     ...getFixedRouteIds(leagueConfig),

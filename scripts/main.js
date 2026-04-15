@@ -10,6 +10,7 @@ import { createLayoutEnvironment } from "./lib/layout-env.js";
 import { createStorageAlert } from "./lib/storage-alert.js";
 import { readJson, writeJson } from "./lib/storage.js";
 import { createTabController } from "./lib/tabs.js";
+import { registerWorldMapTabActivator } from "./lib/world-map-shared.js";
 
 function sanitizeActiveLeagueId(value) {
   return getLeagueConfig(value?.leagueId).id;
@@ -46,6 +47,8 @@ async function init() {
     initialTabId: lastTabState.activeTab,
     storageKey: UI_ACTIVE_TAB_KEY,
   });
+
+  registerWorldMapTabActivator((tabId) => controller.activateTab(tabId));
 
   await controller.init();
 }

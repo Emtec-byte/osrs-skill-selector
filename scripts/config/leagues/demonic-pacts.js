@@ -7,6 +7,8 @@ export const DEMONIC_PACTS_LEAGUE = {
   shortLabel: "Areas",
   capabilities: {
     mapPlanner: true,
+    worldMap: true,
+    shopsBrowser: true,
     relicPlanner: false,
     pactPlanner: false,
     taskPlanner: false,
@@ -29,6 +31,7 @@ export const DEMONIC_PACTS_LEAGUE = {
   },
   data: {
     relationshipJsonSrc: new URL("demonic-pacts-region-relationship-master.json", dataBaseUrl).href,
+    shopCatalogJsonSrc: new URL("demonic-pacts-shop-catalog.json", dataBaseUrl).href,
   },
   rules: {
     startingRegionIds: ["varlamore"],
